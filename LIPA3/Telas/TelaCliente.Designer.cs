@@ -73,13 +73,16 @@
             this.editarBtn = new System.Windows.Forms.Button();
             this.limparBtn = new System.Windows.Forms.Button();
             this.clienteDataGrid = new System.Windows.Forms.DataGridView();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.consultaTxt = new System.Windows.Forms.TextBox();
+            this.consultaLbl = new System.Windows.Forms.Label();
+            this.exibirBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +92,7 @@
             this.excluirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.excluirBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excluirBtn.ForeColor = System.Drawing.Color.White;
-            this.excluirBtn.Location = new System.Drawing.Point(548, 339);
+            this.excluirBtn.Location = new System.Drawing.Point(547, 294);
             this.excluirBtn.Name = "excluirBtn";
             this.excluirBtn.Size = new System.Drawing.Size(135, 35);
             this.excluirBtn.TabIndex = 9;
@@ -124,7 +127,7 @@
             this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarBtn.ForeColor = System.Drawing.Color.White;
-            this.salvarBtn.Location = new System.Drawing.Point(407, 339);
+            this.salvarBtn.Location = new System.Drawing.Point(406, 294);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(135, 35);
             this.salvarBtn.TabIndex = 6;
@@ -551,7 +554,7 @@
             this.editarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarBtn.ForeColor = System.Drawing.Color.White;
-            this.editarBtn.Location = new System.Drawing.Point(688, 339);
+            this.editarBtn.Location = new System.Drawing.Point(688, 294);
             this.editarBtn.Name = "editarBtn";
             this.editarBtn.Size = new System.Drawing.Size(135, 35);
             this.editarBtn.TabIndex = 50;
@@ -565,7 +568,7 @@
             this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.limparBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limparBtn.ForeColor = System.Drawing.Color.White;
-            this.limparBtn.Location = new System.Drawing.Point(829, 339);
+            this.limparBtn.Location = new System.Drawing.Point(406, 335);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(135, 35);
             this.limparBtn.TabIndex = 51;
@@ -595,20 +598,6 @@
             this.clienteDataGrid.Size = new System.Drawing.Size(948, 369);
             this.clienteDataGrid.TabIndex = 52;
             this.clienteDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clienteDataGrid_CellDoubleClick);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(266, 339);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(135, 35);
-            this.btnConsultar.TabIndex = 53;
-            this.btnConsultar.Text = "CONSULTAR";
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // ID
             // 
@@ -652,12 +641,65 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Location = new System.Drawing.Point(547, 335);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(135, 35);
+            this.btnConsultar.TabIndex = 53;
+            this.btnConsultar.Text = "CONSULTAR";
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.consultarBtn_Click);
+            // 
+            // consultaTxt
+            // 
+            this.consultaTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.consultaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.consultaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultaTxt.ForeColor = System.Drawing.Color.White;
+            this.consultaTxt.Location = new System.Drawing.Point(15, 343);
+            this.consultaTxt.Name = "consultaTxt";
+            this.consultaTxt.Size = new System.Drawing.Size(264, 27);
+            this.consultaTxt.TabIndex = 57;
+            this.consultaTxt.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.consultaTxt_PreviewKeyDown);
+            // 
+            // consultaLbl
+            // 
+            this.consultaLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultaLbl.ForeColor = System.Drawing.Color.White;
+            this.consultaLbl.Location = new System.Drawing.Point(12, 320);
+            this.consultaLbl.Name = "consultaLbl";
+            this.consultaLbl.Size = new System.Drawing.Size(278, 20);
+            this.consultaLbl.TabIndex = 56;
+            this.consultaLbl.Text = "[F1] CONSULTAR POR: NOME";
+            // 
+            // exibirBtn
+            // 
+            this.exibirBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.exibirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exibirBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exibirBtn.ForeColor = System.Drawing.Color.White;
+            this.exibirBtn.Location = new System.Drawing.Point(829, 294);
+            this.exibirBtn.Name = "exibirBtn";
+            this.exibirBtn.Size = new System.Drawing.Size(135, 35);
+            this.exibirBtn.TabIndex = 58;
+            this.exibirBtn.Text = "EXIBIR";
+            this.exibirBtn.UseVisualStyleBackColor = false;
+            this.exibirBtn.Click += new System.EventHandler(this.exibirBtn_Click);
+            // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.exibirBtn);
+            this.Controls.Add(this.consultaTxt);
+            this.Controls.Add(this.consultaLbl);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.clienteDataGrid);
             this.Controls.Add(this.limparBtn);
@@ -707,6 +749,7 @@
             this.Name = "TelaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Cliente";
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.consultaTxt_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -766,5 +809,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Rg;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.TextBox consultaTxt;
+        private System.Windows.Forms.Label consultaLbl;
+        private System.Windows.Forms.Button exibirBtn;
     }
 }

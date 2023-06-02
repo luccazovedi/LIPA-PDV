@@ -15,7 +15,7 @@ namespace LIPA3.Classes
     internal class MySQL
     {
         // Altere a variável "caminhoConexao" com as informações do seu banco de dados local.
-        private static string caminhoConexao = "server=localhost;User Id=root;database=LIPA3;password=root";
+        public static string caminhoConexao = "server=localhost;User Id=root;database=LIPA3;password=root";
         public static MySqlConnection conexao = new MySqlConnection(caminhoConexao);
         public static DataContext acesso = new DataContext(MySQL.conexao);
 
@@ -75,7 +75,7 @@ namespace LIPA3.Classes
             }
             catch (Exception)
             {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!.");
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
             }
             finally
             {
@@ -110,9 +110,9 @@ namespace LIPA3.Classes
             }
         }
 
-        public static void InserirTabelaCliente(string nome, int situacao, string cpf, string rg, char genero, 
-            string dataNascimento, string estadoCivil, string profissao, string nacionalidade, string telefone, string celular, 
-            int whatsApp, string email, string endereco, string numero, string complemento, string bairro, string cidade, 
+        public static void InserirTabelaCliente(string nome, int situacao, string cpf, string rg, char genero,
+            string dataNascimento, string estadoCivil, string profissao, string nacionalidade, string telefone, string celular,
+            int whatsApp, string email, string endereco, string numero, string complemento, string bairro, string cidade,
             string estado, string cep, string observacoes)
         {
             try
@@ -136,12 +136,115 @@ namespace LIPA3.Classes
             }
             catch (Exception)
             {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!.");
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
             }
             finally
             {
                 conexao.Close();
             }
+        }
+
+        public static void RemoverTabelaCliente(int id)
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "DELETE FROM Cliente WHERE Id = '" + id + "'";
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+
+                MessageBox.Show("[SISTEMA] Cliente excluído com sucesso!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static void EditarTabelaCliente(string nome, string cpf, string rg, string cidade, string estado, bool situacao, int id)
+        {
+            try
+            {
+                conexao.Open();
+
+                string consulta = "UPDATE cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Situacao = @situacao WHERE Id = @Id";
+
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexao))
+                {
+                    comando.Parameters.AddWithValue("@Nome", nome);
+                    comando.Parameters.AddWithValue("@Cpf", cpf);
+                    comando.Parameters.AddWithValue("@Rg", rg);
+                    comando.Parameters.AddWithValue("@Cidade", cidade);
+                    comando.Parameters.AddWithValue("@Estado", estado);
+                    comando.Parameters.AddWithValue("@Situacao", situacao ? 0 : 1);
+                    comando.Parameters.AddWithValue("@Id", id);
+
+                    comando.ExecuteNonQuery();
+                    comando.Dispose();
+                }
+
+                MessageBox.Show("[SISTEMA] Cliente editado com sucesso!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static string ConsultarTabelaCliente(string conteudoConsulta, string tipoConsulta)
+        {
+            string consulta = "";
+
+            if (conteudoConsulta != "")
+            {
+                switch (tipoConsulta)
+                {
+                    case "NOME":
+                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE NOME = '" + conteudoConsulta + "'";
+                        break;
+                    case "CIDADE":
+                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE CIDADE = '" + conteudoConsulta + "'";
+                        break;
+                    case "ESTADO":
+                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE ESTADO = '" + conteudoConsulta + "'";
+                        break;
+                }
+            }
+
+            return consulta;
+        }
+
+        public static string ExibirTabelaCliente()
+        {
+            string consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente";
+
+            try
+            {
+                conexao.Open();
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
+            }
+            finally
+            {
+
+            }
+
+            return consulta;
         }
     }
 }
