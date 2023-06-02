@@ -211,7 +211,7 @@ namespace LIPA3.Classes
                 switch (tipoConsulta)
                 {
                     case "NOME":
-                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE NOME = '" + conteudoConsulta + "'";
+                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE NOME LIKE '" + conteudoConsulta + "%'";
                         break;
                     case "CIDADE":
                         consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE CIDADE = '" + conteudoConsulta + "'";

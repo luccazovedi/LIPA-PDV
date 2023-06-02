@@ -60,6 +60,7 @@ namespace LIPA3
                     {
                         TelaPrincipal telaPrincipal = new TelaPrincipal();
                         telaPrincipal.Show();
+
                     }
                     else
                     {
@@ -99,6 +100,7 @@ namespace LIPA3
         private void entrarBtn_Click(object sender, EventArgs e)
         {
             Entrar();
+            //Close();
         }
 
         private void sairBtn_Click(object sender, EventArgs e)

@@ -10,11 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LIPA3.Telas
 {
+
     public partial class TelaCliente : Form
     {
+
         string tipoConsulta = "NOME";
 
         public TelaCliente()
@@ -301,36 +304,49 @@ namespace LIPA3.Telas
             {
                 conexao.Open();
                 int id = Convert.ToInt32(clienteDataGrid.SelectedRows[0].Cells["ID"].Value);
-                bool inativo = situacaoChk.Checked;
-                string query = "UPDATE Cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Profissao = @profissao, Nacionalidade = @nacionalidade, Telefone = @telefone, Celular = @celular, Email = @email, Bairro = @bairro, Cep = @Cep, Observacoes = @observacoes, Endereco = @endereco, Numero = @numero, Complemento = @Complemento, Situacao = @situacao WHERE Id = @Id";
-                using (MySqlCommand command = new MySqlCommand(query, conexao))
+                bool validaCpf = ValidarCPF(cpfTxt.Text);
+                bool verificaCpf = VerificarCPF(cpfTxt.Text);
+                if (validaCpf && verificaCpf)
                 {
-                    command.Parameters.AddWithValue("@Nome", nomeTxt.Text);
-                    command.Parameters.AddWithValue("@Cpf", cpfTxt.Text);
-                    command.Parameters.AddWithValue("@Rg", rgTxt.Text);
-                    command.Parameters.AddWithValue("@Cidade", cidadeTxt.Text);
-                    command.Parameters.AddWithValue("@Estado", estadoTxt.Text);
-                    command.Parameters.AddWithValue("@Profissao", profissaoTxt.Text);
-                    command.Parameters.AddWithValue("@Nacionalidade", nacionalidadeTxt.Text);
-                    command.Parameters.AddWithValue("@Telefone", telefoneTxt.Text);
-                    command.Parameters.AddWithValue("@Celular", celularTxt.Text);
-                    command.Parameters.AddWithValue("@Email", emailTxt.Text);
-                    command.Parameters.AddWithValue("@Bairro", bairroTxt.Text);
-                    command.Parameters.AddWithValue("@Cep", cepTxt.Text);
-                    command.Parameters.AddWithValue("@Observacoes", observacoesTxt.Text);
-                    command.Parameters.AddWithValue("@Endereco", enderecoTxt.Text);
-                    command.Parameters.AddWithValue("@Numero", numeroTxt.Text);
-                    command.Parameters.AddWithValue("@Complemento", complementoTxt.Text);
-                    command.Parameters.AddWithValue("@Situacao", inativo);
-                    command.Parameters.AddWithValue("@Id", id);
+                    bool inativo = situacaoChk.Checked;
+                    bool wpp = whatsAppChk.Checked;
+                    string query = "UPDATE Cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Profissao = @profissao, Nacionalidade = @nacionalidade, Telefone = @telefone, Celular = @celular, Email = @email, Bairro = @bairro, Cep = @Cep, Observacoes = @observacoes, Endereco = @endereco, Numero = @numero, Complemento = @Complemento, EstadoCivil = @EstadoCivil, Situacao = @situacao, WhatsApp = @wpp WHERE Id = @Id";
+                    using (MySqlCommand command = new MySqlCommand(query, conexao))
+                    {
+                        command.Parameters.AddWithValue("@Nome", nomeTxt.Text);
+                        command.Parameters.AddWithValue("@Cpf", cpfTxt.Text);
+                        command.Parameters.AddWithValue("@Rg", rgTxt.Text);
+                        command.Parameters.AddWithValue("@Cidade", cidadeTxt.Text);
+                        command.Parameters.AddWithValue("@Estado", estadoTxt.Text);
+                        command.Parameters.AddWithValue("@Profissao", profissaoTxt.Text);
+                        command.Parameters.AddWithValue("@Nacionalidade", nacionalidadeTxt.Text);
+                        command.Parameters.AddWithValue("@Telefone", telefoneTxt.Text);
+                        command.Parameters.AddWithValue("@Celular", celularTxt.Text);
+                        command.Parameters.AddWithValue("@Email", emailTxt.Text);
+                        command.Parameters.AddWithValue("@Bairro", bairroTxt.Text);
+                        command.Parameters.AddWithValue("@Cep", cepTxt.Text);
+                        command.Parameters.AddWithValue("@Observacoes", observacoesTxt.Text);
+                        command.Parameters.AddWithValue("@Endereco", enderecoTxt.Text);
+                        command.Parameters.AddWithValue("@Numero", numeroTxt.Text);
+                        command.Parameters.AddWithValue("@Complemento", complementoTxt.Text);
+                        command.Parameters.AddWithValue("@EstadoCivil", estadoCivilCmb.Text);
+                        command.Parameters.AddWithValue("@Situacao", inativo);
+                        command.Parameters.AddWithValue("@Id", id);
+                        command.Parameters.AddWithValue("@Wpp", wpp);
 
-                    command.ExecuteNonQuery();
+                        command.ExecuteNonQuery();
+                    }
+
+                    conexao.Dispose();
+                    clienteDataGrid.DataSource = null;
+                    clienteDataGrid.Rows.Clear();
+                    Exibir();
+                    Limpar();
                 }
-                conexao.Dispose();
-                clienteDataGrid.DataSource = null;
-                clienteDataGrid.Rows.Clear();
-                Exibir();
-                Limpar();
+                else
+                {
+                    MessageBox.Show("[SISTEMA] O CPF digitado é INVÁLIDO ou JÁ EXISTE! Tente novamente.");
+                }
             }
         }
 
@@ -403,6 +419,36 @@ namespace LIPA3.Telas
                                 enderecoTxt.Text = reader["Endereco"].ToString();
                                 numeroTxt.Text = reader["Numero"].ToString();
                                 complementoTxt.Text = reader["Complemento"].ToString();
+                                dataNascimentoTxt.Text = reader["DataNascimento"].ToString();
+                                
+                                if (reader["Genero"].ToString() == "M")
+                                {
+                                    generoCmb.SelectedIndex = 0;
+                                }
+                                else if (reader["Genero"].ToString() == "F")
+                                {
+                                    generoCmb.SelectedIndex = 1;
+                                }
+                                else
+                                {
+                                    generoCmb.SelectedIndex = 2;
+                                }
+
+                                if (reader["EstadoCivil"].ToString() == "SOLTEIRO")
+                                {
+                                    estadoCivilCmb.SelectedIndex = 0;
+                                }
+
+                                if (reader["WhatsApp"].ToString() == "0")
+                                {
+                                    whatsAppChk.Checked = false;
+                                }
+                                if (reader["WhatsApp"].ToString() == "1")
+                                {
+                                    whatsAppChk.Checked = true;
+                                }
+
+
                             }
                         }
                     }
@@ -410,6 +456,29 @@ namespace LIPA3.Telas
                     conexao.Dispose();
                 }
             }
+        }
+
+        //eventos
+        private void numero(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        // Evento de redimensionamento do formulário
+        private void Form_Resize(object sender, EventArgs e)
+        {
+            generoCmb.Size = new Size(this.ClientSize.Width - 20, (this.ClientSize.Height - 40) / 2);
+            dataNascimentoTxt.Size = new Size(this.ClientSize.Width - 20, (this.ClientSize.Height - 40) / 2);
+
+            //textBox2.Location = new Point(10, textBox1.Bottom + 10);
+        }
+
+        private void TelaCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
+            telaPrincipal.Show();
         }
     }
 }

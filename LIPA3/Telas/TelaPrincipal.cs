@@ -21,6 +21,20 @@ namespace LIPA3.Telas
         {
             TelaCliente telaCliente = new TelaCliente();
             telaCliente.Show();
+            Close();
+        }
+
+        private void produtoLbl_Click(object sender, EventArgs e)
+        {
+            TelaProduto telaProduto = new TelaProduto();
+            telaProduto.Show();
+        }
+
+        private void TelaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            TelaAcesso telaAcesso = new TelaAcesso();
+            telaAcesso.Show();
+         
         }
     }
 }
