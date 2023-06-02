@@ -174,11 +174,11 @@ namespace LIPA3.Telas
                 conexao.Open();
                 if (situacaoChk.Checked)
                 {
-                     query = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM cliente WHERE Situacao=0";
+                     query = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM cliente WHERE Situacao=1";
                 }
                 else
                 {
-                     query = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM cliente WHERE Situacao=1";
+                     query = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM cliente WHERE Situacao=0";
                 }
                 using (MySqlCommand command = new MySqlCommand(query, conexao))
                 {
@@ -213,7 +213,7 @@ namespace LIPA3.Telas
                 conexao.Open();
                 int id = Convert.ToInt32(clienteDataGrid.SelectedRows[0].Cells["ID"].Value);
                 bool inativo = situacaoChk.Checked;
-                string query = "UPDATE cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Situacao = @situacao WHERE Id = @Id";
+                string query = "UPDATE cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Profissao = @profissao, Nacionalidade = @nacionalidade, Telefone = @telefone, Celular = @celular, Email = @email, Bairro = @bairro, Cep = @Cep, Observacoes = @observacoes, Endereco = @endereco, Numero = @numero, Complemento = @Complemento, Situacao = @situacao WHERE Id = @Id";
                 using (MySqlCommand command = new MySqlCommand(query, conexao))
                 {
                     command.Parameters.AddWithValue("@Nome", nomeTxt.Text);
@@ -221,7 +221,18 @@ namespace LIPA3.Telas
                     command.Parameters.AddWithValue("@Rg", rgTxt.Text);
                     command.Parameters.AddWithValue("@Cidade", cidadeTxt.Text);
                     command.Parameters.AddWithValue("@Estado", estadoTxt.Text);
-                    command.Parameters.AddWithValue("@Situacao", inativo ? 0:1);
+                    command.Parameters.AddWithValue("@Profissao", profissaoTxt.Text);
+                    command.Parameters.AddWithValue("@Nacionalidade", nacionalidadeTxt.Text);
+                    command.Parameters.AddWithValue("@Telefone", telefoneTxt.Text);
+                    command.Parameters.AddWithValue("@Celular", celularTxt.Text);
+                    command.Parameters.AddWithValue("@Email", emailTxt.Text);
+                    command.Parameters.AddWithValue("@Bairro", bairroTxt.Text);
+                    command.Parameters.AddWithValue("@Cep", cepTxt.Text);
+                    command.Parameters.AddWithValue("@Observacoes", observacoesTxt.Text);
+                    command.Parameters.AddWithValue("@Endereco", enderecoTxt.Text);
+                    command.Parameters.AddWithValue("@Numero", numeroTxt.Text);
+                    command.Parameters.AddWithValue("@Complemento", complementoTxt.Text);
+                    command.Parameters.AddWithValue("@Situacao", inativo);
                     command.Parameters.AddWithValue("@Id", id);
                     
                     command.ExecuteNonQuery();                  
@@ -239,14 +250,70 @@ namespace LIPA3.Telas
 
         private void clienteDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (clienteDataGrid.SelectedRows.Count > 0)
+            using (MySqlConnection conexao = MySQL.conexao)
             {
-                DataGridViewRow selectedRow = clienteDataGrid.SelectedRows[0];
-                nomeTxt.Text = selectedRow.Cells["Nome"].Value.ToString();
-                cpfTxt.Text = selectedRow.Cells["Cpf"].Value.ToString();
-                rgTxt.Text = selectedRow.Cells["Rg"].Value.ToString();
-                cidadeTxt.Text = selectedRow.Cells["Cidade"].Value.ToString();
-                estadoTxt.Text = selectedRow.Cells["Estado"].Value.ToString();
+                conexao.Open();
+
+                if (clienteDataGrid.SelectedRows.Count > 0)
+                {
+                    string query = "SELECT * FROM cliente WHERE Cpf= @Cpf";
+
+                    DataGridViewRow selectedRow = clienteDataGrid.SelectedRows[0];
+                    nomeTxt.Text = selectedRow.Cells["Nome"].Value.ToString();
+                    cpfTxt.Text = selectedRow.Cells["Cpf"].Value.ToString();
+                    rgTxt.Text = selectedRow.Cells["Rg"].Value.ToString();
+                    cidadeTxt.Text = selectedRow.Cells["Cidade"].Value.ToString();
+                    estadoTxt.Text = selectedRow.Cells["Estado"].Value.ToString();
+                    using (MySqlCommand command = new MySqlCommand(query, conexao))
+                    {
+                        command.Parameters.AddWithValue("@Cpf", cpfTxt.Text);
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                profissaoTxt.Text = reader["Profissao"].ToString();
+                                nacionalidadeTxt.Text = reader["Nacionalidade"].ToString();
+                                telefoneTxt.Text = reader["Telefone"].ToString();
+                                celularTxt.Text = reader["Celular"].ToString();
+                                emailTxt.Text = reader["Email"].ToString();
+                                bairroTxt.Text = reader["Bairro"].ToString();
+                                cepTxt.Text = reader["Cep"].ToString();
+                                observacoesTxt.Text = reader["Observacoes"].ToString();
+                                enderecoTxt.Text = reader["Endereco"].ToString();
+                                numeroTxt.Text = reader["Numero"].ToString();
+                                complementoTxt.Text = reader["Complemento"].ToString();
+                            }
+                        }
+                    }
+                   
+                   conexao.Dispose();
+                }
+            }
+        }
+
+        private void excluirBtn_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection conexao = MySQL.conexao)
+            {
+                conexao.Open();
+                if (clienteDataGrid.SelectedRows.Count > 0)
+                {
+                    int id = Convert.ToInt32(clienteDataGrid.SelectedRows[0].Cells["ID"].Value);
+                    string query = "DELETE FROM cliente WHERE Id = @Id";
+
+                    using (MySqlCommand command = new MySqlCommand(query, conexao))
+                    {
+                        command.Parameters.AddWithValue("@Id", id);
+                        command.ExecuteNonQuery();
+                    }
+                    Limpar();
+                    conexao.Dispose();
+                    btnConsultar_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Nehuma linha selecionada");
+                }
             }
         }
     }

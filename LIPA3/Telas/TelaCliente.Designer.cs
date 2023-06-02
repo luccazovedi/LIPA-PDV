@@ -95,6 +95,7 @@
             this.excluirBtn.TabIndex = 9;
             this.excluirBtn.Text = "EXCLUIR";
             this.excluirBtn.UseVisualStyleBackColor = false;
+            this.excluirBtn.Click += new System.EventHandler(this.excluirBtn_Click);
             // 
             // nomeLbl
             // 
