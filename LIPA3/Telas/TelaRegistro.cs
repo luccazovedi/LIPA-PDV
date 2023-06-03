@@ -22,25 +22,25 @@ namespace LIPA3.Telas
         {
             if (nomeTxt.Text == "")
             {
-                MessageBox.Show("[SISTEMA] É necessário preencher o campo NOME!");
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo NOME!", "[LAMBDA] Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 nomeTxt.Focus();
                 return;
             }
             else if (usuarioTxt.Text == "")
             {
-                MessageBox.Show("[SISTEMA] É necessário preencher o campo USUÁRIO!");
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo USUÁRIO!", "[LAMBDA] Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 usuarioTxt.Focus();
                 return;
             }
             else if (tipoCmb.SelectedIndex < 0)
             {
-                MessageBox.Show("[SISTEMA] É necessário preencher o campo TIPO!");
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo TIPO!", "[LAMBDA] Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tipoCmb.Focus();
                 return;
             }
             else if (senhaTxt.Text == "")
             {
-                MessageBox.Show("[SISTEMA] É necessário preencher o campo SENHA!");
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo SENHA!", "[LAMBDA] Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 senhaTxt.Focus();
                 return;
             }
@@ -56,7 +56,10 @@ namespace LIPA3.Telas
 
         private void Voltar()
         {
-            Close();
+            this.Hide();
+            var telaAcesso = new TelaAcesso();
+            telaAcesso.Closed += (s, args) => this.Close();
+            telaAcesso.Show();
         }
 
         private void TelaRegistro_Load(object sender, EventArgs e)

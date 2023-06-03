@@ -37,7 +37,8 @@
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "TelaProduto";
-            this.Text = "TelaProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "[LAMBDA] Produto";
             this.ResumeLayout(false);
 
         }

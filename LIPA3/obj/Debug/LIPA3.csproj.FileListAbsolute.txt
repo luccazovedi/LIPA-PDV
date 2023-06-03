@@ -199,3 +199,5 @@ C:\Users\joao_\OneDrive\Documents\GitHub\LIPA\LIPA-PDV\LIPA3\obj\Debug\LIPA3.csp
 C:\Users\joao_\OneDrive\Documents\GitHub\LIPA\LIPA-PDV\LIPA3\obj\Debug\LIPA3.exe
 C:\Users\joao_\OneDrive\Documents\GitHub\LIPA\LIPA-PDV\LIPA3\obj\Debug\LIPA3.pdb
 C:\Users\joao_\OneDrive\Documents\GitHub\LIPA\LIPA-PDV\LIPA3\obj\Debug\LIPA3.Telas.TelaProduto.resources
+C:\Users\offic\OneDrive\Área de Trabalho\LIPA3\LIPA-PDV\LIPA3\obj\Debug\LIPA3.Telas.TelaProduto.resources
+C:\Users\offic\OneDrive\Área de Trabalho\LIPA3\LIPA-PDV\LIPA3\obj\Debug\LIPA3.Telas.TelaVenda.resources

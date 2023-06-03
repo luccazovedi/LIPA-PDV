@@ -151,6 +151,9 @@
     <EmbeddedResource Include="Telas\TelaRegistro.resx">
       <DependentUpon>TelaRegistro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaVenda.resx">
+      <DependentUpon>TelaVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

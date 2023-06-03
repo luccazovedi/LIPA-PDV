@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace LIPA3.Telas
             InitializeComponent();
         }
 
+        #region Funções Principais (CRUD)
         private void Limpar()
         {
             nomeTxt.Text = "";
@@ -66,18 +68,16 @@ namespace LIPA3.Telas
                 {
                     MySqlDataReader leitor = comando.ExecuteReader();
 
-                    // Preenche o DataGridView com os dados do MySqlDataReader
                     while (leitor.Read())
                     {
-                        int rowIndex = clienteDataGrid.Rows.Add();
+                        int indiceLinha = clienteDataGrid.Rows.Add();
 
-                        // Preenche as células da linha com os dados do MySqlDataReader
-                        clienteDataGrid.Rows[rowIndex].Cells["ID"].Value = leitor["Id"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["NOME"].Value = leitor["Nome"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["CPF"].Value = leitor["Cpf"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["RG"].Value = leitor["Rg"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["CIDADE"].Value = leitor["Cidade"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["ESTADO"].Value = leitor["Estado"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["ID"].Value = leitor["Id"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["NOME"].Value = leitor["Nome"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["CPF"].Value = leitor["Cpf"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["RG"].Value = leitor["Rg"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["CIDADE"].Value = leitor["Cidade"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["ESTADO"].Value = leitor["Estado"].ToString();
                     }
                 }
                 conexao.Dispose();
@@ -131,14 +131,22 @@ namespace LIPA3.Telas
 
         private void Excluir()
         {
-            if (MessageBox.Show("[SISTEMA] Você realmente deseja remover esse cliente?", "[LAMBDA] Remover Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (clienteDataGrid.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(clienteDataGrid.SelectedRows[0].Cells["ID"].Value);
+                if (MessageBox.Show("[SISTEMA] Você realmente deseja remover esse cliente?", "[LAMBDA] Remover Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(clienteDataGrid.SelectedRows[0].Cells["ID"].Value);
 
-                MySQL.RemoverTabelaCliente(id);
+                    MySQL.RemoverTabelaCliente(id);
 
-                Exibir();
-                Limpar();
+                    Exibir();
+                    Limpar();
+                }
+            }
+            else
+            {
+                MessageBox.Show("[SISTEMA] Erro! É necessário selecionar um cliente antes de excluí-lo.", "[LAMBDA] Remover Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -146,58 +154,100 @@ namespace LIPA3.Telas
         {
             if (MessageBox.Show("[SISTEMA] Você realmente deseja editar esse cliente?", "[LAMBDA] Editar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                MySQL.conexao.Open();
+
                 int id = Convert.ToInt32(clienteDataGrid.SelectedRows[0].Cells["ID"].Value);
-                bool situacao = situacaoChk.Checked;
 
-                MySQL.EditarTabelaCliente(nomeTxt.Text, cpfTxt.Text, rgTxt.Text, cidadeTxt.Text, estadoTxt.Text, situacao, id);
+                if (RetornarCPF() == false)
+                {
+                    if ((string) MySQL.ChecarEditarCPF(id) == cpfTxt.Text)
+                    {
+                        bool situacao = situacaoChk.Checked;
+                        bool whatsApp = whatsAppChk.Checked;
 
-                clienteDataGrid.DataSource = null;
-                clienteDataGrid.Rows.Clear();
+                        string consulta = "UPDATE Cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Profissao = @profissao, Nacionalidade = @nacionalidade, Telefone = @telefone, Celular = @celular, Email = @email, Bairro = @bairro, Cep = @Cep, Observacoes = @observacoes, Endereco = @endereco, Numero = @numero, Complemento = @Complemento, EstadoCivil = @EstadoCivil, Situacao = @situacao, WhatsApp = @whatsapp WHERE Id = @Id";
 
-                Exibir();
-                Limpar();
+                        using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+                        {
+                            comando.Parameters.AddWithValue("@Nome", nomeTxt.Text);
+                            comando.Parameters.AddWithValue("@Cpf", cpfTxt.Text);
+                            comando.Parameters.AddWithValue("@Rg", rgTxt.Text);
+                            comando.Parameters.AddWithValue("@Cidade", cidadeTxt.Text);
+                            comando.Parameters.AddWithValue("@Estado", estadoTxt.Text);
+                            comando.Parameters.AddWithValue("@Profissao", profissaoTxt.Text);
+                            comando.Parameters.AddWithValue("@Nacionalidade", nacionalidadeTxt.Text);
+                            comando.Parameters.AddWithValue("@Telefone", telefoneTxt.Text);
+                            comando.Parameters.AddWithValue("@Celular", celularTxt.Text);
+                            comando.Parameters.AddWithValue("@Email", emailTxt.Text);
+                            comando.Parameters.AddWithValue("@Bairro", bairroTxt.Text);
+                            comando.Parameters.AddWithValue("@Cep", cepTxt.Text);
+                            comando.Parameters.AddWithValue("@Observacoes", observacoesTxt.Text);
+                            comando.Parameters.AddWithValue("@Endereco", enderecoTxt.Text);
+                            comando.Parameters.AddWithValue("@Numero", numeroTxt.Text);
+                            comando.Parameters.AddWithValue("@Complemento", complementoTxt.Text);
+                            comando.Parameters.AddWithValue("@EstadoCivil", estadoCivilCmb.Text);
+                            comando.Parameters.AddWithValue("@Situacao", situacao);
+                            comando.Parameters.AddWithValue("@Id", id);
+                            comando.Parameters.AddWithValue("@WhatsApp", whatsApp);
+
+                            comando.ExecuteNonQuery();
+
+                            MessageBox.Show("[SISTEMA] Cliente editado com sucesso!", "[LAMBDA] Editar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        MySQL.conexao.Dispose();
+
+                        clienteDataGrid.DataSource = null;
+                        clienteDataGrid.Rows.Clear();
+
+                        Exibir();
+                        Limpar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("[SISTEMA] O CPF digitado é INVÁLIDO ou JÁ EXISTE! Tente novamente.", "[LAMBDA] Editar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void Consultar()
         {
-            using (MySqlConnection conexao = MySQL.conexao)
+            clienteDataGrid.DataSource = null;
+            clienteDataGrid.Rows.Clear();
+
+            MySQL.conexao.Open();
+
+            string consulta = MySQL.ConsultarTabelaCliente(consultaTxt.Text, tipoConsulta);
+
+            if (consulta == "")
             {
-                clienteDataGrid.DataSource = null;
-                clienteDataGrid.Rows.Clear();
-
-                conexao.Open();
-
-                string consulta = MySQL.ConsultarTabelaCliente(consultaTxt.Text, tipoConsulta);
-
-                if (consulta == "")
-                {
-                    MessageBox.Show("Erro! Não é possível realizar uma consulta vazia.");
-                    return;
-                }
-
-                using (MySqlCommand command = new MySqlCommand(consulta, MySQL.conexao))
-                {
-                    MySqlDataReader reader = command.ExecuteReader();
-
-                    // Preenche o DataGridView com os dados do MySqlDataReader
-                    while (reader.Read())
-                    {
-                        int rowIndex = clienteDataGrid.Rows.Add();
-
-                        // Preenche as células da linha com os dados do MySqlDataReader
-                        clienteDataGrid.Rows[rowIndex].Cells["ID"].Value = reader["Id"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["NOME"].Value = reader["Nome"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["CPF"].Value = reader["Cpf"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["RG"].Value = reader["Rg"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["CIDADE"].Value = reader["Cidade"].ToString();
-                        clienteDataGrid.Rows[rowIndex].Cells["ESTADO"].Value = reader["Estado"].ToString();
-                    }
-                }
-                conexao.Dispose();
+                MessageBox.Show("[SISTEMA] Erro! Não é possível realizar uma consulta vazia.", "[LAMBDA] Consultar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-        }
 
+            using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+            {
+                MySqlDataReader leitor = comando.ExecuteReader();
+
+                while (leitor.Read())
+                {
+                    int indiceLinha = clienteDataGrid.Rows.Add();
+
+                    clienteDataGrid.Rows[indiceLinha].Cells["ID"].Value = leitor["Id"].ToString();
+                    clienteDataGrid.Rows[indiceLinha].Cells["NOME"].Value = leitor["Nome"].ToString();
+                    clienteDataGrid.Rows[indiceLinha].Cells["CPF"].Value = leitor["Cpf"].ToString();
+                    clienteDataGrid.Rows[indiceLinha].Cells["RG"].Value = leitor["Rg"].ToString();
+                    clienteDataGrid.Rows[indiceLinha].Cells["CIDADE"].Value = leitor["Cidade"].ToString();
+                    clienteDataGrid.Rows[indiceLinha].Cells["ESTADO"].Value = leitor["Estado"].ToString();
+                }
+            }
+
+            MySQL.conexao.Dispose();
+        }
+        #endregion
+
+        #region Métodos CPF
         private bool VerificarCPF(string cpf)
         {
             using (MySqlConnection conexao = new MySqlConnection(MySQL.caminhoConexao))
@@ -257,104 +307,23 @@ namespace LIPA3.Telas
             return true; // CPF válido
         }
 
-        private void salvarBtn_Click(object sender, EventArgs e)
+        private bool RetornarCPF()
         {
             bool cpfValido = ValidarCPF(cpfTxt.Text);
             bool cpfExistente = VerificarCPF(cpfTxt.Text);
+
             if (cpfValido && !cpfExistente)
             {
-                Salvar();
+                return true;
             }
             else
             {
-                MessageBox.Show("[SISTEMA] O CPF digitado é INVÁLIDO ou JÁ EXISTE! Tente novamente.");
+                return false;
             }
         }
+        #endregion
 
-        private void excluirBtn_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection conexao = MySQL.conexao)
-            {
-                conexao.Open();
-                if (clienteDataGrid.SelectedRows.Count > 0)
-                {
-                    int id = Convert.ToInt32(clienteDataGrid.SelectedRows[0].Cells["ID"].Value);
-                    string query = "DELETE FROM cliente WHERE Id = @Id";
-
-                    using (MySqlCommand command = new MySqlCommand(query, conexao))
-                    {
-                        command.Parameters.AddWithValue("@Id", id);
-                        command.ExecuteNonQuery();
-                    }
-                    conexao.Dispose();
-
-                    Exibir();
-                    Limpar();
-                }
-                else
-                {
-                    MessageBox.Show("Nehuma linha selecionada");
-                }
-            }
-        }
-
-        private void editarBtn_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection conexao = MySQL.conexao)
-            {
-                conexao.Open();
-                int id = Convert.ToInt32(clienteDataGrid.SelectedRows[0].Cells["ID"].Value);
-                bool validaCpf = ValidarCPF(cpfTxt.Text);
-                bool verificaCpf = VerificarCPF(cpfTxt.Text);
-                if (validaCpf && verificaCpf)
-                {
-                    bool inativo = situacaoChk.Checked;
-                    bool wpp = whatsAppChk.Checked;
-                    string query = "UPDATE Cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Profissao = @profissao, Nacionalidade = @nacionalidade, Telefone = @telefone, Celular = @celular, Email = @email, Bairro = @bairro, Cep = @Cep, Observacoes = @observacoes, Endereco = @endereco, Numero = @numero, Complemento = @Complemento, EstadoCivil = @EstadoCivil, Situacao = @situacao, WhatsApp = @wpp WHERE Id = @Id";
-                    using (MySqlCommand command = new MySqlCommand(query, conexao))
-                    {
-                        command.Parameters.AddWithValue("@Nome", nomeTxt.Text);
-                        command.Parameters.AddWithValue("@Cpf", cpfTxt.Text);
-                        command.Parameters.AddWithValue("@Rg", rgTxt.Text);
-                        command.Parameters.AddWithValue("@Cidade", cidadeTxt.Text);
-                        command.Parameters.AddWithValue("@Estado", estadoTxt.Text);
-                        command.Parameters.AddWithValue("@Profissao", profissaoTxt.Text);
-                        command.Parameters.AddWithValue("@Nacionalidade", nacionalidadeTxt.Text);
-                        command.Parameters.AddWithValue("@Telefone", telefoneTxt.Text);
-                        command.Parameters.AddWithValue("@Celular", celularTxt.Text);
-                        command.Parameters.AddWithValue("@Email", emailTxt.Text);
-                        command.Parameters.AddWithValue("@Bairro", bairroTxt.Text);
-                        command.Parameters.AddWithValue("@Cep", cepTxt.Text);
-                        command.Parameters.AddWithValue("@Observacoes", observacoesTxt.Text);
-                        command.Parameters.AddWithValue("@Endereco", enderecoTxt.Text);
-                        command.Parameters.AddWithValue("@Numero", numeroTxt.Text);
-                        command.Parameters.AddWithValue("@Complemento", complementoTxt.Text);
-                        command.Parameters.AddWithValue("@EstadoCivil", estadoCivilCmb.Text);
-                        command.Parameters.AddWithValue("@Situacao", inativo);
-                        command.Parameters.AddWithValue("@Id", id);
-                        command.Parameters.AddWithValue("@Wpp", wpp);
-
-                        command.ExecuteNonQuery();
-                    }
-
-                    conexao.Dispose();
-                    clienteDataGrid.DataSource = null;
-                    clienteDataGrid.Rows.Clear();
-                    Exibir();
-                    Limpar();
-                }
-                else
-                {
-                    MessageBox.Show("[SISTEMA] O CPF digitado é INVÁLIDO ou JÁ EXISTE! Tente novamente.");
-                }
-            }
-        }
-
-        private void consultarBtn_Click(object sender, EventArgs e)
-        {
-            Consultar();
-        }
-
+        #region Métodos Controles (WF)
         private void limparBtn_Click(object sender, EventArgs e)
         {
             Limpar();
@@ -363,6 +332,33 @@ namespace LIPA3.Telas
         private void exibirBtn_Click(object sender, EventArgs e)
         {
             Exibir();
+        }
+
+        private void salvarBtn_Click(object sender, EventArgs e)
+        {
+            if (RetornarCPF() == true)
+            {
+                Salvar();
+            }
+            else
+            {
+                MessageBox.Show("[SISTEMA] O CPF digitado é INVÁLIDO ou JÁ EXISTE! Tente novamente.", "[LAMBDA] Salvar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void excluirBtn_Click(object sender, EventArgs e)
+        {
+            Excluir();
+        }
+
+        private void editarBtn_Click(object sender, EventArgs e) // Não esquecer de melhorar essa Função.
+        {
+            Editar();
+        }
+
+        private void consultarBtn_Click(object sender, EventArgs e)
+        {
+            Consultar();
         }
 
         private void consultaTxt_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -420,7 +416,7 @@ namespace LIPA3.Telas
                                 numeroTxt.Text = reader["Numero"].ToString();
                                 complementoTxt.Text = reader["Complemento"].ToString();
                                 dataNascimentoTxt.Text = reader["DataNascimento"].ToString();
-                                
+
                                 if (reader["Genero"].ToString() == "M")
                                 {
                                     generoCmb.SelectedIndex = 0;
@@ -447,8 +443,6 @@ namespace LIPA3.Telas
                                 {
                                     whatsAppChk.Checked = true;
                                 }
-
-
                             }
                         }
                     }
@@ -457,8 +451,10 @@ namespace LIPA3.Telas
                 }
             }
         }
-
-        //eventos
+        #endregion
+    
+        #region Outros Eventos
+        // Eventos
         private void numero(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -466,7 +462,7 @@ namespace LIPA3.Telas
                 e.Handled = true;
             }
         }
-        // Evento de redimensionamento do formulário
+        // Evento de Redimensionamento do Formulário
         private void Form_Resize(object sender, EventArgs e)
         {
             generoCmb.Size = new Size(this.ClientSize.Width - 20, (this.ClientSize.Height - 40) / 2);
@@ -480,5 +476,6 @@ namespace LIPA3.Telas
             TelaPrincipal telaPrincipal = new TelaPrincipal();
             telaPrincipal.Show();
         }
+        #endregion
     }
 }

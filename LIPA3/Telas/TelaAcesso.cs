@@ -13,6 +13,7 @@ using System.Data.Linq;
 using System.Diagnostics.Eventing.Reader;
 using System.Data.SqlClient;
 using LIPA3.Telas;
+using System.Threading;
 
 namespace LIPA3
 {
@@ -21,23 +22,25 @@ namespace LIPA3
         public TelaAcesso()
         {
             InitializeComponent();
+
             MySQL.Conectar();
             MySQL.CriarTabelaUsuario();
             MySQL.CriarTabelaCliente();
             usuarioTxt.Focus();
         }
 
+        #region Funções Principais
         private void Entrar()
         {
             if (usuarioTxt.Text == "")
             {
-                MessageBox.Show("[SISTEMA] É necessário preencher o campo USUÁRIO!");
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo USUÁRIO!", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 usuarioTxt.Focus();
                 return;
             }
             else if (senhaTxt.Text == "")
             {
-                MessageBox.Show("[SISTEMA] É necessário preencher o campo SENHA!");
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo SENHA!", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 senhaTxt.Focus();
                 return;
             }
@@ -58,27 +61,28 @@ namespace LIPA3
 
                     if ((string)usuarioSenha == senhaTxt.Text)
                     {
-                        TelaPrincipal telaPrincipal = new TelaPrincipal();
+                        this.Hide();
+                        var telaPrincipal = new TelaPrincipal();
+                        telaPrincipal.Closed += (s, args) => this.Close();
                         telaPrincipal.Show();
-
                     }
                     else
                     {
-                        MessageBox.Show("[SISTEMA] Senha incorreta! Tente novamente.");
+                        MessageBox.Show("[SISTEMA] Senha incorreta! Tente novamente.", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         senhaTxt.Focus();
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("[SISTEMA] Usuário incorreto! Tente novamente.");
+                    MessageBox.Show("[SISTEMA] Usuário incorreto! Tente novamente.", "[LAMBDA] acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     usuarioTxt.Focus();
                     return;
                 }
             }
-            catch (Exception) 
+            catch (Exception)
             {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!.");
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -88,19 +92,17 @@ namespace LIPA3
 
         private void Registrar()
         {
-            TelaRegistro telaRegistro = new TelaRegistro();
+            this.Hide();
+            var telaRegistro = new TelaRegistro();
+            telaRegistro.Closed += (s, args) => this.Close();
             telaRegistro.Show();
         }
+        #endregion
 
-        private void TelaAcesso_Load(object sender, EventArgs e)
-        {
-            
-        }
-
+        #region Controles Principais
         private void entrarBtn_Click(object sender, EventArgs e)
         {
             Entrar();
-            //Close();
         }
 
         private void sairBtn_Click(object sender, EventArgs e)
@@ -112,5 +114,22 @@ namespace LIPA3
         {
             Registrar();
         }
+
+        private void usuarioTxt_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                senhaTxt.Focus();
+            }
+        }
+
+        private void senhaTxt_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                Entrar();
+            }
+        }
+        #endregion
     }
 }

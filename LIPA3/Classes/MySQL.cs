@@ -19,6 +19,7 @@ namespace LIPA3.Classes
         public static MySqlConnection conexao = new MySqlConnection(caminhoConexao);
         public static DataContext acesso = new DataContext(MySQL.conexao);
 
+        #region Padrão
         public static void Conectar()
         {
             try
@@ -34,7 +35,9 @@ namespace LIPA3.Classes
                 conexao.Close();
             }
         }
+        #endregion
 
+        #region Usuário
         public static void CriarTabelaUsuario()
         {
             try
@@ -50,7 +53,7 @@ namespace LIPA3.Classes
             }
             catch (Exception)
             {
-
+                //MessageBox.Show("[SISTEMA] Ocorreu um erro! Tente novamente.", "[LAMBDA] Criar Tabela Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -71,18 +74,20 @@ namespace LIPA3.Classes
                 comando.ExecuteNonQuery();
                 comando.Dispose();
 
-                MessageBox.Show("[SISTEMA] Usuário inserido com sucesso!");
+                MessageBox.Show("[SISTEMA] Usuário inserido com sucesso!", "[LAMBDA] Salvar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Salvar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 conexao.Close();
             }
         }
+        #endregion
 
+        #region Cliente
         public static void CriarTabelaCliente()
         {
             try
@@ -102,7 +107,7 @@ namespace LIPA3.Classes
             }
             catch (Exception)
             {
-
+                //MessageBox.Show("[SISTEMA] Ocorreu um erro! Tente novamente.", "[LAMBDA] Criar Tabela Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -132,11 +137,11 @@ namespace LIPA3.Classes
                 comando.ExecuteNonQuery();
                 comando.Dispose();
 
-                MessageBox.Show("[SISTEMA] Cliente inserido com sucesso!");
+                MessageBox.Show("[SISTEMA] Cliente inserido com sucesso!", "[LAMBDA] Salvar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Salvar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -156,11 +161,11 @@ namespace LIPA3.Classes
                 comando.ExecuteNonQuery();
                 comando.Dispose();
 
-                MessageBox.Show("[SISTEMA] Cliente excluído com sucesso!");
+                MessageBox.Show("[SISTEMA] Cliente excluído com sucesso!", "[LAMBDA] Excluir Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Excluir Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -190,11 +195,11 @@ namespace LIPA3.Classes
                     comando.Dispose();
                 }
 
-                MessageBox.Show("[SISTEMA] Cliente editado com sucesso!");
+                MessageBox.Show("[SISTEMA] Cliente editado com sucesso!", "[LAMBDA] Editar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Editar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -237,14 +242,26 @@ namespace LIPA3.Classes
             }
             catch (Exception)
             {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!");
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Exibir Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-
+                conexao.Close();
             }
 
             return consulta;
         }
+        #endregion
+
+        #region Outros
+        public static object ChecarEditarCPF(int id)
+        {
+            var consulta = "SELECT Cpf FROM Cliente WHERE Id = " + id;
+
+            MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao);
+            object cpfCliente = comando.ExecuteScalar();
+            return cpfCliente;
+        }
+        #endregion
     }
 }

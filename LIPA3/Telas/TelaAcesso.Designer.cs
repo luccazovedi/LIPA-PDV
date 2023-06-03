@@ -62,6 +62,7 @@
             this.usuarioTxt.Name = "usuarioTxt";
             this.usuarioTxt.Size = new System.Drawing.Size(275, 27);
             this.usuarioTxt.TabIndex = 1;
+            this.usuarioTxt.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.usuarioTxt_PreviewKeyDown);
             // 
             // usuarioLbl
             // 
@@ -98,6 +99,7 @@
             this.senhaTxt.PasswordChar = '*';
             this.senhaTxt.Size = new System.Drawing.Size(275, 27);
             this.senhaTxt.TabIndex = 4;
+            this.senhaTxt.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.senhaTxt_PreviewKeyDown);
             // 
             // label1
             // 
