@@ -26,23 +26,24 @@ namespace LIPA3
             MySQL.Conectar();
             MySQL.CriarTabelaUsuario();
             MySQL.CriarTabelaCliente();
+
             usuarioTxt.Focus();
         }
 
         #region Funções Principais
-        private void Entrar()
+        private bool Entrar()
         {
             if (usuarioTxt.Text == "")
             {
                 MessageBox.Show("[SISTEMA] É necessário preencher o campo USUÁRIO!", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 usuarioTxt.Focus();
-                return;
+                return false;
             }
             else if (senhaTxt.Text == "")
             {
                 MessageBox.Show("[SISTEMA] É necessário preencher o campo SENHA!", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 senhaTxt.Focus();
-                return;
+                return false;
             }
 
             try
@@ -61,28 +62,26 @@ namespace LIPA3
 
                     if ((string)usuarioSenha == senhaTxt.Text)
                     {
-                        this.Hide();
-                        var telaPrincipal = new TelaPrincipal();
-                        telaPrincipal.Closed += (s, args) => this.Close();
-                        telaPrincipal.Show();
+                        return true;
                     }
                     else
                     {
                         MessageBox.Show("[SISTEMA] Senha incorreta! Tente novamente.", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         senhaTxt.Focus();
-                        return;
+                        return false;
                     }
                 }
                 else
                 {
                     MessageBox.Show("[SISTEMA] Usuário incorreto! Tente novamente.", "[LAMBDA] acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     usuarioTxt.Focus();
-                    return;
+                    return false;
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             finally
             {
@@ -102,7 +101,13 @@ namespace LIPA3
         #region Controles Principais
         private void entrarBtn_Click(object sender, EventArgs e)
         {
-            Entrar();
+            if (Entrar() == true)
+            {
+                this.Hide();
+                var telaPrincipal = new TelaPrincipal();
+                telaPrincipal.Closed += (s, args) => this.Close();
+                telaPrincipal.Show();
+            }
         }
 
         private void sairBtn_Click(object sender, EventArgs e)
@@ -127,7 +132,7 @@ namespace LIPA3
         {
             if (e.KeyCode == Keys.Return)
             {
-                Entrar();
+                entrarBtn_Click(sender, e);
             }
         }
         #endregion

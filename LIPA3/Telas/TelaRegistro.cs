@@ -16,8 +16,13 @@ namespace LIPA3.Telas
         public TelaRegistro()
         {
             InitializeComponent();
+
+            MySQL.Conectar();
+
+            nomeTxt.Focus();
         }
 
+        #region Funções Principais
         private void Registrar()
         {
             if (nomeTxt.Text == "")
@@ -61,13 +66,9 @@ namespace LIPA3.Telas
             telaAcesso.Closed += (s, args) => this.Close();
             telaAcesso.Show();
         }
+        #endregion
 
-        private void TelaRegistro_Load(object sender, EventArgs e)
-        {
-            MySQL.Conectar();
-            MySQL.CriarTabelaUsuario();
-        }
-
+        #region Controles Principais
         private void registrarBtn_Click(object sender, EventArgs e)
         {
             Registrar();
@@ -77,5 +78,6 @@ namespace LIPA3.Telas
         {
             Voltar();
         }
+        #endregion
     }
 }

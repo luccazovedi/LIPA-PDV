@@ -175,7 +175,6 @@
             this.Name = "TelaRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Registro";
-            this.Load += new System.EventHandler(this.TelaRegistro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

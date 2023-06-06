@@ -232,24 +232,7 @@ namespace LIPA3.Classes
 
         public static string ExibirTabelaCliente()
         {
-            string consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente";
-
-            try
-            {
-                conexao.Open();
-
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Exibir Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conexao.Close();
-            }
-
-            return consulta;
+            return "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente";
         }
         #endregion
 
