@@ -28,14 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.sairBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // sairBtn
+            // 
+            this.sairBtn.BackColor = System.Drawing.Color.CadetBlue;
+            this.sairBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sairBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sairBtn.ForeColor = System.Drawing.Color.White;
+            this.sairBtn.Location = new System.Drawing.Point(813, -3);
+            this.sairBtn.Name = "sairBtn";
+            this.sairBtn.Size = new System.Drawing.Size(91, 35);
+            this.sairBtn.TabIndex = 61;
+            this.sairBtn.Text = "SAIR";
+            this.sairBtn.UseVisualStyleBackColor = false;
+            this.sairBtn.Click += new System.EventHandler(this.sairBtn_Click);
             // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(904, 762);
+            this.Controls.Add(this.sairBtn);
             this.Name = "TelaVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Venda";
@@ -44,5 +60,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button sairBtn;
     }
 }

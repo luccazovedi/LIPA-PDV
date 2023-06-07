@@ -83,19 +83,19 @@
             this.consultaTxt = new System.Windows.Forms.TextBox();
             this.consultaLbl = new System.Windows.Forms.Label();
             this.exibirBtn = new System.Windows.Forms.Button();
+            this.sairBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // excluirBtn
             // 
-            this.excluirBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.excluirBtn.BackColor = System.Drawing.Color.CadetBlue;
             this.excluirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.excluirBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excluirBtn.ForeColor = System.Drawing.Color.White;
-            this.excluirBtn.Location = new System.Drawing.Point(729, 362);
-            this.excluirBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.excluirBtn.Location = new System.Drawing.Point(618, 294);
             this.excluirBtn.Name = "excluirBtn";
-            this.excluirBtn.Size = new System.Drawing.Size(180, 43);
+            this.excluirBtn.Size = new System.Drawing.Size(135, 35);
             this.excluirBtn.TabIndex = 9;
             this.excluirBtn.Text = "EXCLUIR";
             this.excluirBtn.UseVisualStyleBackColor = false;
@@ -105,37 +105,32 @@
             // 
             this.nomeLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeLbl.ForeColor = System.Drawing.Color.White;
-            this.nomeLbl.Location = new System.Drawing.Point(16, 22);
-            this.nomeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nomeLbl.Location = new System.Drawing.Point(12, 18);
             this.nomeLbl.Name = "nomeLbl";
-            this.nomeLbl.Size = new System.Drawing.Size(80, 25);
+            this.nomeLbl.Size = new System.Drawing.Size(60, 20);
             this.nomeLbl.TabIndex = 8;
             this.nomeLbl.Text = "NOME";
             // 
             // nomeTxt
             // 
-            this.nomeTxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.nomeTxt.BackColor = System.Drawing.Color.DarkSlateGray;
             this.nomeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nomeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeTxt.ForeColor = System.Drawing.Color.White;
-            this.nomeTxt.Location = new System.Drawing.Point(20, 50);
-            this.nomeTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nomeTxt.Location = new System.Drawing.Point(15, 41);
             this.nomeTxt.Name = "nomeTxt";
-            this.nomeTxt.Size = new System.Drawing.Size(465, 32);
+            this.nomeTxt.Size = new System.Drawing.Size(326, 27);
             this.nomeTxt.TabIndex = 7;
             // 
             // salvarBtn
             // 
-            this.salvarBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.salvarBtn.BackColor = System.Drawing.Color.CadetBlue;
             this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarBtn.ForeColor = System.Drawing.Color.White;
-            this.salvarBtn.Location = new System.Drawing.Point(541, 362);
-            this.salvarBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.salvarBtn.Location = new System.Drawing.Point(477, 294);
             this.salvarBtn.Name = "salvarBtn";
-            this.salvarBtn.Size = new System.Drawing.Size(180, 43);
+            this.salvarBtn.Size = new System.Drawing.Size(135, 35);
             this.salvarBtn.TabIndex = 6;
             this.salvarBtn.Text = "SALVAR";
             this.salvarBtn.UseVisualStyleBackColor = false;
@@ -143,65 +138,55 @@
             // 
             // cpfLbl
             // 
-            this.cpfLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cpfLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cpfLbl.ForeColor = System.Drawing.Color.White;
-            this.cpfLbl.Location = new System.Drawing.Point(491, 22);
-            this.cpfLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cpfLbl.Location = new System.Drawing.Point(344, 18);
             this.cpfLbl.Name = "cpfLbl";
-            this.cpfLbl.Size = new System.Drawing.Size(80, 25);
+            this.cpfLbl.Size = new System.Drawing.Size(60, 20);
             this.cpfLbl.TabIndex = 12;
             this.cpfLbl.Text = "CPF";
             // 
             // rgLbl
             // 
-            this.rgLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rgLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgLbl.ForeColor = System.Drawing.Color.White;
-            this.rgLbl.Location = new System.Drawing.Point(799, 22);
-            this.rgLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.rgLbl.Location = new System.Drawing.Point(552, 18);
             this.rgLbl.Name = "rgLbl";
-            this.rgLbl.Size = new System.Drawing.Size(80, 25);
+            this.rgLbl.Size = new System.Drawing.Size(60, 20);
             this.rgLbl.TabIndex = 13;
             this.rgLbl.Text = "RG";
             // 
             // cpfTxt
             // 
-            this.cpfTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cpfTxt.BackColor = System.Drawing.Color.DarkSlateGray;
             this.cpfTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cpfTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cpfTxt.ForeColor = System.Drawing.Color.White;
-            this.cpfTxt.Location = new System.Drawing.Point(495, 50);
-            this.cpfTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cpfTxt.Location = new System.Drawing.Point(347, 41);
             this.cpfTxt.Name = "cpfTxt";
-            this.cpfTxt.Size = new System.Drawing.Size(299, 32);
+            this.cpfTxt.Size = new System.Drawing.Size(200, 27);
             this.cpfTxt.TabIndex = 14;
             this.cpfTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numero);
             // 
             // rgTxt
             // 
-            this.rgTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rgTxt.BackColor = System.Drawing.Color.DarkSlateGray;
             this.rgTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.rgTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgTxt.ForeColor = System.Drawing.Color.White;
-            this.rgTxt.Location = new System.Drawing.Point(803, 50);
-            this.rgTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rgTxt.Location = new System.Drawing.Point(553, 41);
             this.rgTxt.Name = "rgTxt";
-            this.rgTxt.Size = new System.Drawing.Size(332, 32);
+            this.rgTxt.Size = new System.Drawing.Size(200, 27);
             this.rgTxt.TabIndex = 15;
             this.rgTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numero);
             // 
             // situacaoChk
             // 
-            this.situacaoChk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.situacaoChk.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.situacaoChk.ForeColor = System.Drawing.Color.White;
-            this.situacaoChk.Location = new System.Drawing.Point(1144, 50);
-            this.situacaoChk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.situacaoChk.Location = new System.Drawing.Point(759, 40);
             this.situacaoChk.Name = "situacaoChk";
-            this.situacaoChk.Size = new System.Drawing.Size(135, 33);
+            this.situacaoChk.Size = new System.Drawing.Size(101, 27);
             this.situacaoChk.TabIndex = 16;
             this.situacaoChk.Text = "INATIVO";
             this.situacaoChk.UseVisualStyleBackColor = true;
@@ -216,20 +201,18 @@
             "MASCULINO",
             "FEMININO",
             "OUTRO"});
-            this.generoCmb.Location = new System.Drawing.Point(20, 116);
-            this.generoCmb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.generoCmb.Location = new System.Drawing.Point(15, 94);
             this.generoCmb.Name = "generoCmb";
-            this.generoCmb.Size = new System.Drawing.Size(365, 33);
+            this.generoCmb.Size = new System.Drawing.Size(234, 26);
             this.generoCmb.TabIndex = 17;
             // 
             // generoLbl
             // 
             this.generoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generoLbl.ForeColor = System.Drawing.Color.White;
-            this.generoLbl.Location = new System.Drawing.Point(16, 87);
-            this.generoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.generoLbl.Location = new System.Drawing.Point(12, 71);
             this.generoLbl.Name = "generoLbl";
-            this.generoLbl.Size = new System.Drawing.Size(105, 25);
+            this.generoLbl.Size = new System.Drawing.Size(79, 20);
             this.generoLbl.TabIndex = 18;
             this.generoLbl.Text = "GÊNERO";
             // 
@@ -243,20 +226,18 @@
             this.dataNascimentoTxt.CalendarTrailingForeColor = System.Drawing.Color.DarkSlateGray;
             this.dataNascimentoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataNascimentoTxt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dataNascimentoTxt.Location = new System.Drawing.Point(395, 114);
-            this.dataNascimentoTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataNascimentoTxt.Location = new System.Drawing.Point(255, 94);
             this.dataNascimentoTxt.Name = "dataNascimentoTxt";
-            this.dataNascimentoTxt.Size = new System.Drawing.Size(260, 32);
+            this.dataNascimentoTxt.Size = new System.Drawing.Size(196, 27);
             this.dataNascimentoTxt.TabIndex = 19;
             // 
             // dataNascimentoLbl
             // 
             this.dataNascimentoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataNascimentoLbl.ForeColor = System.Drawing.Color.White;
-            this.dataNascimentoLbl.Location = new System.Drawing.Point(391, 87);
-            this.dataNascimentoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dataNascimentoLbl.Location = new System.Drawing.Point(252, 70);
             this.dataNascimentoLbl.Name = "dataNascimentoLbl";
-            this.dataNascimentoLbl.Size = new System.Drawing.Size(265, 25);
+            this.dataNascimentoLbl.Size = new System.Drawing.Size(199, 20);
             this.dataNascimentoLbl.TabIndex = 20;
             this.dataNascimentoLbl.Text = "DATA DE NASCIMENTO";
             // 
@@ -264,10 +245,9 @@
             // 
             this.estadoCivilLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estadoCivilLbl.ForeColor = System.Drawing.Color.White;
-            this.estadoCivilLbl.Location = new System.Drawing.Point(660, 87);
-            this.estadoCivilLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.estadoCivilLbl.Location = new System.Drawing.Point(457, 70);
             this.estadoCivilLbl.Name = "estadoCivilLbl";
-            this.estadoCivilLbl.Size = new System.Drawing.Size(175, 25);
+            this.estadoCivilLbl.Size = new System.Drawing.Size(131, 20);
             this.estadoCivilLbl.TabIndex = 22;
             this.estadoCivilLbl.Text = "ESTADO CIVIL";
             // 
@@ -281,10 +261,9 @@
             "SOLTEIRO",
             "CASADO",
             "VIÚVO"});
-            this.estadoCivilCmb.Location = new System.Drawing.Point(664, 116);
-            this.estadoCivilCmb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.estadoCivilCmb.Location = new System.Drawing.Point(457, 93);
             this.estadoCivilCmb.Name = "estadoCivilCmb";
-            this.estadoCivilCmb.Size = new System.Drawing.Size(299, 33);
+            this.estadoCivilCmb.Size = new System.Drawing.Size(225, 26);
             this.estadoCivilCmb.TabIndex = 21;
             // 
             // profissaoTxt
@@ -293,20 +272,18 @@
             this.profissaoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.profissaoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profissaoTxt.ForeColor = System.Drawing.Color.White;
-            this.profissaoTxt.Location = new System.Drawing.Point(977, 114);
-            this.profissaoTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.profissaoTxt.Location = new System.Drawing.Point(688, 92);
             this.profissaoTxt.Name = "profissaoTxt";
-            this.profissaoTxt.Size = new System.Drawing.Size(299, 32);
+            this.profissaoTxt.Size = new System.Drawing.Size(206, 27);
             this.profissaoTxt.TabIndex = 24;
             // 
             // profissaoLbl
             // 
             this.profissaoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profissaoLbl.ForeColor = System.Drawing.Color.White;
-            this.profissaoLbl.Location = new System.Drawing.Point(973, 86);
-            this.profissaoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.profissaoLbl.Location = new System.Drawing.Point(688, 71);
             this.profissaoLbl.Name = "profissaoLbl";
-            this.profissaoLbl.Size = new System.Drawing.Size(148, 25);
+            this.profissaoLbl.Size = new System.Drawing.Size(111, 20);
             this.profissaoLbl.TabIndex = 23;
             this.profissaoLbl.Text = "PROFISSÃO";
             // 
@@ -316,20 +293,18 @@
             this.nacionalidadeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nacionalidadeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nacionalidadeTxt.ForeColor = System.Drawing.Color.White;
-            this.nacionalidadeTxt.Location = new System.Drawing.Point(20, 180);
-            this.nacionalidadeTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nacionalidadeTxt.Location = new System.Drawing.Point(15, 146);
             this.nacionalidadeTxt.Name = "nacionalidadeTxt";
-            this.nacionalidadeTxt.Size = new System.Drawing.Size(332, 32);
+            this.nacionalidadeTxt.Size = new System.Drawing.Size(250, 27);
             this.nacionalidadeTxt.TabIndex = 26;
             // 
             // nacionalidadeLbl
             // 
             this.nacionalidadeLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nacionalidadeLbl.ForeColor = System.Drawing.Color.White;
-            this.nacionalidadeLbl.Location = new System.Drawing.Point(16, 151);
-            this.nacionalidadeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nacionalidadeLbl.Location = new System.Drawing.Point(12, 123);
             this.nacionalidadeLbl.Name = "nacionalidadeLbl";
-            this.nacionalidadeLbl.Size = new System.Drawing.Size(213, 25);
+            this.nacionalidadeLbl.Size = new System.Drawing.Size(160, 20);
             this.nacionalidadeLbl.TabIndex = 25;
             this.nacionalidadeLbl.Text = "NACIONALIDADE";
             // 
@@ -339,10 +314,9 @@
             this.telefoneTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.telefoneTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefoneTxt.ForeColor = System.Drawing.Color.White;
-            this.telefoneTxt.Location = new System.Drawing.Point(361, 180);
-            this.telefoneTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.telefoneTxt.Location = new System.Drawing.Point(271, 146);
             this.telefoneTxt.Name = "telefoneTxt";
-            this.telefoneTxt.Size = new System.Drawing.Size(265, 32);
+            this.telefoneTxt.Size = new System.Drawing.Size(200, 27);
             this.telefoneTxt.TabIndex = 28;
             this.telefoneTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numero);
             // 
@@ -350,10 +324,9 @@
             // 
             this.telefoneLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefoneLbl.ForeColor = System.Drawing.Color.White;
-            this.telefoneLbl.Location = new System.Drawing.Point(357, 151);
-            this.telefoneLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.telefoneLbl.Location = new System.Drawing.Point(268, 123);
             this.telefoneLbl.Name = "telefoneLbl";
-            this.telefoneLbl.Size = new System.Drawing.Size(136, 25);
+            this.telefoneLbl.Size = new System.Drawing.Size(102, 20);
             this.telefoneLbl.TabIndex = 27;
             this.telefoneLbl.Text = "TELEFONE";
             // 
@@ -363,10 +336,9 @@
             this.celularTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.celularTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.celularTxt.ForeColor = System.Drawing.Color.White;
-            this.celularTxt.Location = new System.Drawing.Point(636, 180);
-            this.celularTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.celularTxt.Location = new System.Drawing.Point(477, 146);
             this.celularTxt.Name = "celularTxt";
-            this.celularTxt.Size = new System.Drawing.Size(265, 32);
+            this.celularTxt.Size = new System.Drawing.Size(200, 27);
             this.celularTxt.TabIndex = 30;
             this.celularTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numero);
             // 
@@ -374,10 +346,9 @@
             // 
             this.celularLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.celularLbl.ForeColor = System.Drawing.Color.White;
-            this.celularLbl.Location = new System.Drawing.Point(632, 151);
-            this.celularLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.celularLbl.Location = new System.Drawing.Point(474, 123);
             this.celularLbl.Name = "celularLbl";
-            this.celularLbl.Size = new System.Drawing.Size(119, 25);
+            this.celularLbl.Size = new System.Drawing.Size(89, 20);
             this.celularLbl.TabIndex = 29;
             this.celularLbl.Text = "CELULAR";
             // 
@@ -385,10 +356,9 @@
             // 
             this.whatsAppChk.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.whatsAppChk.ForeColor = System.Drawing.Color.White;
-            this.whatsAppChk.Location = new System.Drawing.Point(911, 180);
-            this.whatsAppChk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.whatsAppChk.Location = new System.Drawing.Point(683, 146);
             this.whatsAppChk.Name = "whatsAppChk";
-            this.whatsAppChk.Size = new System.Drawing.Size(177, 33);
+            this.whatsAppChk.Size = new System.Drawing.Size(133, 27);
             this.whatsAppChk.TabIndex = 31;
             this.whatsAppChk.Text = "WHATSAPP";
             this.whatsAppChk.UseVisualStyleBackColor = true;
@@ -399,20 +369,18 @@
             this.emailTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.emailTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTxt.ForeColor = System.Drawing.Color.White;
-            this.emailTxt.Location = new System.Drawing.Point(20, 245);
-            this.emailTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTxt.Location = new System.Drawing.Point(15, 199);
             this.emailTxt.Name = "emailTxt";
-            this.emailTxt.Size = new System.Drawing.Size(399, 32);
+            this.emailTxt.Size = new System.Drawing.Size(275, 27);
             this.emailTxt.TabIndex = 33;
             // 
             // emailLbl
             // 
             this.emailLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailLbl.ForeColor = System.Drawing.Color.White;
-            this.emailLbl.Location = new System.Drawing.Point(16, 217);
-            this.emailLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailLbl.Location = new System.Drawing.Point(12, 176);
             this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(93, 25);
+            this.emailLbl.Size = new System.Drawing.Size(70, 20);
             this.emailLbl.TabIndex = 32;
             this.emailLbl.Text = "E-MAIL";
             // 
@@ -422,20 +390,18 @@
             this.enderecoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.enderecoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enderecoTxt.ForeColor = System.Drawing.Color.White;
-            this.enderecoTxt.Location = new System.Drawing.Point(428, 245);
-            this.enderecoTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enderecoTxt.Location = new System.Drawing.Point(296, 199);
             this.enderecoTxt.Name = "enderecoTxt";
-            this.enderecoTxt.Size = new System.Drawing.Size(365, 32);
+            this.enderecoTxt.Size = new System.Drawing.Size(251, 27);
             this.enderecoTxt.TabIndex = 35;
             // 
             // enderecoLbl
             // 
             this.enderecoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enderecoLbl.ForeColor = System.Drawing.Color.White;
-            this.enderecoLbl.Location = new System.Drawing.Point(424, 217);
-            this.enderecoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.enderecoLbl.Location = new System.Drawing.Point(293, 176);
             this.enderecoLbl.Name = "enderecoLbl";
-            this.enderecoLbl.Size = new System.Drawing.Size(136, 25);
+            this.enderecoLbl.Size = new System.Drawing.Size(102, 20);
             this.enderecoLbl.TabIndex = 34;
             this.enderecoLbl.Text = "ENDEREÇO";
             // 
@@ -445,10 +411,9 @@
             this.numeroTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.numeroTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeroTxt.ForeColor = System.Drawing.Color.White;
-            this.numeroTxt.Location = new System.Drawing.Point(803, 245);
-            this.numeroTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numeroTxt.Location = new System.Drawing.Point(555, 199);
             this.numeroTxt.Name = "numeroTxt";
-            this.numeroTxt.Size = new System.Drawing.Size(132, 32);
+            this.numeroTxt.Size = new System.Drawing.Size(100, 27);
             this.numeroTxt.TabIndex = 37;
             this.numeroTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numero);
             // 
@@ -456,10 +421,9 @@
             // 
             this.numeroLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeroLbl.ForeColor = System.Drawing.Color.White;
-            this.numeroLbl.Location = new System.Drawing.Point(799, 217);
-            this.numeroLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.numeroLbl.Location = new System.Drawing.Point(552, 176);
             this.numeroLbl.Name = "numeroLbl";
-            this.numeroLbl.Size = new System.Drawing.Size(113, 25);
+            this.numeroLbl.Size = new System.Drawing.Size(85, 20);
             this.numeroLbl.TabIndex = 36;
             this.numeroLbl.Text = "NÚMERO";
             // 
@@ -469,20 +433,18 @@
             this.complementoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.complementoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.complementoTxt.ForeColor = System.Drawing.Color.White;
-            this.complementoTxt.Location = new System.Drawing.Point(945, 245);
-            this.complementoTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.complementoTxt.Location = new System.Drawing.Point(661, 199);
             this.complementoTxt.Name = "complementoTxt";
-            this.complementoTxt.Size = new System.Drawing.Size(332, 32);
+            this.complementoTxt.Size = new System.Drawing.Size(233, 27);
             this.complementoTxt.TabIndex = 39;
             // 
             // complementoLbl
             // 
             this.complementoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.complementoLbl.ForeColor = System.Drawing.Color.White;
-            this.complementoLbl.Location = new System.Drawing.Point(941, 217);
-            this.complementoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.complementoLbl.Location = new System.Drawing.Point(658, 176);
             this.complementoLbl.Name = "complementoLbl";
-            this.complementoLbl.Size = new System.Drawing.Size(184, 25);
+            this.complementoLbl.Size = new System.Drawing.Size(138, 20);
             this.complementoLbl.TabIndex = 38;
             this.complementoLbl.Text = "COMPLEMENTO";
             // 
@@ -492,20 +454,18 @@
             this.bairroTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.bairroTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bairroTxt.ForeColor = System.Drawing.Color.White;
-            this.bairroTxt.Location = new System.Drawing.Point(20, 321);
-            this.bairroTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bairroTxt.Location = new System.Drawing.Point(15, 261);
             this.bairroTxt.Name = "bairroTxt";
-            this.bairroTxt.Size = new System.Drawing.Size(332, 32);
+            this.bairroTxt.Size = new System.Drawing.Size(223, 27);
             this.bairroTxt.TabIndex = 41;
             // 
             // bairroLbl
             // 
             this.bairroLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bairroLbl.ForeColor = System.Drawing.Color.White;
-            this.bairroLbl.Location = new System.Drawing.Point(16, 293);
-            this.bairroLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bairroLbl.Location = new System.Drawing.Point(12, 238);
             this.bairroLbl.Name = "bairroLbl";
-            this.bairroLbl.Size = new System.Drawing.Size(105, 25);
+            this.bairroLbl.Size = new System.Drawing.Size(79, 20);
             this.bairroLbl.TabIndex = 40;
             this.bairroLbl.Text = "BAIRRO";
             // 
@@ -515,20 +475,18 @@
             this.cidadeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cidadeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cidadeTxt.ForeColor = System.Drawing.Color.White;
-            this.cidadeTxt.Location = new System.Drawing.Point(361, 321);
-            this.cidadeTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cidadeTxt.Location = new System.Drawing.Point(244, 261);
             this.cidadeTxt.Name = "cidadeTxt";
-            this.cidadeTxt.Size = new System.Drawing.Size(332, 32);
+            this.cidadeTxt.Size = new System.Drawing.Size(227, 27);
             this.cidadeTxt.TabIndex = 43;
             // 
             // cidadeLbl
             // 
             this.cidadeLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cidadeLbl.ForeColor = System.Drawing.Color.White;
-            this.cidadeLbl.Location = new System.Drawing.Point(357, 293);
-            this.cidadeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cidadeLbl.Location = new System.Drawing.Point(241, 238);
             this.cidadeLbl.Name = "cidadeLbl";
-            this.cidadeLbl.Size = new System.Drawing.Size(97, 25);
+            this.cidadeLbl.Size = new System.Drawing.Size(73, 20);
             this.cidadeLbl.TabIndex = 42;
             this.cidadeLbl.Text = "CIDADE";
             // 
@@ -538,20 +496,18 @@
             this.estadoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.estadoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estadoTxt.ForeColor = System.Drawing.Color.White;
-            this.estadoTxt.Location = new System.Drawing.Point(701, 321);
-            this.estadoTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.estadoTxt.Location = new System.Drawing.Point(477, 261);
             this.estadoTxt.Name = "estadoTxt";
-            this.estadoTxt.Size = new System.Drawing.Size(132, 32);
+            this.estadoTxt.Size = new System.Drawing.Size(100, 27);
             this.estadoTxt.TabIndex = 45;
             // 
             // estadoLbl
             // 
             this.estadoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estadoLbl.ForeColor = System.Drawing.Color.White;
-            this.estadoLbl.Location = new System.Drawing.Point(697, 293);
-            this.estadoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.estadoLbl.Location = new System.Drawing.Point(470, 238);
             this.estadoLbl.Name = "estadoLbl";
-            this.estadoLbl.Size = new System.Drawing.Size(103, 25);
+            this.estadoLbl.Size = new System.Drawing.Size(77, 20);
             this.estadoLbl.TabIndex = 44;
             this.estadoLbl.Text = "ESTADO";
             // 
@@ -561,10 +517,9 @@
             this.cepTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cepTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cepTxt.ForeColor = System.Drawing.Color.White;
-            this.cepTxt.Location = new System.Drawing.Point(843, 321);
-            this.cepTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cepTxt.Location = new System.Drawing.Point(583, 261);
             this.cepTxt.Name = "cepTxt";
-            this.cepTxt.Size = new System.Drawing.Size(199, 32);
+            this.cepTxt.Size = new System.Drawing.Size(150, 27);
             this.cepTxt.TabIndex = 47;
             this.cepTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numero);
             // 
@@ -572,10 +527,9 @@
             // 
             this.cepLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cepLbl.ForeColor = System.Drawing.Color.White;
-            this.cepLbl.Location = new System.Drawing.Point(843, 293);
-            this.cepLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cepLbl.Location = new System.Drawing.Point(580, 238);
             this.cepLbl.Name = "cepLbl";
-            this.cepLbl.Size = new System.Drawing.Size(60, 25);
+            this.cepLbl.Size = new System.Drawing.Size(45, 20);
             this.cepLbl.TabIndex = 46;
             this.cepLbl.Text = "CEP";
             // 
@@ -585,34 +539,31 @@
             this.observacoesTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.observacoesTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.observacoesTxt.ForeColor = System.Drawing.Color.White;
-            this.observacoesTxt.Location = new System.Drawing.Point(1051, 321);
-            this.observacoesTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.observacoesTxt.Location = new System.Drawing.Point(739, 261);
             this.observacoesTxt.Multiline = true;
             this.observacoesTxt.Name = "observacoesTxt";
-            this.observacoesTxt.Size = new System.Drawing.Size(232, 32);
+            this.observacoesTxt.Size = new System.Drawing.Size(155, 27);
             this.observacoesTxt.TabIndex = 49;
             // 
             // observacoesLbl
             // 
             this.observacoesLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.observacoesLbl.ForeColor = System.Drawing.Color.White;
-            this.observacoesLbl.Location = new System.Drawing.Point(1047, 293);
-            this.observacoesLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.observacoesLbl.Location = new System.Drawing.Point(736, 238);
             this.observacoesLbl.Name = "observacoesLbl";
-            this.observacoesLbl.Size = new System.Drawing.Size(185, 25);
+            this.observacoesLbl.Size = new System.Drawing.Size(139, 20);
             this.observacoesLbl.TabIndex = 48;
             this.observacoesLbl.Text = "OBSERVAÇÕES";
             // 
             // editarBtn
             // 
-            this.editarBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.editarBtn.BackColor = System.Drawing.Color.CadetBlue;
             this.editarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarBtn.ForeColor = System.Drawing.Color.White;
-            this.editarBtn.Location = new System.Drawing.Point(917, 362);
-            this.editarBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editarBtn.Location = new System.Drawing.Point(759, 294);
             this.editarBtn.Name = "editarBtn";
-            this.editarBtn.Size = new System.Drawing.Size(180, 43);
+            this.editarBtn.Size = new System.Drawing.Size(135, 35);
             this.editarBtn.TabIndex = 50;
             this.editarBtn.Text = "EDITAR";
             this.editarBtn.UseVisualStyleBackColor = false;
@@ -620,14 +571,13 @@
             // 
             // limparBtn
             // 
-            this.limparBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.limparBtn.BackColor = System.Drawing.Color.CadetBlue;
             this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.limparBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limparBtn.ForeColor = System.Drawing.Color.White;
-            this.limparBtn.Location = new System.Drawing.Point(541, 412);
-            this.limparBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.limparBtn.Location = new System.Drawing.Point(691, 335);
             this.limparBtn.Name = "limparBtn";
-            this.limparBtn.Size = new System.Drawing.Size(180, 43);
+            this.limparBtn.Size = new System.Drawing.Size(135, 35);
             this.limparBtn.TabIndex = 51;
             this.limparBtn.Text = "LIMPAR";
             this.limparBtn.UseVisualStyleBackColor = false;
@@ -638,7 +588,7 @@
             this.clienteDataGrid.AllowUserToAddRows = false;
             this.clienteDataGrid.AllowUserToDeleteRows = false;
             this.clienteDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.clienteDataGrid.BackgroundColor = System.Drawing.Color.SeaGreen;
+            this.clienteDataGrid.BackgroundColor = System.Drawing.Color.CadetBlue;
             this.clienteDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clienteDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -648,13 +598,12 @@
             this.Cidade,
             this.Estado});
             this.clienteDataGrid.GridColor = System.Drawing.Color.SeaGreen;
-            this.clienteDataGrid.Location = new System.Drawing.Point(20, 468);
-            this.clienteDataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clienteDataGrid.Location = new System.Drawing.Point(15, 380);
             this.clienteDataGrid.Name = "clienteDataGrid";
             this.clienteDataGrid.ReadOnly = true;
             this.clienteDataGrid.RowHeadersWidth = 51;
             this.clienteDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clienteDataGrid.Size = new System.Drawing.Size(1264, 454);
+            this.clienteDataGrid.Size = new System.Drawing.Size(877, 369);
             this.clienteDataGrid.TabIndex = 52;
             this.clienteDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clienteDataGrid_CellDoubleClick);
             // 
@@ -708,14 +657,13 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnConsultar.BackColor = System.Drawing.Color.CadetBlue;
             this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(729, 412);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Location = new System.Drawing.Point(285, 339);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(180, 43);
+            this.btnConsultar.Size = new System.Drawing.Size(135, 35);
             this.btnConsultar.TabIndex = 53;
             this.btnConsultar.Text = "CONSULTAR";
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -723,14 +671,13 @@
             // 
             // consultaTxt
             // 
-            this.consultaTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.consultaTxt.BackColor = System.Drawing.Color.CadetBlue;
             this.consultaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.consultaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultaTxt.ForeColor = System.Drawing.Color.White;
-            this.consultaTxt.Location = new System.Drawing.Point(20, 422);
-            this.consultaTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.consultaTxt.Location = new System.Drawing.Point(15, 343);
             this.consultaTxt.Name = "consultaTxt";
-            this.consultaTxt.Size = new System.Drawing.Size(351, 32);
+            this.consultaTxt.Size = new System.Drawing.Size(264, 27);
             this.consultaTxt.TabIndex = 57;
             this.consultaTxt.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.consultaTxt_PreviewKeyDown);
             // 
@@ -738,34 +685,47 @@
             // 
             this.consultaLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultaLbl.ForeColor = System.Drawing.Color.White;
-            this.consultaLbl.Location = new System.Drawing.Point(16, 394);
-            this.consultaLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.consultaLbl.Location = new System.Drawing.Point(12, 320);
             this.consultaLbl.Name = "consultaLbl";
-            this.consultaLbl.Size = new System.Drawing.Size(371, 25);
+            this.consultaLbl.Size = new System.Drawing.Size(278, 20);
             this.consultaLbl.TabIndex = 56;
             this.consultaLbl.Text = "[F1] CONSULTAR POR: NOME";
             // 
             // exibirBtn
             // 
-            this.exibirBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.exibirBtn.BackColor = System.Drawing.Color.CadetBlue;
             this.exibirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exibirBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exibirBtn.ForeColor = System.Drawing.Color.White;
-            this.exibirBtn.Location = new System.Drawing.Point(1105, 362);
-            this.exibirBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exibirBtn.Location = new System.Drawing.Point(550, 335);
             this.exibirBtn.Name = "exibirBtn";
-            this.exibirBtn.Size = new System.Drawing.Size(180, 43);
+            this.exibirBtn.Size = new System.Drawing.Size(135, 35);
             this.exibirBtn.TabIndex = 58;
             this.exibirBtn.Text = "EXIBIR";
             this.exibirBtn.UseVisualStyleBackColor = false;
             this.exibirBtn.Click += new System.EventHandler(this.exibirBtn_Click);
             // 
+            // sairBtn
+            // 
+            this.sairBtn.BackColor = System.Drawing.Color.CadetBlue;
+            this.sairBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sairBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sairBtn.ForeColor = System.Drawing.Color.White;
+            this.sairBtn.Location = new System.Drawing.Point(813, -1);
+            this.sairBtn.Name = "sairBtn";
+            this.sairBtn.Size = new System.Drawing.Size(91, 35);
+            this.sairBtn.TabIndex = 59;
+            this.sairBtn.Text = "SAIR";
+            this.sairBtn.UseVisualStyleBackColor = false;
+            this.sairBtn.Click += new System.EventHandler(this.sairBtn_Click);
+            // 
             // TelaCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(1312, 937);
+            this.ClientSize = new System.Drawing.Size(904, 762);
+            this.Controls.Add(this.sairBtn);
             this.Controls.Add(this.exibirBtn);
             this.Controls.Add(this.consultaTxt);
             this.Controls.Add(this.consultaLbl);
@@ -815,13 +775,10 @@
             this.Controls.Add(this.nomeLbl);
             this.Controls.Add(this.nomeTxt);
             this.Controls.Add(this.salvarBtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TelaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Cliente";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaCliente_FormClosing);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.consultaTxt_PreviewKeyDown);
-            this.Resize += new System.EventHandler(this.Form_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -884,5 +841,6 @@
         private System.Windows.Forms.TextBox consultaTxt;
         private System.Windows.Forms.Label consultaLbl;
         private System.Windows.Forms.Button exibirBtn;
+        private System.Windows.Forms.Button sairBtn;
     }
 }

@@ -24,6 +24,8 @@ namespace LIPA3.Telas
         public TelaCliente()
         {
             InitializeComponent();
+
+            nomeTxt.Focus();
         }
 
         #region Funções Principais (CRUD)
@@ -388,6 +390,11 @@ namespace LIPA3.Telas
             Consultar();
         }
 
+        private void sairBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void consultaTxt_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
@@ -404,7 +411,7 @@ namespace LIPA3.Telas
                 {
                     tipoConsulta = "NOME";
                 }
-                consultaLbl.Text = "[F1] PESQUISAR POR: " + tipoConsulta;
+                consultaLbl.Text = "[F1] CONSULTAR POR: " + tipoConsulta;
             }
         }
 
@@ -486,19 +493,13 @@ namespace LIPA3.Telas
                 e.Handled = true;
             }
         }
-        private void Form_Resize(object sender, EventArgs e)
-        {
-            generoCmb.Size = new Size(this.ClientSize.Width - 20, (this.ClientSize.Height - 40) / 2);
-            dataNascimentoTxt.Size = new Size(this.ClientSize.Width - 20, (this.ClientSize.Height - 40) / 2);
+        //private void Form_Resize(object sender, EventArgs e)
+        //{
+        //    generoCmb.Size = new Size(this.ClientSize.Width - 20, (this.ClientSize.Height - 40) / 2);
+        //    dataNascimentoTxt.Size = new Size(this.ClientSize.Width - 20, (this.ClientSize.Height - 40) / 2);
 
-            //textBox2.Location = new Point(10, textBox1.Bottom + 10);
-        }
-
-        private void TelaCliente_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            TelaPrincipal telaPrincipal = new TelaPrincipal();
-            telaPrincipal.Show();
-        }
+        //    //textBox2.Location = new Point(10, textBox1.Bottom + 10);
+        //}
         #endregion
     }
 }

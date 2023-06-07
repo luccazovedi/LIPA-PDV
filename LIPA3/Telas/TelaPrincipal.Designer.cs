@@ -33,6 +33,7 @@
             this.produtoLbl = new System.Windows.Forms.Label();
             this.vendaLbl = new System.Windows.Forms.Label();
             this.painelPnl = new System.Windows.Forms.Panel();
+            this.outroPainelPnl = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // clienteLbl
@@ -51,7 +52,7 @@
             this.produtoLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produtoLbl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.produtoLbl.Image = ((System.Drawing.Image)(resources.GetObject("produtoLbl.Image")));
-            this.produtoLbl.Location = new System.Drawing.Point(105, 9);
+            this.produtoLbl.Location = new System.Drawing.Point(102, 9);
             this.produtoLbl.Name = "produtoLbl";
             this.produtoLbl.Size = new System.Drawing.Size(96, 96);
             this.produtoLbl.TabIndex = 1;
@@ -62,27 +63,43 @@
             this.vendaLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.vendaLbl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.vendaLbl.Image = ((System.Drawing.Image)(resources.GetObject("vendaLbl.Image")));
-            this.vendaLbl.Location = new System.Drawing.Point(207, 9);
+            this.vendaLbl.Location = new System.Drawing.Point(204, 9);
             this.vendaLbl.Name = "vendaLbl";
             this.vendaLbl.Size = new System.Drawing.Size(96, 96);
             this.vendaLbl.TabIndex = 3;
+            this.vendaLbl.Click += new System.EventHandler(this.vendaLbl_Click);
             // 
             // painelPnl
             // 
             this.painelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.painelPnl.BackColor = System.Drawing.Color.DarkSlateGray;
             this.painelPnl.Location = new System.Drawing.Point(13, 109);
             this.painelPnl.Name = "painelPnl";
-            this.painelPnl.Size = new System.Drawing.Size(759, 440);
+            this.painelPnl.Size = new System.Drawing.Size(925, 920);
             this.painelPnl.TabIndex = 4;
+            this.painelPnl.Click += new System.EventHandler(this.painelPnl_Click);
+            // 
+            // outroPainelPnl
+            // 
+            this.outroPainelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.outroPainelPnl.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.outroPainelPnl.Location = new System.Drawing.Point(967, 109);
+            this.outroPainelPnl.Name = "outroPainelPnl";
+            this.outroPainelPnl.Size = new System.Drawing.Size(925, 920);
+            this.outroPainelPnl.TabIndex = 5;
+            this.outroPainelPnl.Click += new System.EventHandler(this.outroPainelPnl_Click);
             // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1904, 1042);
+            this.Controls.Add(this.outroPainelPnl);
             this.Controls.Add(this.painelPnl);
             this.Controls.Add(this.vendaLbl);
             this.Controls.Add(this.produtoLbl);
@@ -102,5 +119,6 @@
         private System.Windows.Forms.Label produtoLbl;
         private System.Windows.Forms.Label vendaLbl;
         private System.Windows.Forms.Panel painelPnl;
+        private System.Windows.Forms.Panel outroPainelPnl;
     }
 }

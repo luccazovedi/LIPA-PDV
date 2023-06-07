@@ -16,5 +16,10 @@ namespace LIPA3.Telas
         {
             InitializeComponent();
         }
+
+        private void fecharBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

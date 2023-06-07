@@ -16,5 +16,10 @@ namespace LIPA3.Telas
         {
             InitializeComponent();
         }
+
+        private void sairBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

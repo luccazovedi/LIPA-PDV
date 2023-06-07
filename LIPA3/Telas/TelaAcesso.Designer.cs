@@ -128,7 +128,7 @@
             this.registrarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.registrarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registrarBtn.ForeColor = System.Drawing.Color.White;
-            this.registrarBtn.Location = new System.Drawing.Point(326, 480);
+            this.registrarBtn.Location = new System.Drawing.Point(339, 480);
             this.registrarBtn.Name = "registrarBtn";
             this.registrarBtn.Size = new System.Drawing.Size(135, 35);
             this.registrarBtn.TabIndex = 7;
