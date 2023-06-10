@@ -19,6 +19,8 @@ namespace LIPA3
 {
     public partial class TelaAcesso : Form
     {
+        object usuarioId;
+
         public TelaAcesso()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace LIPA3
             MySQL.Conectar();
             MySQL.CriarTabelaUsuario();
             MySQL.CriarTabelaCliente();
+            MySQL.CriarTabelaProduto();
 
             usuarioTxt.Focus();
         }
@@ -52,22 +55,34 @@ namespace LIPA3
 
                 var consulta = "SELECT Id FROM Usuario WHERE Usuario = '" + usuarioTxt.Text + "'";
                 MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao);
-                object usuarioId = comando.ExecuteScalar();
+                usuarioId = comando.ExecuteScalar();
 
                 if (usuarioId != null)
                 {
-                    consulta = "SELECT Senha FROM Usuario WHERE Id = '" + usuarioId + "'";
+                    consulta = "SELECT Situacao FROM Usuario WHERE Id = '" + usuarioId + "'";
                     comando = new MySqlCommand(consulta, MySQL.conexao);
-                    object usuarioSenha = comando.ExecuteScalar();
+                    object usuarioSituacao = comando.ExecuteScalar();
 
-                    if ((string)usuarioSenha == senhaTxt.Text)
+                    if ((int) usuarioSituacao == 1)
                     {
-                        return true;
+                        consulta = "SELECT Senha FROM Usuario WHERE Id = '" + usuarioId + "'";
+                        comando = new MySqlCommand(consulta, MySQL.conexao);
+                        object usuarioSenha = comando.ExecuteScalar();
+
+                        if ((string)usuarioSenha == senhaTxt.Text)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("[SISTEMA] Senha incorreta! Tente novamente.", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            senhaTxt.Focus();
+                            return false;
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("[SISTEMA] Senha incorreta! Tente novamente.", "[LAMBDA] Acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        senhaTxt.Focus();
+                        MessageBox.Show("[SISTEMA] Usuário inativo! Não há como prosseguir.", "[LAMBDA] acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return false;
                     }
                 }
@@ -104,7 +119,7 @@ namespace LIPA3
             if (Entrar() == true)
             {
                 this.Hide();
-                var telaPrincipal = new TelaPrincipal();
+                var telaPrincipal = new TelaPrincipal(usuarioId);
                 telaPrincipal.Closed += (s, args) => this.Close();
                 telaPrincipal.Show();
             }

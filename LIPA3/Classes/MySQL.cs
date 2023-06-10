@@ -179,7 +179,7 @@ namespace LIPA3.Classes
             {
                 conexao.Open();
 
-                string consulta = "UPDATE cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Situacao = @situacao WHERE Id = @Id";
+                string consulta = "UPDATE Cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Situacao = @situacao WHERE Id = @Id";
 
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexao))
                 {
@@ -231,6 +231,148 @@ namespace LIPA3.Classes
         }
 
         public static string ExibirTabelaCliente()
+        {
+            return "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente";
+        }
+        #endregion
+
+        #region Produto
+        public static void CriarTabelaProduto()
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "CREATE TABLE Produto (Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, " +
+                    "Descricao VARCHAR(255), CodigoBarras VARCHAR(255), Marca VARCHAR(255), Peso NUMERIC(18, 2), Largura NUMERIC(18, 2), " +
+                    "Altura NUMERIC(18, 2), Profundidade NUMERIC(18, 2), Situacao INT, Condicao VARCHAR(255), PrecoVenda NUMERIC(18, 2), " +
+                    "QuantidadeEstoque NUMERIC(18, 2), DataCadastro VARCHAR(255));";
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+            }
+            catch (Exception)
+            {
+                //MessageBox.Show("[SISTEMA] Ocorreu um erro! Tente novamente.", "[LAMBDA] Criar Tabela Produto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static void InserirTabelaProduto(string descricao, string codigoBarras, string marca, double peso, double largura, double altura,
+            double profundidade, int situacao, string condicao, double precoVenda, double quantidadeEstoque)
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "INSERT INTO Produto (descricao, codigoBarras, marca, peso, largura, altura, profundidade, " +
+                    "situacao, condicao, precoVenda, quantidadeEstoque, dataCadastro)" +
+                    "VALUES ('" + descricao + "', '" + codigoBarras + "', '" + marca + "', '" + peso + "', " +
+                    "'" + largura + "', '" + altura + "', '" + profundidade + "', '" + situacao + "', '" + condicao + "', " +
+                    "'" + precoVenda + "', '" + quantidadeEstoque + "', '" + DateTime.Now.ToString() + "');";
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+
+                MessageBox.Show("[SISTEMA] Produto inserido com sucesso!", "[LAMBDA] Salvar Produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Salvar Produto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static void RemoverTabelaProduto(int id)
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "DELETE FROM Produto WHERE Id = '" + id + "'";
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+
+                MessageBox.Show("[SISTEMA] Produto excluído com sucesso!", "[LAMBDA] Excluir Produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Excluir Produto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static void EditarTabelaProduto(string nome, string cpf, string rg, string cidade, string estado, bool situacao, int id)
+        {
+            try
+            {
+                conexao.Open();
+
+                string consulta = "UPDATE Cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Situacao = @situacao WHERE Id = @Id";
+
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexao))
+                {
+                    comando.Parameters.AddWithValue("@Nome", nome);
+                    comando.Parameters.AddWithValue("@Cpf", cpf);
+                    comando.Parameters.AddWithValue("@Rg", rg);
+                    comando.Parameters.AddWithValue("@Cidade", cidade);
+                    comando.Parameters.AddWithValue("@Estado", estado);
+                    comando.Parameters.AddWithValue("@Situacao", situacao ? 0 : 1);
+                    comando.Parameters.AddWithValue("@Id", id);
+
+                    comando.ExecuteNonQuery();
+                    comando.Dispose();
+                }
+
+                MessageBox.Show("[SISTEMA] Cliente editado com sucesso!", "[LAMBDA] Editar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Editar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static string ConsultarTabelaProduto(string conteudoConsulta, string tipoConsulta)
+        {
+            string consulta = "";
+
+            if (conteudoConsulta != "")
+            {
+                switch (tipoConsulta)
+                {
+                    case "NOME":
+                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE NOME LIKE '" + conteudoConsulta + "%'";
+                        break;
+                    case "CIDADE":
+                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE CIDADE = '" + conteudoConsulta + "'";
+                        break;
+                    case "ESTADO":
+                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE ESTADO = '" + conteudoConsulta + "'";
+                        break;
+                }
+            }
+
+            return consulta;
+        }
+
+        public static string ExibirTabelaProduto()
         {
             return "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente";
         }

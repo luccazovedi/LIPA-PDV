@@ -50,7 +50,7 @@ namespace LIPA3.Telas
                 return;
             }
 
-            MySQL.InserirTabelaUsuario(nomeTxt.Text, usuarioTxt.Text, tipoCmb.SelectedText, senhaTxt.Text, 1);
+            MySQL.InserirTabelaUsuario(nomeTxt.Text, usuarioTxt.Text, tipoCmb.SelectedItem.ToString(), senhaTxt.Text, 1);
 
             nomeTxt.Clear();
             usuarioTxt.Clear();

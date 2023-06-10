@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LIPA3.Classes;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +15,52 @@ namespace LIPA3.Telas
     public partial class TelaPrincipal : Form
     {
         string escolhaTela = "";
-        public TelaPrincipal()
+        object usuarioId;
+        public TelaPrincipal(object usuarioId)
         {
             InitializeComponent();
+            this.usuarioId = usuarioId;
+        }
+
+        private bool ChecarTipoUsuario()
+        {
+            try
+            {
+                MySQL.conexao.Open();
+
+                var consulta = "SELECT Tipo FROM Usuario WHERE Id = '" + usuarioId + "'";
+                MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao);
+                object usuarioTipo = comando.ExecuteScalar();
+
+                if ((string) usuarioTipo == "ADMINISTRADOR")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception) 
+            {
+                return false;
+            }
+            finally
+            {
+                MySQL.conexao.Close();
+            }
         }
 
         private void clienteLbl_Click(object sender, EventArgs e)
         {
-            escolhaTela = "C";
+            if (ChecarTipoUsuario() == false)
+            {
+                MessageBox.Show("[SISTEMA] Permissão insuficiente!", "[LAMBDA] Tela Principal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                escolhaTela = "C";
+            }
 
             //this.Hide();
             //var telaCliente = new TelaCliente();
@@ -30,7 +70,14 @@ namespace LIPA3.Telas
 
         private void produtoLbl_Click(object sender, EventArgs e)
         {
-            escolhaTela = "P";
+            if (ChecarTipoUsuario() == false)
+            {
+                MessageBox.Show("[SISTEMA] Permissão insuficiente!", "[LAMBDA] Tela Principal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                escolhaTela = "P";
+            }
 
             //this.Hide();
             //var telaProduto = new TelaProduto();
