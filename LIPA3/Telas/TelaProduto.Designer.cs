@@ -29,6 +29,45 @@
         private void InitializeComponent()
         {
             this.sairBtn = new System.Windows.Forms.Button();
+            this.descricaoLbl = new System.Windows.Forms.Label();
+            this.descricaoTxt = new System.Windows.Forms.TextBox();
+            this.situacaoChk = new System.Windows.Forms.CheckBox();
+            this.codigoBarrasTxt = new System.Windows.Forms.TextBox();
+            this.codigoBarrasLbl = new System.Windows.Forms.Label();
+            this.marcaTxt = new System.Windows.Forms.TextBox();
+            this.marcaLbl = new System.Windows.Forms.Label();
+            this.pesoTxt = new System.Windows.Forms.TextBox();
+            this.pesoLbl = new System.Windows.Forms.Label();
+            this.larguraTxt = new System.Windows.Forms.TextBox();
+            this.larguraLbl = new System.Windows.Forms.Label();
+            this.alturaTxt = new System.Windows.Forms.TextBox();
+            this.alturaLbl = new System.Windows.Forms.Label();
+            this.profundidadeTxt = new System.Windows.Forms.TextBox();
+            this.profundidadeLbl = new System.Windows.Forms.Label();
+            this.novoRadBtn = new System.Windows.Forms.RadioButton();
+            this.usadoRadBtn = new System.Windows.Forms.RadioButton();
+            this.condicaoGrpBox = new System.Windows.Forms.GroupBox();
+            this.precoVendaTxt = new System.Windows.Forms.TextBox();
+            this.precoVendaLbl = new System.Windows.Forms.Label();
+            this.quantidadeEstoqueTxt = new System.Windows.Forms.TextBox();
+            this.quantidadeEstoqueLbl = new System.Windows.Forms.Label();
+            this.exibirBtn = new System.Windows.Forms.Button();
+            this.limparBtn = new System.Windows.Forms.Button();
+            this.editarBtn = new System.Windows.Forms.Button();
+            this.excluirBtn = new System.Windows.Forms.Button();
+            this.salvarBtn = new System.Windows.Forms.Button();
+            this.produtoDataGrid = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Condicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consultaTxt = new System.Windows.Forms.TextBox();
+            this.consultaLbl = new System.Windows.Forms.Label();
+            this.consultarBtn = new System.Windows.Forms.Button();
+            this.condicaoGrpBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // sairBtn
@@ -43,7 +82,420 @@
             this.sairBtn.TabIndex = 60;
             this.sairBtn.Text = "SAIR";
             this.sairBtn.UseVisualStyleBackColor = false;
-            this.sairBtn.Click += new System.EventHandler(this.fecharBtn_Click);
+            this.sairBtn.Click += new System.EventHandler(this.sairBtn_Click);
+            // 
+            // descricaoLbl
+            // 
+            this.descricaoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descricaoLbl.ForeColor = System.Drawing.Color.White;
+            this.descricaoLbl.Location = new System.Drawing.Point(12, 30);
+            this.descricaoLbl.Name = "descricaoLbl";
+            this.descricaoLbl.Size = new System.Drawing.Size(111, 20);
+            this.descricaoLbl.TabIndex = 62;
+            this.descricaoLbl.Text = "DESCRIÇÃO";
+            // 
+            // descricaoTxt
+            // 
+            this.descricaoTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.descricaoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descricaoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descricaoTxt.ForeColor = System.Drawing.Color.White;
+            this.descricaoTxt.Location = new System.Drawing.Point(15, 53);
+            this.descricaoTxt.Name = "descricaoTxt";
+            this.descricaoTxt.Size = new System.Drawing.Size(326, 27);
+            this.descricaoTxt.TabIndex = 61;
+            // 
+            // situacaoChk
+            // 
+            this.situacaoChk.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.situacaoChk.ForeColor = System.Drawing.Color.White;
+            this.situacaoChk.Location = new System.Drawing.Point(675, 53);
+            this.situacaoChk.Name = "situacaoChk";
+            this.situacaoChk.Size = new System.Drawing.Size(101, 27);
+            this.situacaoChk.TabIndex = 63;
+            this.situacaoChk.Text = "INATIVO";
+            this.situacaoChk.UseVisualStyleBackColor = true;
+            // 
+            // codigoBarrasTxt
+            // 
+            this.codigoBarrasTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.codigoBarrasTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.codigoBarrasTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoBarrasTxt.ForeColor = System.Drawing.Color.White;
+            this.codigoBarrasTxt.Location = new System.Drawing.Point(347, 53);
+            this.codigoBarrasTxt.Name = "codigoBarrasTxt";
+            this.codigoBarrasTxt.Size = new System.Drawing.Size(322, 27);
+            this.codigoBarrasTxt.TabIndex = 65;
+            // 
+            // codigoBarrasLbl
+            // 
+            this.codigoBarrasLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoBarrasLbl.ForeColor = System.Drawing.Color.White;
+            this.codigoBarrasLbl.Location = new System.Drawing.Point(344, 30);
+            this.codigoBarrasLbl.Name = "codigoBarrasLbl";
+            this.codigoBarrasLbl.Size = new System.Drawing.Size(180, 20);
+            this.codigoBarrasLbl.TabIndex = 64;
+            this.codigoBarrasLbl.Text = "CÓDIGO DE BARRAS";
+            // 
+            // marcaTxt
+            // 
+            this.marcaTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.marcaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.marcaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marcaTxt.ForeColor = System.Drawing.Color.White;
+            this.marcaTxt.Location = new System.Drawing.Point(15, 117);
+            this.marcaTxt.Name = "marcaTxt";
+            this.marcaTxt.Size = new System.Drawing.Size(200, 27);
+            this.marcaTxt.TabIndex = 67;
+            // 
+            // marcaLbl
+            // 
+            this.marcaLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marcaLbl.ForeColor = System.Drawing.Color.White;
+            this.marcaLbl.Location = new System.Drawing.Point(12, 94);
+            this.marcaLbl.Name = "marcaLbl";
+            this.marcaLbl.Size = new System.Drawing.Size(73, 20);
+            this.marcaLbl.TabIndex = 66;
+            this.marcaLbl.Text = "MARCA";
+            // 
+            // pesoTxt
+            // 
+            this.pesoTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pesoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.pesoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pesoTxt.ForeColor = System.Drawing.Color.White;
+            this.pesoTxt.Location = new System.Drawing.Point(221, 117);
+            this.pesoTxt.Name = "pesoTxt";
+            this.pesoTxt.Size = new System.Drawing.Size(120, 27);
+            this.pesoTxt.TabIndex = 69;
+            // 
+            // pesoLbl
+            // 
+            this.pesoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pesoLbl.ForeColor = System.Drawing.Color.White;
+            this.pesoLbl.Location = new System.Drawing.Point(218, 94);
+            this.pesoLbl.Name = "pesoLbl";
+            this.pesoLbl.Size = new System.Drawing.Size(57, 20);
+            this.pesoLbl.TabIndex = 68;
+            this.pesoLbl.Text = "PESO";
+            // 
+            // larguraTxt
+            // 
+            this.larguraTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.larguraTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.larguraTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.larguraTxt.ForeColor = System.Drawing.Color.White;
+            this.larguraTxt.Location = new System.Drawing.Point(349, 117);
+            this.larguraTxt.Name = "larguraTxt";
+            this.larguraTxt.Size = new System.Drawing.Size(120, 27);
+            this.larguraTxt.TabIndex = 71;
+            // 
+            // larguraLbl
+            // 
+            this.larguraLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.larguraLbl.ForeColor = System.Drawing.Color.White;
+            this.larguraLbl.Location = new System.Drawing.Point(346, 94);
+            this.larguraLbl.Name = "larguraLbl";
+            this.larguraLbl.Size = new System.Drawing.Size(95, 20);
+            this.larguraLbl.TabIndex = 70;
+            this.larguraLbl.Text = "LARGURA";
+            // 
+            // alturaTxt
+            // 
+            this.alturaTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.alturaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.alturaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alturaTxt.ForeColor = System.Drawing.Color.White;
+            this.alturaTxt.Location = new System.Drawing.Point(475, 117);
+            this.alturaTxt.Name = "alturaTxt";
+            this.alturaTxt.Size = new System.Drawing.Size(120, 27);
+            this.alturaTxt.TabIndex = 73;
+            // 
+            // alturaLbl
+            // 
+            this.alturaLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alturaLbl.ForeColor = System.Drawing.Color.White;
+            this.alturaLbl.Location = new System.Drawing.Point(472, 94);
+            this.alturaLbl.Name = "alturaLbl";
+            this.alturaLbl.Size = new System.Drawing.Size(95, 20);
+            this.alturaLbl.TabIndex = 72;
+            this.alturaLbl.Text = "ALTURA";
+            // 
+            // profundidadeTxt
+            // 
+            this.profundidadeTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.profundidadeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.profundidadeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profundidadeTxt.ForeColor = System.Drawing.Color.White;
+            this.profundidadeTxt.Location = new System.Drawing.Point(603, 117);
+            this.profundidadeTxt.Name = "profundidadeTxt";
+            this.profundidadeTxt.Size = new System.Drawing.Size(153, 27);
+            this.profundidadeTxt.TabIndex = 75;
+            // 
+            // profundidadeLbl
+            // 
+            this.profundidadeLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profundidadeLbl.ForeColor = System.Drawing.Color.White;
+            this.profundidadeLbl.Location = new System.Drawing.Point(600, 94);
+            this.profundidadeLbl.Name = "profundidadeLbl";
+            this.profundidadeLbl.Size = new System.Drawing.Size(156, 20);
+            this.profundidadeLbl.TabIndex = 74;
+            this.profundidadeLbl.Text = "PROFUNDIDADE";
+            // 
+            // novoRadBtn
+            // 
+            this.novoRadBtn.AutoSize = true;
+            this.novoRadBtn.Checked = true;
+            this.novoRadBtn.Location = new System.Drawing.Point(6, 19);
+            this.novoRadBtn.Name = "novoRadBtn";
+            this.novoRadBtn.Size = new System.Drawing.Size(79, 22);
+            this.novoRadBtn.TabIndex = 76;
+            this.novoRadBtn.TabStop = true;
+            this.novoRadBtn.Text = "NOVO";
+            this.novoRadBtn.UseVisualStyleBackColor = true;
+            // 
+            // usadoRadBtn
+            // 
+            this.usadoRadBtn.AutoSize = true;
+            this.usadoRadBtn.Location = new System.Drawing.Point(85, 19);
+            this.usadoRadBtn.Name = "usadoRadBtn";
+            this.usadoRadBtn.Size = new System.Drawing.Size(89, 22);
+            this.usadoRadBtn.TabIndex = 77;
+            this.usadoRadBtn.Text = "USADO";
+            this.usadoRadBtn.UseVisualStyleBackColor = true;
+            // 
+            // condicaoGrpBox
+            // 
+            this.condicaoGrpBox.Controls.Add(this.novoRadBtn);
+            this.condicaoGrpBox.Controls.Add(this.usadoRadBtn);
+            this.condicaoGrpBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.condicaoGrpBox.ForeColor = System.Drawing.Color.White;
+            this.condicaoGrpBox.Location = new System.Drawing.Point(432, 162);
+            this.condicaoGrpBox.Name = "condicaoGrpBox";
+            this.condicaoGrpBox.Size = new System.Drawing.Size(185, 47);
+            this.condicaoGrpBox.TabIndex = 78;
+            this.condicaoGrpBox.TabStop = false;
+            this.condicaoGrpBox.Text = "CONDIÇÃO";
+            // 
+            // precoVendaTxt
+            // 
+            this.precoVendaTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.precoVendaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.precoVendaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precoVendaTxt.ForeColor = System.Drawing.Color.White;
+            this.precoVendaTxt.Location = new System.Drawing.Point(15, 182);
+            this.precoVendaTxt.Name = "precoVendaTxt";
+            this.precoVendaTxt.Size = new System.Drawing.Size(200, 27);
+            this.precoVendaTxt.TabIndex = 80;
+            // 
+            // precoVendaLbl
+            // 
+            this.precoVendaLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precoVendaLbl.ForeColor = System.Drawing.Color.White;
+            this.precoVendaLbl.Location = new System.Drawing.Point(12, 159);
+            this.precoVendaLbl.Name = "precoVendaLbl";
+            this.precoVendaLbl.Size = new System.Drawing.Size(130, 20);
+            this.precoVendaLbl.TabIndex = 79;
+            this.precoVendaLbl.Text = "PREÇO VENDA";
+            // 
+            // quantidadeEstoqueTxt
+            // 
+            this.quantidadeEstoqueTxt.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.quantidadeEstoqueTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.quantidadeEstoqueTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantidadeEstoqueTxt.ForeColor = System.Drawing.Color.White;
+            this.quantidadeEstoqueTxt.Location = new System.Drawing.Point(221, 182);
+            this.quantidadeEstoqueTxt.Name = "quantidadeEstoqueTxt";
+            this.quantidadeEstoqueTxt.Size = new System.Drawing.Size(200, 27);
+            this.quantidadeEstoqueTxt.TabIndex = 82;
+            // 
+            // quantidadeEstoqueLbl
+            // 
+            this.quantidadeEstoqueLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantidadeEstoqueLbl.ForeColor = System.Drawing.Color.White;
+            this.quantidadeEstoqueLbl.Location = new System.Drawing.Point(218, 159);
+            this.quantidadeEstoqueLbl.Name = "quantidadeEstoqueLbl";
+            this.quantidadeEstoqueLbl.Size = new System.Drawing.Size(208, 20);
+            this.quantidadeEstoqueLbl.TabIndex = 81;
+            this.quantidadeEstoqueLbl.Text = "QUANTIDADE ESTOQUE";
+            // 
+            // exibirBtn
+            // 
+            this.exibirBtn.BackColor = System.Drawing.Color.CadetBlue;
+            this.exibirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exibirBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exibirBtn.ForeColor = System.Drawing.Color.White;
+            this.exibirBtn.Location = new System.Drawing.Point(764, 209);
+            this.exibirBtn.Name = "exibirBtn";
+            this.exibirBtn.Size = new System.Drawing.Size(135, 35);
+            this.exibirBtn.TabIndex = 87;
+            this.exibirBtn.Text = "EXIBIR";
+            this.exibirBtn.UseVisualStyleBackColor = false;
+            this.exibirBtn.Click += new System.EventHandler(this.exibirBtn_Click);
+            // 
+            // limparBtn
+            // 
+            this.limparBtn.BackColor = System.Drawing.Color.CadetBlue;
+            this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.limparBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.limparBtn.ForeColor = System.Drawing.Color.White;
+            this.limparBtn.Location = new System.Drawing.Point(690, 250);
+            this.limparBtn.Name = "limparBtn";
+            this.limparBtn.Size = new System.Drawing.Size(135, 35);
+            this.limparBtn.TabIndex = 86;
+            this.limparBtn.Text = "LIMPAR";
+            this.limparBtn.UseVisualStyleBackColor = false;
+            this.limparBtn.Click += new System.EventHandler(this.limparBtn_Click);
+            // 
+            // editarBtn
+            // 
+            this.editarBtn.BackColor = System.Drawing.Color.CadetBlue;
+            this.editarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editarBtn.ForeColor = System.Drawing.Color.White;
+            this.editarBtn.Location = new System.Drawing.Point(623, 209);
+            this.editarBtn.Name = "editarBtn";
+            this.editarBtn.Size = new System.Drawing.Size(135, 35);
+            this.editarBtn.TabIndex = 85;
+            this.editarBtn.Text = "EDITAR";
+            this.editarBtn.UseVisualStyleBackColor = false;
+            this.editarBtn.Click += new System.EventHandler(this.editarBtn_Click);
+            // 
+            // excluirBtn
+            // 
+            this.excluirBtn.BackColor = System.Drawing.Color.CadetBlue;
+            this.excluirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.excluirBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.excluirBtn.ForeColor = System.Drawing.Color.White;
+            this.excluirBtn.Location = new System.Drawing.Point(764, 168);
+            this.excluirBtn.Name = "excluirBtn";
+            this.excluirBtn.Size = new System.Drawing.Size(135, 35);
+            this.excluirBtn.TabIndex = 84;
+            this.excluirBtn.Text = "EXCLUIR";
+            this.excluirBtn.UseVisualStyleBackColor = false;
+            this.excluirBtn.Click += new System.EventHandler(this.excluirBtn_Click);
+            // 
+            // salvarBtn
+            // 
+            this.salvarBtn.BackColor = System.Drawing.Color.CadetBlue;
+            this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.salvarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvarBtn.ForeColor = System.Drawing.Color.White;
+            this.salvarBtn.Location = new System.Drawing.Point(623, 168);
+            this.salvarBtn.Name = "salvarBtn";
+            this.salvarBtn.Size = new System.Drawing.Size(135, 35);
+            this.salvarBtn.TabIndex = 83;
+            this.salvarBtn.Text = "SALVAR";
+            this.salvarBtn.UseVisualStyleBackColor = false;
+            this.salvarBtn.Click += new System.EventHandler(this.salvarBtn_Click);
+            // 
+            // produtoDataGrid
+            // 
+            this.produtoDataGrid.AllowUserToAddRows = false;
+            this.produtoDataGrid.AllowUserToDeleteRows = false;
+            this.produtoDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.produtoDataGrid.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.produtoDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.produtoDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Descricao,
+            this.Marca,
+            this.PrecoVenda,
+            this.QuantidadeEstoque,
+            this.Condicao});
+            this.produtoDataGrid.GridColor = System.Drawing.Color.SeaGreen;
+            this.produtoDataGrid.Location = new System.Drawing.Point(12, 381);
+            this.produtoDataGrid.Name = "produtoDataGrid";
+            this.produtoDataGrid.ReadOnly = true;
+            this.produtoDataGrid.RowHeadersWidth = 51;
+            this.produtoDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.produtoDataGrid.Size = new System.Drawing.Size(877, 369);
+            this.produtoDataGrid.TabIndex = 88;
+            this.produtoDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.produtoDataGrid_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.FillWeight = 45.68528F;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Descricao
+            // 
+            this.Descricao.FillWeight = 110.8629F;
+            this.Descricao.HeaderText = "DESCRIÇÃO";
+            this.Descricao.MinimumWidth = 6;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            this.Marca.FillWeight = 110.8629F;
+            this.Marca.HeaderText = "MARCA";
+            this.Marca.MinimumWidth = 6;
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // PrecoVenda
+            // 
+            this.PrecoVenda.FillWeight = 110.8629F;
+            this.PrecoVenda.HeaderText = "PREÇO VENDA";
+            this.PrecoVenda.MinimumWidth = 6;
+            this.PrecoVenda.Name = "PrecoVenda";
+            this.PrecoVenda.ReadOnly = true;
+            // 
+            // QuantidadeEstoque
+            // 
+            this.QuantidadeEstoque.FillWeight = 110.8629F;
+            this.QuantidadeEstoque.HeaderText = "QUANTIDADE ESTOQUE";
+            this.QuantidadeEstoque.MinimumWidth = 6;
+            this.QuantidadeEstoque.Name = "QuantidadeEstoque";
+            this.QuantidadeEstoque.ReadOnly = true;
+            // 
+            // Condicao
+            // 
+            this.Condicao.FillWeight = 110.8629F;
+            this.Condicao.HeaderText = "CONDIÇÃO";
+            this.Condicao.MinimumWidth = 6;
+            this.Condicao.Name = "Condicao";
+            this.Condicao.ReadOnly = true;
+            // 
+            // consultaTxt
+            // 
+            this.consultaTxt.BackColor = System.Drawing.Color.CadetBlue;
+            this.consultaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.consultaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultaTxt.ForeColor = System.Drawing.Color.White;
+            this.consultaTxt.Location = new System.Drawing.Point(12, 346);
+            this.consultaTxt.Name = "consultaTxt";
+            this.consultaTxt.Size = new System.Drawing.Size(310, 27);
+            this.consultaTxt.TabIndex = 91;
+            this.consultaTxt.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.consultaTxt_PreviewKeyDown);
+            // 
+            // consultaLbl
+            // 
+            this.consultaLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultaLbl.ForeColor = System.Drawing.Color.White;
+            this.consultaLbl.Location = new System.Drawing.Point(9, 323);
+            this.consultaLbl.Name = "consultaLbl";
+            this.consultaLbl.Size = new System.Drawing.Size(313, 20);
+            this.consultaLbl.TabIndex = 90;
+            this.consultaLbl.Text = "[F1] CONSULTAR POR: DESCRIÇÃO";
+            // 
+            // consultarBtn
+            // 
+            this.consultarBtn.BackColor = System.Drawing.Color.CadetBlue;
+            this.consultarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.consultarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultarBtn.ForeColor = System.Drawing.Color.White;
+            this.consultarBtn.Location = new System.Drawing.Point(328, 342);
+            this.consultarBtn.Name = "consultarBtn";
+            this.consultarBtn.Size = new System.Drawing.Size(135, 35);
+            this.consultarBtn.TabIndex = 89;
+            this.consultarBtn.Text = "CONSULTAR";
+            this.consultarBtn.UseVisualStyleBackColor = false;
+            this.consultarBtn.Click += new System.EventHandler(this.consultarBtn_Click);
             // 
             // TelaProduto
             // 
@@ -51,16 +503,86 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(904, 762);
+            this.Controls.Add(this.consultaTxt);
+            this.Controls.Add(this.consultaLbl);
+            this.Controls.Add(this.consultarBtn);
+            this.Controls.Add(this.produtoDataGrid);
+            this.Controls.Add(this.exibirBtn);
+            this.Controls.Add(this.limparBtn);
+            this.Controls.Add(this.editarBtn);
+            this.Controls.Add(this.excluirBtn);
+            this.Controls.Add(this.salvarBtn);
+            this.Controls.Add(this.quantidadeEstoqueTxt);
+            this.Controls.Add(this.quantidadeEstoqueLbl);
+            this.Controls.Add(this.precoVendaTxt);
+            this.Controls.Add(this.precoVendaLbl);
+            this.Controls.Add(this.condicaoGrpBox);
+            this.Controls.Add(this.profundidadeTxt);
+            this.Controls.Add(this.profundidadeLbl);
+            this.Controls.Add(this.alturaTxt);
+            this.Controls.Add(this.alturaLbl);
+            this.Controls.Add(this.larguraTxt);
+            this.Controls.Add(this.larguraLbl);
+            this.Controls.Add(this.pesoTxt);
+            this.Controls.Add(this.pesoLbl);
+            this.Controls.Add(this.marcaTxt);
+            this.Controls.Add(this.marcaLbl);
+            this.Controls.Add(this.codigoBarrasTxt);
+            this.Controls.Add(this.codigoBarrasLbl);
+            this.Controls.Add(this.situacaoChk);
+            this.Controls.Add(this.descricaoLbl);
+            this.Controls.Add(this.descricaoTxt);
             this.Controls.Add(this.sairBtn);
             this.Name = "TelaProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Produto";
+            this.condicaoGrpBox.ResumeLayout(false);
+            this.condicaoGrpBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoDataGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button sairBtn;
+        private System.Windows.Forms.Label descricaoLbl;
+        private System.Windows.Forms.TextBox descricaoTxt;
+        private System.Windows.Forms.CheckBox situacaoChk;
+        private System.Windows.Forms.TextBox codigoBarrasTxt;
+        private System.Windows.Forms.Label codigoBarrasLbl;
+        private System.Windows.Forms.TextBox marcaTxt;
+        private System.Windows.Forms.Label marcaLbl;
+        private System.Windows.Forms.TextBox pesoTxt;
+        private System.Windows.Forms.Label pesoLbl;
+        private System.Windows.Forms.TextBox larguraTxt;
+        private System.Windows.Forms.Label larguraLbl;
+        private System.Windows.Forms.TextBox alturaTxt;
+        private System.Windows.Forms.Label alturaLbl;
+        private System.Windows.Forms.TextBox profundidadeTxt;
+        private System.Windows.Forms.Label profundidadeLbl;
+        private System.Windows.Forms.RadioButton novoRadBtn;
+        private System.Windows.Forms.RadioButton usadoRadBtn;
+        private System.Windows.Forms.GroupBox condicaoGrpBox;
+        private System.Windows.Forms.TextBox precoVendaTxt;
+        private System.Windows.Forms.Label precoVendaLbl;
+        private System.Windows.Forms.TextBox quantidadeEstoqueTxt;
+        private System.Windows.Forms.Label quantidadeEstoqueLbl;
+        private System.Windows.Forms.Button exibirBtn;
+        private System.Windows.Forms.Button limparBtn;
+        private System.Windows.Forms.Button editarBtn;
+        private System.Windows.Forms.Button excluirBtn;
+        private System.Windows.Forms.Button salvarBtn;
+        private System.Windows.Forms.DataGridView produtoDataGrid;
+        private System.Windows.Forms.TextBox consultaTxt;
+        private System.Windows.Forms.Label consultaLbl;
+        private System.Windows.Forms.Button consultarBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecoVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeEstoque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Condicao;
     }
 }

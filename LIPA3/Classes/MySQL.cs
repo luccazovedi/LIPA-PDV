@@ -315,66 +315,32 @@ namespace LIPA3.Classes
             }
         }
 
-        public static void EditarTabelaProduto(string nome, string cpf, string rg, string cidade, string estado, bool situacao, int id)
-        {
-            try
-            {
-                conexao.Open();
-
-                string consulta = "UPDATE Cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Situacao = @situacao WHERE Id = @Id";
-
-                using (MySqlCommand comando = new MySqlCommand(consulta, conexao))
-                {
-                    comando.Parameters.AddWithValue("@Nome", nome);
-                    comando.Parameters.AddWithValue("@Cpf", cpf);
-                    comando.Parameters.AddWithValue("@Rg", rg);
-                    comando.Parameters.AddWithValue("@Cidade", cidade);
-                    comando.Parameters.AddWithValue("@Estado", estado);
-                    comando.Parameters.AddWithValue("@Situacao", situacao ? 0 : 1);
-                    comando.Parameters.AddWithValue("@Id", id);
-
-                    comando.ExecuteNonQuery();
-                    comando.Dispose();
-                }
-
-                MessageBox.Show("[SISTEMA] Cliente editado com sucesso!", "[LAMBDA] Editar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Editar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
-
         public static string ConsultarTabelaProduto(string conteudoConsulta, string tipoConsulta)
         {
-            string consulta = "";
+            string consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE " + tipoConsulta + " LIKE '" + conteudoConsulta + "%'";
 
-            if (conteudoConsulta != "")
+            /*if (conteudoConsulta != "")
             {
                 switch (tipoConsulta)
                 {
-                    case "NOME":
-                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE NOME LIKE '" + conteudoConsulta + "%'";
+                    case "DESCRICAO":
+                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE DESCRICAO LIKE '" + conteudoConsulta + "%'";
                         break;
-                    case "CIDADE":
-                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE CIDADE = '" + conteudoConsulta + "'";
+                    case "MARCA":
+                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE MARCA LIKE '" + conteudoConsulta + "%'";
                         break;
-                    case "ESTADO":
-                        consulta = "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente WHERE ESTADO = '" + conteudoConsulta + "'";
+                    case "CONDICAO":
+                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE CONDICAO LIKE '" + conteudoConsulta + "%'";
                         break;
                 }
-            }
+            }*/
 
             return consulta;
         }
 
         public static string ExibirTabelaProduto()
         {
-            return "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente";
+            return "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto";
         }
         #endregion
 
