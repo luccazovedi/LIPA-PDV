@@ -327,3 +327,4 @@ C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.csproj.
 C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.csproj.CopyComplete
 C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.exe
 C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.pdb
+C:\Users\joao_\OneDrive\Documents\GitHub\LIPA\LIPA-PDV\LIPA3\obj\Debug\LIPA3.Telas.TelaVenda.resources

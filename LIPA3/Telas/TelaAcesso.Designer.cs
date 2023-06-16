@@ -47,7 +47,7 @@
             this.entrarBtn.Location = new System.Drawing.Point(268, 280);
             this.entrarBtn.Name = "entrarBtn";
             this.entrarBtn.Size = new System.Drawing.Size(135, 35);
-            this.entrarBtn.TabIndex = 0;
+            this.entrarBtn.TabIndex = 3;
             this.entrarBtn.Text = "ENTRAR";
             this.entrarBtn.UseVisualStyleBackColor = false;
             this.entrarBtn.Click += new System.EventHandler(this.entrarBtn_Click);
@@ -83,7 +83,7 @@
             this.sairBtn.Location = new System.Drawing.Point(409, 280);
             this.sairBtn.Name = "sairBtn";
             this.sairBtn.Size = new System.Drawing.Size(135, 35);
-            this.sairBtn.TabIndex = 3;
+            this.sairBtn.TabIndex = 4;
             this.sairBtn.Text = "SAIR";
             this.sairBtn.UseVisualStyleBackColor = false;
             this.sairBtn.Click += new System.EventHandler(this.sairBtn_Click);
@@ -98,7 +98,7 @@
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.PasswordChar = '*';
             this.senhaTxt.Size = new System.Drawing.Size(275, 27);
-            this.senhaTxt.TabIndex = 4;
+            this.senhaTxt.TabIndex = 2;
             this.senhaTxt.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.senhaTxt_PreviewKeyDown);
             // 
             // label1
@@ -131,7 +131,7 @@
             this.registrarBtn.Location = new System.Drawing.Point(339, 480);
             this.registrarBtn.Name = "registrarBtn";
             this.registrarBtn.Size = new System.Drawing.Size(135, 35);
-            this.registrarBtn.TabIndex = 7;
+            this.registrarBtn.TabIndex = 5;
             this.registrarBtn.Text = "REGISTRAR";
             this.registrarBtn.UseVisualStyleBackColor = false;
             this.registrarBtn.Click += new System.EventHandler(this.registrarBtn_Click);

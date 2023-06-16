@@ -200,7 +200,7 @@ namespace LIPA3.Telas
                 bool situacao = situacaoChk.Checked;
                 bool whatsApp = whatsAppChk.Checked;
 
-                string consulta = "UPDATE Cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Profissao = @profissao, Nacionalidade = @nacionalidade, Telefone = @telefone, Celular = @celular, Email = @email, Bairro = @bairro, Cep = @Cep, Observacoes = @observacoes, Endereco = @endereco, Numero = @numero, Complemento = @Complemento, EstadoCivil = @EstadoCivil, Situacao = @situacao, WhatsApp = @whatsapp WHERE Id = @Id";
+                string consulta = "UPDATE Cliente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Cidade = @cidade, Estado = @estado, Profissao = @profissao, Nacionalidade = @nacionalidade, Telefone = @telefone, Celular = @celular, Email = @email, Bairro = @bairro, Cep = @Cep, Observacoes = @observacoes, Endereco = @endereco, DataNascimento = @DataNascimento, Numero = @numero, Complemento = @Complemento, EstadoCivil = @EstadoCivil, Genero = @Genero, Situacao = @situacao, WhatsApp = @whatsapp WHERE Id = @Id";
 
                 using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
                 {
@@ -221,9 +221,23 @@ namespace LIPA3.Telas
                     comando.Parameters.AddWithValue("@Numero", numeroTxt.Text);
                     comando.Parameters.AddWithValue("@Complemento", complementoTxt.Text);
                     comando.Parameters.AddWithValue("@EstadoCivil", estadoCivilCmb.Text);
+                    comando.Parameters.AddWithValue("@DataNascimento", dataNascimentoTxt.Text);
                     comando.Parameters.AddWithValue("@Situacao", situacao);
                     comando.Parameters.AddWithValue("@Id", id);
                     comando.Parameters.AddWithValue("@WhatsApp", whatsApp);
+
+                    if(generoCmb.SelectedIndex == 0)
+                    {
+                        comando.Parameters.AddWithValue("@Genero", "M");
+                    }
+                    else if (generoCmb.SelectedIndex == 1)
+                    {
+                        comando.Parameters.AddWithValue("@Genero", "F");
+                    }
+                    else
+                    {
+                        comando.Parameters.AddWithValue("@Genero", "O");
+                    }
 
                     comando.ExecuteNonQuery();
 
@@ -252,6 +266,7 @@ namespace LIPA3.Telas
             if (consulta == "")
             {
                 MessageBox.Show("[SISTEMA] Erro! Não é possível realizar uma consulta vazia.", "[LAMBDA] Consultar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MySQL.conexao.Dispose();
                 return;
             }
 
@@ -449,6 +464,7 @@ namespace LIPA3.Telas
                             numeroTxt.Text = leitor["Numero"].ToString();
                             complementoTxt.Text = leitor["Complemento"].ToString();
                             dataNascimentoTxt.Text = leitor["DataNascimento"].ToString();
+                            
 
                             if (leitor["Genero"].ToString() == "M")
                             {
@@ -467,14 +483,31 @@ namespace LIPA3.Telas
                             {
                                 estadoCivilCmb.SelectedIndex = 0;
                             }
+                            else if (leitor["EstadoCivil"].ToString() == "CASADO")
+                            {
+                                estadoCivilCmb.SelectedIndex = 1;
+                            }
+                            else
+                            {
+                                estadoCivilCmb.SelectedIndex = 2;
+                            }
 
                             if (leitor["WhatsApp"].ToString() == "0")
                             {
                                 whatsAppChk.Checked = false;
                             }
-                            if (leitor["WhatsApp"].ToString() == "1")
+                            else
                             {
                                 whatsAppChk.Checked = true;
+                            }
+
+                            if (leitor["Situacao"].ToString() == "0")
+                            {
+                                situacaoChk.Checked = false;
+                            }
+                            else
+                            {
+                                situacaoChk.Checked= true;
                             }
                         }
                     }
@@ -501,5 +534,10 @@ namespace LIPA3.Telas
         //    //textBox2.Location = new Point(10, textBox1.Bottom + 10);
         //}
         #endregion
+
+        private void telefoneTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
