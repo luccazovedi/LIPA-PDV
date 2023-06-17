@@ -328,3 +328,6 @@ C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.csproj.
 C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.exe
 C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.pdb
 C:\Users\joao_\OneDrive\Documents\GitHub\LIPA\LIPA-PDV\LIPA3\obj\Debug\LIPA3.Telas.TelaVenda.resources
+C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.Telas.TelaClienteConsulta.resources
+C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.Telas.TelaProdutoConsulta.resources
+C:\Users\offic\OneDrive\Área de Trabalho\LIPA-PDV\LIPA3\obj\Debug\LIPA3.Telas.TelaVendaConsulta.resources

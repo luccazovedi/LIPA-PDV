@@ -534,10 +534,5 @@ namespace LIPA3.Telas
         //    //textBox2.Location = new Point(10, textBox1.Bottom + 10);
         //}
         #endregion
-
-        private void telefoneTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

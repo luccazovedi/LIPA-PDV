@@ -344,6 +344,217 @@ namespace LIPA3.Classes
         }
         #endregion
 
+        #region Venda
+        public static void CriarTabelaVenda()
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "CREATE TABLE Venda (Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, " +
+                    "DataVenda VARCHAR(255), ClienteId INT, UsuarioId INT, TotalItens INT, SubTotal NUMERIC(18, 2), " +
+                    "Desconto NUMERIC(18, 2), ValorTotal NUMERIC(18, 2), FormaPagamento VARCHAR(255), Situacao VARCHAR(255), " +
+                    "Observacoes VARCHAR(255), FOREIGN KEY (ClienteId) REFERENCES Cliente(Id), FOREIGN KEY (UsuarioId) REFERENCES Usuario(Id));";
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+            }
+            catch (Exception)
+            {
+                //MessageBox.Show("[SISTEMA] Ocorreu um erro! Tente novamente.", "[LAMBDA] Criar Tabela Venda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static void InserirTabelaVenda(int clienteId, int usuarioId, int totalItens, double subTotal, double desconto, double valorTotal, 
+            string formaPagamento, string situacao, string observacoes)
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "INSERT INTO Venda (DataVenda, ClienteId, UsuarioId, TotalItens, SubTotal, Desconto, ValorTotal, " +
+                    "FormaPagamento, Situacao, Observacoes)" +
+                    "VALUES ('" + DateTime.Now.ToString() + "','" + clienteId + "', '" + usuarioId + "', '" + totalItens + "', '" + subTotal + "', " +
+                    "'" + desconto + "', '" + valorTotal + "', '" + formaPagamento + "', '" + situacao + "', '" + observacoes + "')";
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+
+                MessageBox.Show("[SISTEMA] Venda inserida com sucesso!", "[LAMBDA] Salvar Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Salvar Venda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static void RemoverTabelaVenda(int id)
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "DELETE FROM Venda WHERE Id = '" + id + "'";
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+
+                MessageBox.Show("[SISTEMA] Venda excluída com sucesso!", "[LAMBDA] Excluir Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Excluir Venda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static string ConsultarTabelaVenda(string conteudoConsulta, string tipoConsulta)
+        {
+            string consulta = "SELECT Id, CodProduto, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Venda WHERE " + tipoConsulta + " LIKE '" + conteudoConsulta + "%'";
+
+            /*if (conteudoConsulta != "")
+            {
+                switch (tipoConsulta)
+                {
+                    case "DESCRICAO":
+                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE DESCRICAO LIKE '" + conteudoConsulta + "%'";
+                        break;
+                    case "MARCA":
+                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE MARCA LIKE '" + conteudoConsulta + "%'";
+                        break;
+                    case "CONDICAO":
+                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE CONDICAO LIKE '" + conteudoConsulta + "%'";
+                        break;
+                }
+            }*/
+
+            return consulta;
+        }
+
+        public static string ExibirTabelaVenda()
+        {
+            return "SELECT Id, DataVenda, ClienteId, UsuarioId, ValorTotal FROM Venda";
+        }
+        #endregion
+
+        #region VendaItens
+        public static void CriarTabelaVendaItens()
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "CREATE TABLE VendaItens (Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, " +
+                    "VendaId INT, ProdutoId INT, Quantidade INT, Descricao VARCHAR(255), ValorUnitario NUMERIC(18, 2), SubTotalProduto NUMERIC(18, 2), " +
+                    "FOREIGN KEY (VendaId) REFERENCES Venda(Id), FOREIGN KEY (ProdutoId) REFERENCES Produto(Id));"; ;
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+            }
+            catch (Exception)
+            {
+                //MessageBox.Show("[SISTEMA] Ocorreu um erro! Tente novamente.", "[LAMBDA] Criar Tabela Venda Itens", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static void InserirTabelaVendaItens(int vendaId, int produtoId, int quantidade, string descricao, double valorUnitario, double subTotalProduto)
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "INSERT INTO VendaItens (VendaId, ProdutoId, Quantidade, Descricao, ValorUnitario, SubTotalProduto)" +
+                    "VALUES ('" + vendaId + "','" + produtoId + "', '" + quantidade + "', '" + descricao + "', '" + valorUnitario + "', " +
+                    "'" + subTotalProduto + "')";
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+
+                //MessageBox.Show("[SISTEMA] Item adicionado com sucesso!", "[LAMBDA] Adicionar Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Adicionar Item", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static void RemoverTabelaVendaItens(int id)
+        {
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "DELETE FROM VendaItens WHERE Id = '" + id + "'";
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+
+                //MessageBox.Show("[SISTEMA] Item removido com sucesso!", "[LAMBDA] Remover Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("[SISTEMA] Ocorreu um erro!", "[LAMBDA] Remover Item", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public static string ConsultarTabelaVendaItens(string conteudoConsulta, string tipoConsulta)
+        {
+            string consulta = "SELECT Id, CodProduto, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Venda WHERE " + tipoConsulta + " LIKE '" + conteudoConsulta + "%'";
+
+            /*if (conteudoConsulta != "")
+            {
+                switch (tipoConsulta)
+                {
+                    case "DESCRICAO":
+                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE DESCRICAO LIKE '" + conteudoConsulta + "%'";
+                        break;
+                    case "MARCA":
+                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE MARCA LIKE '" + conteudoConsulta + "%'";
+                        break;
+                    case "CONDICAO":
+                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE CONDICAO LIKE '" + conteudoConsulta + "%'";
+                        break;
+                }
+            }*/
+
+            return consulta;
+        }
+
+        public static string ExibirTabelaVendaItens(int vendaId)
+        {
+            return "SELECT Id, Descricao, Quantidade, ValorUnitario, SubTotalProduto FROM VendaItens WHERE VendaId = " + vendaId;
+        }
+        #endregion
+
         #region Outros
         public static object ChecarEditarCPF(int id)
         {

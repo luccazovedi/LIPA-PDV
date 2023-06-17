@@ -60,7 +60,7 @@ namespace LIPA3.Telas
                     int indiceLinha = produtoDataGrid.Rows.Add();
 
                     produtoDataGrid.Rows[indiceLinha].Cells["ID"].Value = leitor["Id"].ToString();
-                    produtoDataGrid.Rows[indiceLinha].Cells["CodProduto"].Value = leitor["CodProduto"].ToString();
+                    //produtoDataGrid.Rows[indiceLinha].Cells["CODIGO"].Value = leitor["CodProduto"].ToString();
                     produtoDataGrid.Rows[indiceLinha].Cells["DESCRICAO"].Value = leitor["Descricao"].ToString();
                     produtoDataGrid.Rows[indiceLinha].Cells["MARCA"].Value = leitor["Marca"].ToString();
                     produtoDataGrid.Rows[indiceLinha].Cells["PRECOVENDA"].Value = leitor["PrecoVenda"].ToString();
@@ -321,10 +321,5 @@ namespace LIPA3.Telas
             }
         }
         #endregion
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

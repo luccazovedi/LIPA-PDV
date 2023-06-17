@@ -473,7 +473,6 @@
             this.CodProdutoLbl.Size = new System.Drawing.Size(154, 20);
             this.CodProdutoLbl.TabIndex = 92;
             this.CodProdutoLbl.Text = "COD PRODUTO";
-            this.CodProdutoLbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // ID
             // 

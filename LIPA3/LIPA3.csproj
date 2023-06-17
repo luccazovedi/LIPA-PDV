@@ -107,6 +107,12 @@
     <Compile Include="Telas\TelaCliente.Designer.cs">
       <DependentUpon>TelaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\TelaClienteConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaClienteConsulta.Designer.cs">
+      <DependentUpon>TelaClienteConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     </Compile>
     <Compile Include="Telas\TelaProduto.Designer.cs">
       <DependentUpon>TelaProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TelaProdutoConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaProdutoConsulta.Designer.cs">
+      <DependentUpon>TelaProdutoConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\TelaRegistro.cs">
       <SubType>Form</SubType>
@@ -131,6 +143,12 @@
     <Compile Include="Telas\TelaVenda.Designer.cs">
       <DependentUpon>TelaVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\TelaVendaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaVendaConsulta.Designer.cs">
+      <DependentUpon>TelaVendaConsulta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -142,17 +160,26 @@
     <EmbeddedResource Include="Telas\TelaCliente.resx">
       <DependentUpon>TelaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaClienteConsulta.resx">
+      <DependentUpon>TelaClienteConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaProduto.resx">
       <DependentUpon>TelaProduto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaProdutoConsulta.resx">
+      <DependentUpon>TelaProdutoConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaRegistro.resx">
       <DependentUpon>TelaRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaVenda.resx">
       <DependentUpon>TelaVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaVendaConsulta.resx">
+      <DependentUpon>TelaVendaConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

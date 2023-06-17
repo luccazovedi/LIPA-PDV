@@ -29,6 +29,8 @@ namespace LIPA3
             MySQL.CriarTabelaUsuario();
             MySQL.CriarTabelaCliente();
             MySQL.CriarTabelaProduto();
+            MySQL.CriarTabelaVenda();
+            MySQL.CriarTabelaVendaItens();
 
             usuarioTxt.Focus();
         }

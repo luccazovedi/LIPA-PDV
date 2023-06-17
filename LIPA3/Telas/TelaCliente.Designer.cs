@@ -318,7 +318,6 @@
             this.telefoneTxt.Name = "telefoneTxt";
             this.telefoneTxt.Size = new System.Drawing.Size(200, 27);
             this.telefoneTxt.TabIndex = 10;
-            this.telefoneTxt.TextChanged += new System.EventHandler(this.telefoneTxt_TextChanged);
             this.telefoneTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numero);
             // 
             // telefoneLbl
