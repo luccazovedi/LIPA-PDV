@@ -53,7 +53,7 @@
             this.Cidade,
             this.Estado});
             this.clienteDataGrid.GridColor = System.Drawing.Color.SeaGreen;
-            this.clienteDataGrid.Location = new System.Drawing.Point(12, 105);
+            this.clienteDataGrid.Location = new System.Drawing.Point(12, 12);
             this.clienteDataGrid.Name = "clienteDataGrid";
             this.clienteDataGrid.ReadOnly = true;
             this.clienteDataGrid.RowHeadersWidth = 51;
@@ -115,9 +115,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(904, 561);
+            this.ClientSize = new System.Drawing.Size(904, 461);
             this.Controls.Add(this.clienteDataGrid);
             this.Name = "TelaClienteConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Cliente Consulta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaClienteConsulta_FormClosing);
             this.Load += new System.EventHandler(this.TelaClienteConsulta_Load);

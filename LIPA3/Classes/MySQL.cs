@@ -246,7 +246,7 @@ namespace LIPA3.Classes
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexao;
                 comando.CommandText = "CREATE TABLE Produto (Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, " +
-                    "Descricao VARCHAR(255),CodProduto VARCHAR(45), CodigoBarras VARCHAR(255), Marca VARCHAR(255), Peso NUMERIC(18, 2), Largura NUMERIC(18, 2), " +
+                    "Descricao VARCHAR(255), CodigoBarras VARCHAR(255), Marca VARCHAR(255), Peso NUMERIC(18, 2), Largura NUMERIC(18, 2), " +
                     "Altura NUMERIC(18, 2), Profundidade NUMERIC(18, 2), Situacao INT, Condicao VARCHAR(255), PrecoVenda NUMERIC(18, 2), " +
                     "QuantidadeEstoque NUMERIC(18, 2), DataCadastro VARCHAR(255));";
                 comando.ExecuteNonQuery();
@@ -262,7 +262,7 @@ namespace LIPA3.Classes
             }
         }
 
-        public static void InserirTabelaProduto(string descricao, string codProduto, string codigoBarras, string marca, double peso, double largura, double altura,
+        public static void InserirTabelaProduto(string descricao, string codigoBarras, string marca, double peso, double largura, double altura,
             double profundidade, int situacao, string condicao, double precoVenda, double quantidadeEstoque)
         {
             try
@@ -271,9 +271,9 @@ namespace LIPA3.Classes
 
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexao;
-                comando.CommandText = "INSERT INTO Produto (descricao, CodProduto, codigoBarras, marca, peso, largura, altura, profundidade, " +
+                comando.CommandText = "INSERT INTO Produto (descricao, codigoBarras, marca, peso, largura, altura, profundidade, " +
                     "situacao, condicao, precoVenda, quantidadeEstoque, dataCadastro)" +
-                    "VALUES ('" + descricao + "','" + codProduto + "', '" + codigoBarras + "', '" + marca + "', '" + peso + "', " +
+                    "VALUES ('" + descricao + "', '" + codigoBarras + "', '" + marca + "', '" + peso + "', " +
                     "'" + largura + "', '" + altura + "', '" + profundidade + "', '" + situacao + "', '" + condicao + "', " +
                     "'" + precoVenda + "', '" + quantidadeEstoque + "', '" + DateTime.Now.ToString() + "');";
                 comando.ExecuteNonQuery();
@@ -317,7 +317,7 @@ namespace LIPA3.Classes
 
         public static string ConsultarTabelaProduto(string conteudoConsulta, string tipoConsulta)
         {
-            string consulta = "SELECT Id, CodProduto, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE " + tipoConsulta + " LIKE '" + conteudoConsulta + "%'";
+            string consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE " + tipoConsulta + " LIKE '" + conteudoConsulta + "%'";
 
             /*if (conteudoConsulta != "")
             {
@@ -340,7 +340,7 @@ namespace LIPA3.Classes
 
         public static string ExibirTabelaProduto()
         {
-            return "SELECT Id, CodProduto, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto";
+            return "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto";
         }
         #endregion
 
@@ -517,34 +517,6 @@ namespace LIPA3.Classes
             MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao);
             object cpfCliente = comando.ExecuteScalar();
             return cpfCliente;
-        }
-
-        public static int ChecarEstoque(int id, string quantidade)
-        {
-            conexao.Open();
-
-            string quantidadeEstoque = "0";
-            string consulta = "SELECT QuantidadeEstoque FROM Produto WHERE Id = " + id;
-            MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao);
-
-            using (MySqlDataReader leitor = comando.ExecuteReader())
-            {
-                if (leitor.Read())
-                {
-                    quantidadeEstoque = leitor["QuantidadeEstoque"].ToString();
-                }
-
-                if (int.Parse(quantidadeEstoque) < int.Parse(quantidade))
-                {
-                    conexao.Close();
-                    return 0;
-                }
-                else
-                {
-                    conexao.Close();
-                    return int.Parse(quantidadeEstoque);
-                }
-            }
         }
         #endregion
     }

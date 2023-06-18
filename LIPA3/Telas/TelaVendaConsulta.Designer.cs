@@ -51,7 +51,7 @@
             this.Usuario,
             this.ValorTotal});
             this.vendaDataGrid.GridColor = System.Drawing.Color.SeaGreen;
-            this.vendaDataGrid.Location = new System.Drawing.Point(15, 98);
+            this.vendaDataGrid.Location = new System.Drawing.Point(15, 12);
             this.vendaDataGrid.Name = "vendaDataGrid";
             this.vendaDataGrid.ReadOnly = true;
             this.vendaDataGrid.RowHeadersWidth = 51;
@@ -105,9 +105,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(904, 561);
+            this.ClientSize = new System.Drawing.Size(904, 471);
             this.Controls.Add(this.vendaDataGrid);
             this.Name = "TelaVendaConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Venda Consulta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaVendaConsulta_FormClosing);
             this.Load += new System.EventHandler(this.TelaVendaConsulta_Load);

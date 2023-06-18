@@ -60,10 +60,7 @@
             this.consultaTxt = new System.Windows.Forms.TextBox();
             this.consultaLbl = new System.Windows.Forms.Label();
             this.consultarBtn = new System.Windows.Forms.Button();
-            this.CodProdutoTxt = new System.Windows.Forms.TextBox();
-            this.CodProdutoLbl = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecoVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,7 +109,7 @@
             // 
             this.situacaoChk.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.situacaoChk.ForeColor = System.Drawing.Color.White;
-            this.situacaoChk.Location = new System.Drawing.Point(753, 53);
+            this.situacaoChk.Location = new System.Drawing.Point(594, 53);
             this.situacaoChk.Name = "situacaoChk";
             this.situacaoChk.Size = new System.Drawing.Size(101, 27);
             this.situacaoChk.TabIndex = 3;
@@ -125,7 +122,7 @@
             this.codigoBarrasTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.codigoBarrasTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codigoBarrasTxt.ForeColor = System.Drawing.Color.White;
-            this.codigoBarrasTxt.Location = new System.Drawing.Point(506, 53);
+            this.codigoBarrasTxt.Location = new System.Drawing.Point(347, 53);
             this.codigoBarrasTxt.Name = "codigoBarrasTxt";
             this.codigoBarrasTxt.Size = new System.Drawing.Size(241, 27);
             this.codigoBarrasTxt.TabIndex = 2;
@@ -134,7 +131,7 @@
             // 
             this.codigoBarrasLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codigoBarrasLbl.ForeColor = System.Drawing.Color.White;
-            this.codigoBarrasLbl.Location = new System.Drawing.Point(514, 30);
+            this.codigoBarrasLbl.Location = new System.Drawing.Point(347, 30);
             this.codigoBarrasLbl.Name = "codigoBarrasLbl";
             this.codigoBarrasLbl.Size = new System.Drawing.Size(180, 20);
             this.codigoBarrasLbl.TabIndex = 64;
@@ -328,7 +325,7 @@
             this.exibirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exibirBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exibirBtn.ForeColor = System.Drawing.Color.White;
-            this.exibirBtn.Location = new System.Drawing.Point(764, 209);
+            this.exibirBtn.Location = new System.Drawing.Point(764, 176);
             this.exibirBtn.Name = "exibirBtn";
             this.exibirBtn.Size = new System.Drawing.Size(135, 35);
             this.exibirBtn.TabIndex = 16;
@@ -342,7 +339,7 @@
             this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.limparBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limparBtn.ForeColor = System.Drawing.Color.White;
-            this.limparBtn.Location = new System.Drawing.Point(690, 250);
+            this.limparBtn.Location = new System.Drawing.Point(764, 217);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(135, 35);
             this.limparBtn.TabIndex = 17;
@@ -356,7 +353,7 @@
             this.editarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarBtn.ForeColor = System.Drawing.Color.White;
-            this.editarBtn.Location = new System.Drawing.Point(623, 209);
+            this.editarBtn.Location = new System.Drawing.Point(764, 135);
             this.editarBtn.Name = "editarBtn";
             this.editarBtn.Size = new System.Drawing.Size(135, 35);
             this.editarBtn.TabIndex = 15;
@@ -370,7 +367,7 @@
             this.excluirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.excluirBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excluirBtn.ForeColor = System.Drawing.Color.White;
-            this.excluirBtn.Location = new System.Drawing.Point(764, 168);
+            this.excluirBtn.Location = new System.Drawing.Point(764, 94);
             this.excluirBtn.Name = "excluirBtn";
             this.excluirBtn.Size = new System.Drawing.Size(135, 35);
             this.excluirBtn.TabIndex = 14;
@@ -384,7 +381,7 @@
             this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarBtn.ForeColor = System.Drawing.Color.White;
-            this.salvarBtn.Location = new System.Drawing.Point(623, 168);
+            this.salvarBtn.Location = new System.Drawing.Point(764, 53);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(135, 35);
             this.salvarBtn.TabIndex = 13;
@@ -401,7 +398,6 @@
             this.produtoDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.produtoDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.CodProduto,
             this.Descricao,
             this.Marca,
             this.PrecoVenda,
@@ -453,27 +449,6 @@
             this.consultarBtn.UseVisualStyleBackColor = false;
             this.consultarBtn.Click += new System.EventHandler(this.consultarBtn_Click);
             // 
-            // CodProdutoTxt
-            // 
-            this.CodProdutoTxt.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.CodProdutoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.CodProdutoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CodProdutoTxt.ForeColor = System.Drawing.Color.White;
-            this.CodProdutoTxt.Location = new System.Drawing.Point(349, 53);
-            this.CodProdutoTxt.Name = "CodProdutoTxt";
-            this.CodProdutoTxt.Size = new System.Drawing.Size(151, 27);
-            this.CodProdutoTxt.TabIndex = 91;
-            // 
-            // CodProdutoLbl
-            // 
-            this.CodProdutoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CodProdutoLbl.ForeColor = System.Drawing.Color.White;
-            this.CodProdutoLbl.Location = new System.Drawing.Point(346, 30);
-            this.CodProdutoLbl.Name = "CodProdutoLbl";
-            this.CodProdutoLbl.Size = new System.Drawing.Size(154, 20);
-            this.CodProdutoLbl.TabIndex = 92;
-            this.CodProdutoLbl.Text = "COD PRODUTO";
-            // 
             // ID
             // 
             this.ID.FillWeight = 45.68528F;
@@ -481,14 +456,6 @@
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            // 
-            // CodProduto
-            // 
-            this.CodProduto.FillWeight = 110.8629F;
-            this.CodProduto.HeaderText = "CODIGO";
-            this.CodProduto.MinimumWidth = 6;
-            this.CodProduto.Name = "CodProduto";
-            this.CodProduto.ReadOnly = true;
             // 
             // Descricao
             // 
@@ -536,8 +503,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(904, 762);
-            this.Controls.Add(this.CodProdutoLbl);
-            this.Controls.Add(this.CodProdutoTxt);
             this.Controls.Add(this.consultaTxt);
             this.Controls.Add(this.consultaLbl);
             this.Controls.Add(this.consultarBtn);
@@ -613,10 +578,7 @@
         private System.Windows.Forms.TextBox consultaTxt;
         private System.Windows.Forms.Label consultaLbl;
         private System.Windows.Forms.Button consultarBtn;
-        private System.Windows.Forms.TextBox CodProdutoTxt;
-        private System.Windows.Forms.Label CodProdutoLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecoVenda;

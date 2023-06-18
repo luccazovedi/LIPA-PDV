@@ -121,7 +121,6 @@ namespace LIPA3.Telas
             //    double.Parse(valorTotalTxt.Text), formaPagamentoCmb.SelectedItem.ToString(), situacaoCmb.SelectedItem.ToString(), observacoesTxt.Text);
             MySQL.InserirTabelaVenda(ClienteId, 1, 0, 0, 0, 0, formaPagamentoCmb.SelectedItem.ToString(), situacaoCmb.SelectedItem.ToString(), observacoesTxt.Text);
 
-            //Exibir();
             Limpar("V");
         }
 
@@ -133,7 +132,6 @@ namespace LIPA3.Telas
                 {
                     MySQL.RemoverTabelaVenda(VendaId);
 
-                    //Exibir();
                     Limpar("T");
                 }
             }
@@ -143,43 +141,35 @@ namespace LIPA3.Telas
             }
         }
 
-        /*private void Editar()
+        private void Editar()
         {
-            MySQL.conexao.Open();
-
-            string consulta = "UPDATE Produto SET Descricao = @Descricao, CodProduto = @CodProduto, CodigoBarras = @CodigoBarras, Marca = @Marca, Peso = @Peso," +
-                "Largura = @Largura, Altura = @Altura, Profundidade = @Profundidade, Situacao = @Situacao, Condicao = @Condicao," +
-                "PrecoVenda = @PrecoVenda, QuantidadeEstoque = @QuantidadeEstoque WHERE Id = @Id";
-
-            using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+            if (VendaId != 0)
             {
-                comando.Parameters.AddWithValue("@Descricao", descricaoTxt.Text);
-                comando.Parameters.AddWithValue("@CodProduto", CodProdutoTxt.Text);
-                comando.Parameters.AddWithValue("@CodigoBarras", codigoBarrasTxt.Text);
-                comando.Parameters.AddWithValue("@Marca", marcaTxt.Text);
-                comando.Parameters.AddWithValue("@Peso", double.Parse(pesoTxt.Text));
-                comando.Parameters.AddWithValue("@Largura", double.Parse(larguraTxt.Text));
-                comando.Parameters.AddWithValue("@Altura", double.Parse(alturaTxt.Text));
-                comando.Parameters.AddWithValue("@Profundidade", double.Parse(profundidadeTxt.Text));
-                comando.Parameters.AddWithValue("@Situacao", situacao);
-                comando.Parameters.AddWithValue("@Condicao", condicao);
-                comando.Parameters.AddWithValue("@PrecoVenda", double.Parse(precoVendaTxt.Text));
-                comando.Parameters.AddWithValue("@QuantidadeEstoque", double.Parse(quantidadeEstoqueTxt.Text));
-                comando.Parameters.AddWithValue("@Id", id);
+                MySQL.conexao.Open();
 
-                comando.ExecuteNonQuery();
+                string consulta = "UPDATE Venda SET FormaPagamento = @FormaPagamento, Situacao = @Situacao, " +
+                    "Observacoes = @Observacoes WHERE Id = " + VendaId;
 
-                MessageBox.Show("[SISTEMA] Produto editado com sucesso!", "[LAMBDA] Editar Produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+                {
+                    comando.Parameters.AddWithValue("@FormaPagamento", formaPagamentoCmb.SelectedItem.ToString());
+                    comando.Parameters.AddWithValue("@Situacao", situacaoCmb.SelectedItem.ToString());
+                    comando.Parameters.AddWithValue("@Observacoes", observacoesTxt.Text);
+
+                    comando.ExecuteNonQuery();
+
+                    MessageBox.Show("[SISTEMA] Venda editada com sucesso!", "[LAMBDA] Editar Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                MySQL.conexao.Dispose();
+
+                Limpar("V");
             }
-
-            MySQL.conexao.Dispose();
-
-            produtoDataGrid.DataSource = null;
-            produtoDataGrid.Rows.Clear();
-
-            Exibir();
-            Limpar();
-        }*/
+            else
+            {
+                MessageBox.Show("[SISTEMA] Erro! É necessário selecionar uma venda antes de excluí-la.", "[LAMBDA] Excluir Venda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void CalcularTotal()
         {
@@ -253,6 +243,11 @@ namespace LIPA3.Telas
         private void excluirBtn_Click(object sender, EventArgs e)
         {
             Excluir();
+        }
+
+        private void editarBtn_Click(object sender, EventArgs e)
+        {
+            Editar();
         }
 
         private void sairBtn_Click(object sender, EventArgs e)
@@ -423,60 +418,16 @@ namespace LIPA3.Telas
 
                 subTotalProdutoTxt.Text = subTotalProduto.ToString();
 
-                //int quantidadeEstoque = MySQL.ChecarEstoque(ProdutoId, quantidadeTxt.Text);
-
-                //if (quantidadeEstoque != 0)
-                //{
-                //    int quantidadeAtualizada = quantidadeEstoque - quantidade;
-
-                //    MySQL.conexao.Open();
-
-                //    string consulta = "UPDATE Produto SET QuantidadeEstoque = @QuantidadeAtualizada WHERE Id = " + ProdutoId;
-
-                //    using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
-                //    {
-                //        comando.Parameters.AddWithValue("@QuantidadeAtualizada", quantidadeAtualizada);
-
-                //        comando.ExecuteNonQuery();
-                //    }
-
-                //    MySQL.conexao.Dispose();
-
                 MySQL.InserirTabelaVendaItens(VendaId, ProdutoId, quantidade, produtoTxt.Text, valorUnitario, subTotalProduto);
 
                 CalcularTotal();
                 Exibir();
                 Limpar("VI");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("[SISTEMA] A quantidade digitada ultrapassa o estoque do produto!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return;
-                //}
             }
         }
 
         private void removerBtn_Click(object sender, EventArgs e)
         {
-            //int quantidade = int.Parse(quantidadeTxt.Text);
-
-            //int quantidadeEstoque = MySQL.ChecarEstoque(ProdutoId, quantidadeTxt.Text);
-
-            //int quantidadeAtualizada = quantidadeEstoque + quantidade;
-
-            //MySQL.conexao.Open();
-
-            //string consulta = "UPDATE Produto SET QuantidadeEstoque = @QuantidadeAtualizada WHERE Id = " + ProdutoId;
-
-            //using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
-            //{
-            //    comando.Parameters.AddWithValue("@QuantidadeAtualizada", quantidadeAtualizada);
-
-            //    comando.ExecuteNonQuery();
-            //}
-
-            //MySQL.conexao.Dispose();
-
             if (VendaId != 0 && VendaItemId != 0)
             {
                 MySQL.RemoverTabelaVendaItens(VendaItemId);

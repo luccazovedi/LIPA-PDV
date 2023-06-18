@@ -55,7 +55,7 @@
             this.QuantidadeEstoque,
             this.Condicao});
             this.produtoDataGrid.GridColor = System.Drawing.Color.SeaGreen;
-            this.produtoDataGrid.Location = new System.Drawing.Point(15, 98);
+            this.produtoDataGrid.Location = new System.Drawing.Point(15, 12);
             this.produtoDataGrid.Name = "produtoDataGrid";
             this.produtoDataGrid.ReadOnly = true;
             this.produtoDataGrid.RowHeadersWidth = 51;
@@ -125,9 +125,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(904, 561);
+            this.ClientSize = new System.Drawing.Size(904, 470);
             this.Controls.Add(this.produtoDataGrid);
             this.Name = "TelaProdutoConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Produto Consulta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaProdutoConsulta_FormClosing);
             this.Load += new System.EventHandler(this.TelaProdutoConsulta_Load);

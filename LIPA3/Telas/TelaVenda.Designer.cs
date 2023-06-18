@@ -68,6 +68,7 @@
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.vendaItensDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -431,6 +432,7 @@
             this.editarBtn.TabIndex = 104;
             this.editarBtn.Text = "EDITAR";
             this.editarBtn.UseVisualStyleBackColor = false;
+            this.editarBtn.Click += new System.EventHandler(this.editarBtn_Click);
             // 
             // excluirBtn
             // 
@@ -629,5 +631,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

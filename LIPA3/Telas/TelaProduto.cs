@@ -28,7 +28,6 @@ namespace LIPA3.Telas
         private void Limpar()
         {
             descricaoTxt.Text = "";
-            CodProdutoTxt.Text = "";
             codigoBarrasTxt.Text = "";
             marcaTxt.Text = "";
             pesoTxt.Text = "";
@@ -60,7 +59,6 @@ namespace LIPA3.Telas
                     int indiceLinha = produtoDataGrid.Rows.Add();
 
                     produtoDataGrid.Rows[indiceLinha].Cells["ID"].Value = leitor["Id"].ToString();
-                    //produtoDataGrid.Rows[indiceLinha].Cells["CODIGO"].Value = leitor["CodProduto"].ToString();
                     produtoDataGrid.Rows[indiceLinha].Cells["DESCRICAO"].Value = leitor["Descricao"].ToString();
                     produtoDataGrid.Rows[indiceLinha].Cells["MARCA"].Value = leitor["Marca"].ToString();
                     produtoDataGrid.Rows[indiceLinha].Cells["PRECOVENDA"].Value = leitor["PrecoVenda"].ToString();
@@ -94,7 +92,43 @@ namespace LIPA3.Telas
                 condicao = "USADO";
             }
 
-            MySQL.InserirTabelaProduto(descricaoTxt.Text,CodProdutoTxt.Text, codigoBarrasTxt.Text, marcaTxt.Text, double.Parse(pesoTxt.Text), 
+            if (descricaoTxt.Text == "")
+            {
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo DESCRIÇÃO!", "[LAMBDA] Produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                descricaoTxt.Focus();
+                return;
+            }
+            else if (precoVendaTxt.Text == "")
+            {
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo PREÇO VENDA!", "[LAMBDA] Produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                precoVendaTxt.Focus();
+                return;
+            }
+            else if (quantidadeEstoqueTxt.Text == "")
+            {
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo QUANTIDADE ESTOQUE!", "[LAMBDA] Produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                quantidadeEstoqueTxt.Focus();
+                return;
+            }
+
+            else if (pesoTxt.Text == "")
+            {
+                pesoTxt.Text = "0";
+            }
+            if (larguraTxt.Text == "")
+            {
+                larguraTxt.Text = "0";
+            }
+            if (alturaTxt.Text == "")
+            {
+                alturaTxt.Text = "0";
+            }
+            if (profundidadeTxt.Text == "")
+            {
+                profundidadeTxt.Text = "0";
+            }
+
+            MySQL.InserirTabelaProduto(descricaoTxt.Text, codigoBarrasTxt.Text, marcaTxt.Text, double.Parse(pesoTxt.Text), 
                 double.Parse(larguraTxt.Text), double.Parse(alturaTxt.Text), double.Parse(profundidadeTxt.Text), situacao, condicao, 
                 double.Parse(precoVendaTxt.Text), double.Parse(quantidadeEstoqueTxt.Text));
 
@@ -140,14 +174,13 @@ namespace LIPA3.Telas
                 condicao = "USADO";
             }
 
-            string consulta = "UPDATE Produto SET Descricao = @Descricao, CodProduto = @CodProduto, CodigoBarras = @CodigoBarras, Marca = @Marca, Peso = @Peso," +
+            string consulta = "UPDATE Produto SET Descricao = @Descricao, CodigoBarras = @CodigoBarras, Marca = @Marca, Peso = @Peso," +
                 "Largura = @Largura, Altura = @Altura, Profundidade = @Profundidade, Situacao = @Situacao, Condicao = @Condicao," +
                 "PrecoVenda = @PrecoVenda, QuantidadeEstoque = @QuantidadeEstoque WHERE Id = @Id";
 
             using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
             {
                 comando.Parameters.AddWithValue("@Descricao", descricaoTxt.Text);
-                comando.Parameters.AddWithValue("@CodProduto", CodProdutoTxt.Text);
                 comando.Parameters.AddWithValue("@CodigoBarras", codigoBarrasTxt.Text);
                 comando.Parameters.AddWithValue("@Marca", marcaTxt.Text);
                 comando.Parameters.AddWithValue("@Peso", double.Parse(pesoTxt.Text));
@@ -198,7 +231,6 @@ namespace LIPA3.Telas
                     int indiceLinha = produtoDataGrid.Rows.Add();
 
                     produtoDataGrid.Rows[indiceLinha].Cells["ID"].Value = leitor["Id"].ToString();
-                    produtoDataGrid.Rows[indiceLinha].Cells["CodProduto"].Value = leitor["CodProduto"].ToString();
                     produtoDataGrid.Rows[indiceLinha].Cells["DESCRICAO"].Value = leitor["Descricao"].ToString();
                     produtoDataGrid.Rows[indiceLinha].Cells["MARCA"].Value = leitor["Marca"].ToString();
                     produtoDataGrid.Rows[indiceLinha].Cells["PRECOVENDA"].Value = leitor["PrecoVenda"].ToString();
@@ -298,7 +330,6 @@ namespace LIPA3.Telas
                     {
                         if (leitor.Read())
                         {
-                            CodProdutoTxt.Text = leitor["CodProduto"].ToString();
                             codigoBarrasTxt.Text = leitor["CodigoBarras"].ToString();
                             pesoTxt.Text = leitor["Peso"].ToString();
                             larguraTxt.Text = leitor["Largura"].ToString();
