@@ -16,10 +16,14 @@ namespace LIPA3.Telas
     {
         public string ProdutoId { get; private set; }
         public string ProdutoDescricao { get; private set; }
+        public string ProdutoValor { get; private set; }
+        public bool Selecionou { get; private set; }
 
         public TelaProdutoConsulta()
         {
             InitializeComponent();
+
+            Selecionou = false;
         }
 
         private void Exibir()
@@ -64,6 +68,8 @@ namespace LIPA3.Telas
                 DataGridViewRow linhaSelecionada = produtoDataGrid.SelectedRows[0];
                 ProdutoId = linhaSelecionada.Cells["Id"].Value.ToString(); ;
                 ProdutoDescricao = linhaSelecionada.Cells["Descricao"].Value.ToString();
+                ProdutoValor = linhaSelecionada.Cells["PrecoVenda"].Value.ToString();
+                Selecionou = true;
             }
 
             Close();

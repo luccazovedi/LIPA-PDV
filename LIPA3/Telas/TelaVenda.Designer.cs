@@ -57,7 +57,6 @@
             this.valorTotalTxt = new System.Windows.Forms.TextBox();
             this.adicionarBtn = new System.Windows.Forms.Button();
             this.removerBtn = new System.Windows.Forms.Button();
-            this.exibirBtn = new System.Windows.Forms.Button();
             this.limparBtn = new System.Windows.Forms.Button();
             this.editarBtn = new System.Windows.Forms.Button();
             this.excluirBtn = new System.Windows.Forms.Button();
@@ -265,7 +264,7 @@
             this.subTotalProdutoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.subTotalProdutoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTotalProdutoTxt.ForeColor = System.Drawing.Color.White;
-            this.subTotalProdutoTxt.Location = new System.Drawing.Point(571, 190);
+            this.subTotalProdutoTxt.Location = new System.Drawing.Point(675, 192);
             this.subTotalProdutoTxt.Name = "subTotalProdutoTxt";
             this.subTotalProdutoTxt.Size = new System.Drawing.Size(188, 27);
             this.subTotalProdutoTxt.TabIndex = 89;
@@ -274,7 +273,7 @@
             // 
             this.subTotalProdutoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTotalProdutoLbl.ForeColor = System.Drawing.Color.White;
-            this.subTotalProdutoLbl.Location = new System.Drawing.Point(571, 169);
+            this.subTotalProdutoLbl.Location = new System.Drawing.Point(675, 171);
             this.subTotalProdutoLbl.Name = "subTotalProdutoLbl";
             this.subTotalProdutoLbl.Size = new System.Drawing.Size(188, 20);
             this.subTotalProdutoLbl.TabIndex = 90;
@@ -298,7 +297,7 @@
             // 
             this.subTotalLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTotalLbl.ForeColor = System.Drawing.Color.White;
-            this.subTotalLbl.Location = new System.Drawing.Point(132, 691);
+            this.subTotalLbl.Location = new System.Drawing.Point(231, 691);
             this.subTotalLbl.Name = "subTotalLbl";
             this.subTotalLbl.Size = new System.Drawing.Size(103, 20);
             this.subTotalLbl.TabIndex = 93;
@@ -310,9 +309,9 @@
             this.subTotalTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.subTotalTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTotalTxt.ForeColor = System.Drawing.Color.White;
-            this.subTotalTxt.Location = new System.Drawing.Point(135, 714);
+            this.subTotalTxt.Location = new System.Drawing.Point(234, 714);
             this.subTotalTxt.Name = "subTotalTxt";
-            this.subTotalTxt.Size = new System.Drawing.Size(109, 27);
+            this.subTotalTxt.Size = new System.Drawing.Size(195, 27);
             this.subTotalTxt.TabIndex = 92;
             // 
             // totalItensLbl
@@ -333,14 +332,14 @@
             this.totalItensTxt.ForeColor = System.Drawing.Color.White;
             this.totalItensTxt.Location = new System.Drawing.Point(12, 714);
             this.totalItensTxt.Name = "totalItensTxt";
-            this.totalItensTxt.Size = new System.Drawing.Size(117, 27);
+            this.totalItensTxt.Size = new System.Drawing.Size(195, 27);
             this.totalItensTxt.TabIndex = 94;
             // 
             // descontoLbl
             // 
             this.descontoLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descontoLbl.ForeColor = System.Drawing.Color.White;
-            this.descontoLbl.Location = new System.Drawing.Point(247, 691);
+            this.descontoLbl.Location = new System.Drawing.Point(464, 691);
             this.descontoLbl.Name = "descontoLbl";
             this.descontoLbl.Size = new System.Drawing.Size(105, 20);
             this.descontoLbl.TabIndex = 97;
@@ -352,16 +351,16 @@
             this.descontoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descontoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descontoTxt.ForeColor = System.Drawing.Color.White;
-            this.descontoTxt.Location = new System.Drawing.Point(250, 714);
+            this.descontoTxt.Location = new System.Drawing.Point(467, 714);
             this.descontoTxt.Name = "descontoTxt";
-            this.descontoTxt.Size = new System.Drawing.Size(111, 27);
+            this.descontoTxt.Size = new System.Drawing.Size(195, 27);
             this.descontoTxt.TabIndex = 96;
             // 
             // valorTotalLbl
             // 
             this.valorTotalLbl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valorTotalLbl.ForeColor = System.Drawing.Color.White;
-            this.valorTotalLbl.Location = new System.Drawing.Point(364, 691);
+            this.valorTotalLbl.Location = new System.Drawing.Point(710, 691);
             this.valorTotalLbl.Name = "valorTotalLbl";
             this.valorTotalLbl.Size = new System.Drawing.Size(126, 20);
             this.valorTotalLbl.TabIndex = 99;
@@ -373,9 +372,9 @@
             this.valorTotalTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.valorTotalTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valorTotalTxt.ForeColor = System.Drawing.Color.White;
-            this.valorTotalTxt.Location = new System.Drawing.Point(367, 714);
+            this.valorTotalTxt.Location = new System.Drawing.Point(694, 714);
             this.valorTotalTxt.Name = "valorTotalTxt";
-            this.valorTotalTxt.Size = new System.Drawing.Size(176, 27);
+            this.valorTotalTxt.Size = new System.Drawing.Size(195, 27);
             this.valorTotalTxt.TabIndex = 98;
             // 
             // adicionarBtn
@@ -384,12 +383,13 @@
             this.adicionarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adicionarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adicionarBtn.ForeColor = System.Drawing.Color.White;
-            this.adicionarBtn.Location = new System.Drawing.Point(765, 186);
+            this.adicionarBtn.Location = new System.Drawing.Point(675, 225);
             this.adicionarBtn.Name = "adicionarBtn";
             this.adicionarBtn.Size = new System.Drawing.Size(34, 35);
             this.adicionarBtn.TabIndex = 100;
             this.adicionarBtn.Text = "+";
             this.adicionarBtn.UseVisualStyleBackColor = false;
+            this.adicionarBtn.Click += new System.EventHandler(this.adicionarBtn_Click);
             // 
             // removerBtn
             // 
@@ -397,26 +397,13 @@
             this.removerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.removerBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removerBtn.ForeColor = System.Drawing.Color.White;
-            this.removerBtn.Location = new System.Drawing.Point(805, 186);
+            this.removerBtn.Location = new System.Drawing.Point(715, 225);
             this.removerBtn.Name = "removerBtn";
             this.removerBtn.Size = new System.Drawing.Size(34, 35);
             this.removerBtn.TabIndex = 101;
             this.removerBtn.Text = "-";
             this.removerBtn.UseVisualStyleBackColor = false;
-            // 
-            // exibirBtn
-            // 
-            this.exibirBtn.BackColor = System.Drawing.Color.CadetBlue;
-            this.exibirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exibirBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exibirBtn.ForeColor = System.Drawing.Color.White;
-            this.exibirBtn.Location = new System.Drawing.Point(86, 233);
-            this.exibirBtn.Name = "exibirBtn";
-            this.exibirBtn.Size = new System.Drawing.Size(135, 35);
-            this.exibirBtn.TabIndex = 105;
-            this.exibirBtn.Text = "EXIBIR";
-            this.exibirBtn.UseVisualStyleBackColor = false;
-            this.exibirBtn.Click += new System.EventHandler(this.exibirBtn_Click);
+            this.removerBtn.Click += new System.EventHandler(this.removerBtn_Click);
             // 
             // limparBtn
             // 
@@ -424,7 +411,7 @@
             this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.limparBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limparBtn.ForeColor = System.Drawing.Color.White;
-            this.limparBtn.Location = new System.Drawing.Point(227, 233);
+            this.limparBtn.Location = new System.Drawing.Point(431, 192);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(135, 35);
             this.limparBtn.TabIndex = 106;
@@ -479,7 +466,7 @@
             this.consultarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.consultarBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultarBtn.ForeColor = System.Drawing.Color.White;
-            this.consultarBtn.Location = new System.Drawing.Point(368, 233);
+            this.consultarBtn.Location = new System.Drawing.Point(12, 233);
             this.consultarBtn.Name = "consultarBtn";
             this.consultarBtn.Size = new System.Drawing.Size(135, 35);
             this.consultarBtn.TabIndex = 107;
@@ -508,6 +495,7 @@
             this.vendaItensDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vendaItensDataGrid.Size = new System.Drawing.Size(877, 400);
             this.vendaItensDataGrid.TabIndex = 108;
+            this.vendaItensDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendaItensDataGrid_CellDoubleClick);
             // 
             // ID
             // 
@@ -557,7 +545,6 @@
             this.ClientSize = new System.Drawing.Size(904, 762);
             this.Controls.Add(this.vendaItensDataGrid);
             this.Controls.Add(this.consultarBtn);
-            this.Controls.Add(this.exibirBtn);
             this.Controls.Add(this.limparBtn);
             this.Controls.Add(this.editarBtn);
             this.Controls.Add(this.excluirBtn);
@@ -631,7 +618,6 @@
         private System.Windows.Forms.TextBox valorTotalTxt;
         private System.Windows.Forms.Button adicionarBtn;
         private System.Windows.Forms.Button removerBtn;
-        private System.Windows.Forms.Button exibirBtn;
         private System.Windows.Forms.Button limparBtn;
         private System.Windows.Forms.Button editarBtn;
         private System.Windows.Forms.Button excluirBtn;

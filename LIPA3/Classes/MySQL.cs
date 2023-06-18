@@ -422,29 +422,6 @@ namespace LIPA3.Classes
             }
         }
 
-        public static string ConsultarTabelaVenda(string conteudoConsulta, string tipoConsulta)
-        {
-            string consulta = "SELECT Id, CodProduto, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Venda WHERE " + tipoConsulta + " LIKE '" + conteudoConsulta + "%'";
-
-            /*if (conteudoConsulta != "")
-            {
-                switch (tipoConsulta)
-                {
-                    case "DESCRICAO":
-                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE DESCRICAO LIKE '" + conteudoConsulta + "%'";
-                        break;
-                    case "MARCA":
-                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE MARCA LIKE '" + conteudoConsulta + "%'";
-                        break;
-                    case "CONDICAO":
-                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE CONDICAO LIKE '" + conteudoConsulta + "%'";
-                        break;
-                }
-            }*/
-
-            return consulta;
-        }
-
         public static string ExibirTabelaVenda()
         {
             return "SELECT Id, DataVenda, ClienteId, UsuarioId, ValorTotal FROM Venda";
@@ -526,29 +503,6 @@ namespace LIPA3.Classes
             }
         }
 
-        public static string ConsultarTabelaVendaItens(string conteudoConsulta, string tipoConsulta)
-        {
-            string consulta = "SELECT Id, CodProduto, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Venda WHERE " + tipoConsulta + " LIKE '" + conteudoConsulta + "%'";
-
-            /*if (conteudoConsulta != "")
-            {
-                switch (tipoConsulta)
-                {
-                    case "DESCRICAO":
-                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE DESCRICAO LIKE '" + conteudoConsulta + "%'";
-                        break;
-                    case "MARCA":
-                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE MARCA LIKE '" + conteudoConsulta + "%'";
-                        break;
-                    case "CONDICAO":
-                        consulta = "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto WHERE CONDICAO LIKE '" + conteudoConsulta + "%'";
-                        break;
-                }
-            }*/
-
-            return consulta;
-        }
-
         public static string ExibirTabelaVendaItens(int vendaId)
         {
             return "SELECT Id, Descricao, Quantidade, ValorUnitario, SubTotalProduto FROM VendaItens WHERE VendaId = " + vendaId;
@@ -563,6 +517,34 @@ namespace LIPA3.Classes
             MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao);
             object cpfCliente = comando.ExecuteScalar();
             return cpfCliente;
+        }
+
+        public static int ChecarEstoque(int id, string quantidade)
+        {
+            conexao.Open();
+
+            string quantidadeEstoque = "0";
+            string consulta = "SELECT QuantidadeEstoque FROM Produto WHERE Id = " + id;
+            MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao);
+
+            using (MySqlDataReader leitor = comando.ExecuteReader())
+            {
+                if (leitor.Read())
+                {
+                    quantidadeEstoque = leitor["QuantidadeEstoque"].ToString();
+                }
+
+                if (int.Parse(quantidadeEstoque) < int.Parse(quantidade))
+                {
+                    conexao.Close();
+                    return 0;
+                }
+                else
+                {
+                    conexao.Close();
+                    return int.Parse(quantidadeEstoque);
+                }
+            }
         }
         #endregion
     }

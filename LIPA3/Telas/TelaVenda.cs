@@ -19,66 +19,110 @@ namespace LIPA3.Telas
         private int ClienteId { get; set; }
         private int ProdutoId { get; set; }
         private int VendaId { get; set; }
+        private int VendaItemId { get; set; }
 
         public TelaVenda()
         {
             InitializeComponent();
+
+            Limpar("T");
         }
 
         #region Funções Principais Venda (CRUD)
-        private void Limpar()
+        private void Limpar(string tipo)
         {
-            clienteTxt.Text = "";
-            formaPagamentoCmb.SelectedIndex = -1;
-            situacaoCmb.SelectedIndex = -1;
-            observacoesTxt.Text = "";
-            produtoTxt.Text = "";
-            quantidadeTxt.Text = "";
-            valorUnitarioTxt.Text = "";
-            subTotalProdutoTxt.Text = "";
-            totalItensTxt.Text = "";
-            subTotalTxt.Text = "";
-            descontoTxt.Text = "";
-            valorTotalTxt.Text = "";
-            clienteTxt.Focus();
+            if (tipo == "T" || tipo == "V")
+            {
+                clienteTxt.Text = "";
+                formaPagamentoCmb.SelectedIndex = -1;
+                situacaoCmb.SelectedIndex = -1;
+                observacoesTxt.Text = "";
+                totalItensTxt.Text = "";
+                subTotalTxt.Text = "";
+                descontoTxt.Text = "";
+                valorTotalTxt.Text = "";
+                ClienteId = 0;
+                ProdutoId = 0;
+                VendaId = 0;
+
+                vendaItensDataGrid.DataSource = null;
+                vendaItensDataGrid.Rows.Clear();
+
+                clienteTxt.Focus();
+
+                totalItensTxt.Enabled = false;
+                subTotalTxt.Enabled = false;
+                descontoTxt.Enabled = false;
+                valorTotalTxt.Enabled = false;
+            }
+            
+            if (tipo == "T" || tipo == "VI")
+            {
+                produtoTxt.Text = "";
+                quantidadeTxt.Text = "";
+                valorUnitarioTxt.Text = "";
+                subTotalProdutoTxt.Text = "";
+                VendaItemId = 0;
+
+                produtoTxt.Focus();
+            }       
         }
 
-        //private void Exibir()
-        //{
-        //    vendaItensDataGrid.DataSource = null;
-        //    vendaItensDataGrid.Rows.Clear();
+        private void Exibir()
+        {
+            vendaItensDataGrid.DataSource = null;
+            vendaItensDataGrid.Rows.Clear();
 
-        //    MySQL.conexao.Open();
+            MySQL.conexao.Open();
 
-        //    string consulta = MySQL.ExibirTabelaVendaItens(VendaId);
+            string consulta = MySQL.ExibirTabelaVendaItens(VendaId);
 
-        //    using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
-        //    {
-        //        MySqlDataReader leitor = comando.ExecuteReader();
+            using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+            {
+                MySqlDataReader leitor = comando.ExecuteReader();
 
-        //        while (leitor.Read())
-        //        {
-        //            int indiceLinha = vendaItensDataGrid.Rows.Add();
+                while (leitor.Read())
+                {
+                    int indiceLinha = vendaItensDataGrid.Rows.Add();
 
-        //            vendaItensDataGrid.Rows[indiceLinha].Cells["ID"].Value = leitor["Id"].ToString();
-        //            vendaItensDataGrid.Rows[indiceLinha].Cells["DESCRICAO"].Value = leitor["Descricao"].ToString();
-        //            vendaItensDataGrid.Rows[indiceLinha].Cells["QUANTIDADE"].Value = leitor["Marca"].ToString();
-        //            vendaItensDataGrid.Rows[indiceLinha].Cells["VALORUNITARIO"].Value = leitor["PrecoVenda"].ToString();
-        //            vendaItensDataGrid.Rows[indiceLinha].Cells["SUBTOTAL"].Value = leitor["SubTotal"].ToString();
- 
-        //        }
-        //    }
+                    vendaItensDataGrid.Rows[indiceLinha].Cells["ID"].Value = leitor["Id"].ToString();
+                    vendaItensDataGrid.Rows[indiceLinha].Cells["DESCRICAO"].Value = leitor["Descricao"].ToString();
+                    vendaItensDataGrid.Rows[indiceLinha].Cells["QUANTIDADE"].Value = leitor["Quantidade"].ToString();
+                    vendaItensDataGrid.Rows[indiceLinha].Cells["VALORUNITARIO"].Value = leitor["ValorUnitario"].ToString();
+                    vendaItensDataGrid.Rows[indiceLinha].Cells["SUBTOTAL"].Value = leitor["SubTotalProduto"].ToString();
+                }
+            }
 
-        //    MySQL.conexao.Dispose();
-        //}
+            MySQL.conexao.Dispose();
+        }
 
         private void Salvar()
         {
-            MySQL.InserirTabelaVenda(ClienteId, 1, int.Parse(totalItensTxt.Text), double.Parse(subTotalTxt.Text), double.Parse(descontoTxt.Text),
-                double.Parse(valorTotalTxt.Text), formaPagamentoCmb.SelectedItem.ToString(), situacaoCmb.SelectedItem.ToString(), observacoesTxt.Text);
+            if (clienteTxt.Text == "")
+            {
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo CLIENTE!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clienteTxt.Focus();
+                return;
+            }
+            else if (formaPagamentoCmb.SelectedIndex < 0)
+            {
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo FORMA PAGAMENTO!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                formaPagamentoCmb.Focus();
+                return;
+            }
+            else if (situacaoCmb.SelectedIndex < 0)
+            {
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo SITUAÇÃO!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                situacaoCmb.Focus();
+                return;
+            }
+
+            //MySQL.InserirTabelaVenda(ClienteId, 1, int.Parse(totalItensTxt.Text), double.Parse(subTotalTxt.Text), double.Parse(descontoTxt.Text),
+            //    double.Parse(valorTotalTxt.Text), formaPagamentoCmb.SelectedItem.ToString(), situacaoCmb.SelectedItem.ToString(), observacoesTxt.Text);
+            MySQL.InserirTabelaVenda(ClienteId, 1, 0, 0, 0, 0, formaPagamentoCmb.SelectedItem.ToString(), situacaoCmb.SelectedItem.ToString(), observacoesTxt.Text);
 
             //Exibir();
-            Limpar();
+            Limpar("V");
         }
 
         private void Excluir()
@@ -87,10 +131,10 @@ namespace LIPA3.Telas
             {
                 if (MessageBox.Show("[SISTEMA] Você realmente deseja excluir essa venda?", "[LAMBDA] Excluir Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MySQL.RemoverTabelaProduto(VendaId);
+                    MySQL.RemoverTabelaVenda(VendaId);
 
                     //Exibir();
-                    Limpar();
+                    Limpar("T");
                 }
             }
             else
@@ -136,7 +180,80 @@ namespace LIPA3.Telas
             Exibir();
             Limpar();
         }*/
+
+        private void CalcularTotal()
+        {
+            MySQL.conexao.Open();
+
+            string consulta = "SELECT COUNT(Id) AS TotalItens, SUM(SubTotalProduto) AS SubTotal FROM VendaItens WHERE VendaId = " + VendaId;
+
+            using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+            {
+                MySqlDataReader leitor = comando.ExecuteReader();
+
+                while (leitor.Read())
+                {
+                    totalItensTxt.Text = leitor["TotalItens"].ToString();
+
+                    if (int.Parse(totalItensTxt.Text) > 0)
+                    {
+                        subTotalTxt.Text = leitor["SubTotal"].ToString();
+                    }
+                    else
+                    {
+                        subTotalTxt.Text = "0";
+                    }
+                }
+            }
+
+            MySQL.conexao.Dispose();
+
+            double subTotal = double.Parse(subTotalTxt.Text);
+            double desconto = double.Parse(descontoTxt.Text);
+            double valorTotal = subTotal - desconto;
+            valorTotalTxt.Text = valorTotal.ToString();
+
+            MySQL.conexao.Open();
+
+            consulta = "UPDATE Venda SET TotalItens = @TotalItens, SubTotal = @SubTotal, Desconto = @Desconto, " +
+                "ValorTotal = @ValorTotal WHERE Id = " + VendaId;
+
+            using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+            {
+                comando.Parameters.AddWithValue("@TotalItens", int.Parse(totalItensTxt.Text));
+                if (double.Parse(subTotalTxt.Text) <= 0)
+                {
+                    comando.Parameters.AddWithValue("@SubTotal", 0);
+                }
+                else
+                {
+                    comando.Parameters.AddWithValue("@SubTotal", double.Parse(subTotalTxt.Text));
+                }
+                comando.Parameters.AddWithValue("@Desconto", double.Parse(descontoTxt.Text));
+                comando.Parameters.AddWithValue("@ValorTotal", double.Parse(valorTotalTxt.Text));
+
+                comando.ExecuteNonQuery();
+            }
+
+            MySQL.conexao.Dispose();
+        }
         #endregion
+
+        #region Métodos Controles (WF)
+        private void limparBtn_Click(object sender, EventArgs e)
+        {
+            Limpar("T");
+        }
+
+        private void salvarBtn_Click(object sender, EventArgs e)
+        {
+            Salvar();
+        }
+
+        private void excluirBtn_Click(object sender, EventArgs e)
+        {
+            Excluir();
+        }
 
         private void sairBtn_Click(object sender, EventArgs e)
         {
@@ -150,8 +267,11 @@ namespace LIPA3.Telas
 
             if (resultado == DialogResult.OK)
             {
-                ClienteId = int.Parse(telaClienteConsulta.ClienteId);
-                clienteTxt.Text = telaClienteConsulta.ClienteNome;
+                if (telaClienteConsulta.Selecionou == true)
+                {
+                    ClienteId = int.Parse(telaClienteConsulta.ClienteId);
+                    clienteTxt.Text = telaClienteConsulta.ClienteNome;
+                }
             }
         }
 
@@ -162,8 +282,12 @@ namespace LIPA3.Telas
 
             if (resultado == DialogResult.OK)
             {
-                ProdutoId = int.Parse(telaProdutoConsulta.ProdutoId);
-                produtoTxt.Text = telaProdutoConsulta.ProdutoDescricao;
+                if (telaProdutoConsulta.Selecionou == true)
+                {
+                    ProdutoId = int.Parse(telaProdutoConsulta.ProdutoId);
+                    produtoTxt.Text = telaProdutoConsulta.ProdutoDescricao;
+                    valorUnitarioTxt.Text = telaProdutoConsulta.ProdutoValor;
+                }
             }
         }
 
@@ -172,73 +296,214 @@ namespace LIPA3.Telas
             TelaVendaConsulta telaVendaConsulta = new TelaVendaConsulta();
             DialogResult resultado = telaVendaConsulta.ShowDialog();
 
-            VendaId = int.Parse(telaVendaConsulta.VendaId);
-
-            if (resultado == DialogResult.OK && VendaId != 0)
+            if (resultado == DialogResult.OK)
             {
-
-                MySQL.conexao.Open();
-
-                string consulta = "SELECT * FROM Venda WHERE Id = @Id";
-
-                using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+                if (telaVendaConsulta.Selecionou == true)
                 {
-                    comando.Parameters.AddWithValue("@Id", VendaId);
-                    using (MySqlDataReader leitor = comando.ExecuteReader())
+                    VendaId = int.Parse(telaVendaConsulta.VendaId);
+
+                    if (VendaId != 0)
                     {
-                        if (leitor.Read())
+                        MySQL.conexao.Open();
+
+                        string consulta = "SELECT * FROM Venda WHERE Id = @Id";
+
+                        using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
                         {
-                            observacoesTxt.Text = leitor["Observacoes"].ToString();
-                            totalItensTxt.Text = leitor["TotalItens"].ToString();
-                            subTotalTxt.Text = leitor["SubTotal"].ToString();
-                            descontoTxt.Text = leitor["Desconto"].ToString();
-                            valorTotalTxt.Text = leitor["ValorTotal"].ToString();
-
-                            if (leitor["FormaPagamento"].ToString() == "CARTÃO CRÉDITO")
+                            comando.Parameters.AddWithValue("@Id", VendaId);
+                            using (MySqlDataReader leitor = comando.ExecuteReader())
                             {
-                                formaPagamentoCmb.SelectedIndex = 0;
-                            }
+                                if (leitor.Read())
+                                {
+                                    observacoesTxt.Text = leitor["Observacoes"].ToString();
+                                    totalItensTxt.Text = leitor["TotalItens"].ToString();
+                                    subTotalTxt.Text = leitor["SubTotal"].ToString();
+                                    descontoTxt.Text = leitor["Desconto"].ToString();
+                                    valorTotalTxt.Text = leitor["ValorTotal"].ToString();
 
-                            if (leitor["Situacao"].ToString() == "ABERTA")
+                                    if (leitor["FormaPagamento"].ToString() == "CARTÃO CRÉDITO")
+                                    {
+                                        formaPagamentoCmb.SelectedIndex = 0;
+                                    }
+                                    else if (leitor["FormaPagamento"].ToString() == "CARTÃO DÉBITO")
+                                    {
+                                        formaPagamentoCmb.SelectedIndex = 1;
+                                    }
+                                    else if (leitor["FormaPagamento"].ToString() == "DEPÓSITO")
+                                    {
+                                        formaPagamentoCmb.SelectedIndex = 2;
+                                    }
+                                    else if (leitor["FormaPagamento"].ToString() == "DINHEIRO")
+                                    {
+                                        formaPagamentoCmb.SelectedIndex = 3;
+                                    }
+                                    else if (leitor["FormaPagamento"].ToString() == "PIX")
+                                    {
+                                        formaPagamentoCmb.SelectedIndex = 4;
+                                    }
+
+                                    if (leitor["Situacao"].ToString() == "ABERTA")
+                                    {
+                                        situacaoCmb.SelectedIndex = 0;
+                                    }
+                                    else if (leitor["Situacao"].ToString() == "PAGA")
+                                    {
+                                        situacaoCmb.SelectedIndex = 1;
+                                    }
+                                    else if (leitor["Situacao"].ToString() == "FINALIZADA")
+                                    {
+                                        situacaoCmb.SelectedIndex = 2;
+                                    }
+
+                                    string clienteId = leitor["ClienteId"].ToString();
+                                    consulta = "SELECT Nome FROM Cliente WHERE Id = " + int.Parse(clienteId);
+                                }
+                            }
+                            MySqlCommand outroComando = new MySqlCommand(consulta, MySQL.conexao);
+                            MySqlDataReader outroLeitor = outroComando.ExecuteReader();
+
+                            if (outroLeitor.Read())
                             {
-                                situacaoCmb.SelectedIndex = 0;
+                                clienteTxt.Text = outroLeitor["Nome"].ToString();
                             }
-
-                            string clienteId = leitor["ClienteId"].ToString();
-                            consulta = "SELECT Nome FROM Cliente WHERE Id = " + int.Parse(clienteId);
                         }
-                    }
-                    MySqlCommand outroComando = new MySqlCommand(consulta, MySQL.conexao);
-                    MySqlDataReader outroLeitor = outroComando.ExecuteReader();
 
-                    if (outroLeitor.Read())
-                    {
-                        clienteTxt.Text = outroLeitor["Nome"].ToString();
+                        MySQL.conexao.Dispose();
+
+                        Exibir();
+
+                        totalItensTxt.Enabled = true;
+                        subTotalTxt.Enabled = true;
+                        descontoTxt.Enabled = true;
+                        valorTotalTxt.Enabled = true;
                     }
                 }
-
-                MySQL.conexao.Dispose();
             }
         }
 
-        private void salvarBtn_Click(object sender, EventArgs e)
+        private void adicionarBtn_Click(object sender, EventArgs e)
         {
-            Salvar();
+            if (produtoTxt.Text == "")
+            {
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo PRODUTO!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                produtoTxt.Focus();
+                return;
+            }
+            else if (quantidadeTxt.Text == "")
+            {
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo QUANTIDADE!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                quantidadeTxt.Focus();
+                return;
+            }
+            else if (valorUnitarioTxt.Text == "")
+            {
+                MessageBox.Show("[SISTEMA] É necessário preencher o campo VALOR UNITÁRIO!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                valorUnitarioTxt.Focus();
+                return;
+            }
+            else if (int.Parse(quantidadeTxt.Text) <= 0)
+            {
+                MessageBox.Show("[SISTEMA] A quantidade não pode ser NEGATIVA ou IGUAL A ZERO!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                quantidadeTxt.Focus();
+                return;
+
+            }
+            else if (double.Parse(valorUnitarioTxt.Text) <= 0)
+            {
+                MessageBox.Show("[SISTEMA] O valor unitário não pode ser NEGATIVO OU IGUAL A ZERO!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                valorUnitarioTxt.Focus();
+                return;
+            }
+
+            if (VendaId != 0 && ProdutoId != 0)
+            {
+                int quantidade = int.Parse(quantidadeTxt.Text);
+                double valorUnitario = double.Parse(valorUnitarioTxt.Text);
+                double subTotalProduto = quantidade * valorUnitario;
+
+                subTotalProdutoTxt.Text = subTotalProduto.ToString();
+
+                //int quantidadeEstoque = MySQL.ChecarEstoque(ProdutoId, quantidadeTxt.Text);
+
+                //if (quantidadeEstoque != 0)
+                //{
+                //    int quantidadeAtualizada = quantidadeEstoque - quantidade;
+
+                //    MySQL.conexao.Open();
+
+                //    string consulta = "UPDATE Produto SET QuantidadeEstoque = @QuantidadeAtualizada WHERE Id = " + ProdutoId;
+
+                //    using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+                //    {
+                //        comando.Parameters.AddWithValue("@QuantidadeAtualizada", quantidadeAtualizada);
+
+                //        comando.ExecuteNonQuery();
+                //    }
+
+                //    MySQL.conexao.Dispose();
+
+                MySQL.InserirTabelaVendaItens(VendaId, ProdutoId, quantidade, produtoTxt.Text, valorUnitario, subTotalProduto);
+
+                CalcularTotal();
+                Exibir();
+                Limpar("VI");
+                //}
+                //else
+                //{
+                //    MessageBox.Show("[SISTEMA] A quantidade digitada ultrapassa o estoque do produto!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    return;
+                //}
+            }
         }
 
-        private void excluirBtn_Click(object sender, EventArgs e)
+        private void removerBtn_Click(object sender, EventArgs e)
         {
-            Excluir();
+            //int quantidade = int.Parse(quantidadeTxt.Text);
+
+            //int quantidadeEstoque = MySQL.ChecarEstoque(ProdutoId, quantidadeTxt.Text);
+
+            //int quantidadeAtualizada = quantidadeEstoque + quantidade;
+
+            //MySQL.conexao.Open();
+
+            //string consulta = "UPDATE Produto SET QuantidadeEstoque = @QuantidadeAtualizada WHERE Id = " + ProdutoId;
+
+            //using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+            //{
+            //    comando.Parameters.AddWithValue("@QuantidadeAtualizada", quantidadeAtualizada);
+
+            //    comando.ExecuteNonQuery();
+            //}
+
+            //MySQL.conexao.Dispose();
+
+            if (VendaId != 0 && VendaItemId != 0)
+            {
+                MySQL.RemoverTabelaVendaItens(VendaItemId);
+
+                CalcularTotal();
+                Exibir();
+                Limpar("VI");
+            }
         }
 
-        private void exibirBtn_Click(object sender, EventArgs e)
+        private void vendaItensDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Exibir();
-        }
+            MySQL.conexao.Open();
 
-        private void limparBtn_Click(object sender, EventArgs e)
-        {
-            Limpar();
+            if (vendaItensDataGrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow linhaSelecionada = vendaItensDataGrid.SelectedRows[0];
+                string id = linhaSelecionada.Cells["Id"].Value.ToString();
+                VendaItemId = int.Parse(id);
+                produtoTxt.Text = linhaSelecionada.Cells["Descricao"].Value.ToString();
+                quantidadeTxt.Text = linhaSelecionada.Cells["Quantidade"].Value.ToString();
+                valorUnitarioTxt.Text = linhaSelecionada.Cells["ValorUnitario"].Value.ToString();
+                subTotalProdutoTxt.Text = linhaSelecionada.Cells["SubTotal"].Value.ToString();
+            }
+
+            MySQL.conexao.Dispose();
         }
+        #endregion
     }
 }

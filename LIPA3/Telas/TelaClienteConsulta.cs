@@ -16,10 +16,13 @@ namespace LIPA3.Telas
     {
         public string ClienteId { get; private set; }
         public string ClienteNome { get; private set; }
+        public bool Selecionou { get; private set; }
 
         public TelaClienteConsulta()
         {
             InitializeComponent();
+
+            Selecionou = false;
         }
 
         private void Exibir()
@@ -63,6 +66,7 @@ namespace LIPA3.Telas
                 DataGridViewRow linhaSelecionada = clienteDataGrid.SelectedRows[0];
                 ClienteId = linhaSelecionada.Cells["Id"].Value.ToString(); ;
                 ClienteNome = linhaSelecionada.Cells["Nome"].Value.ToString();
+                Selecionou = true;
             }
 
             Close();

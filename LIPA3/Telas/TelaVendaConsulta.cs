@@ -15,10 +15,13 @@ namespace LIPA3.Telas
     public partial class TelaVendaConsulta : Form
     {
         public string VendaId { get; private set; }
+        public bool Selecionou { get; private set; }
 
         public TelaVendaConsulta()
         {
             InitializeComponent();
+
+            Selecionou = false;
         }
 
         private void Exibir()
@@ -59,7 +62,8 @@ namespace LIPA3.Telas
             if (vendaDataGrid.SelectedRows.Count > 0)
             {
                 DataGridViewRow linhaSelecionada = vendaDataGrid.SelectedRows[0];
-                VendaId = linhaSelecionada.Cells["Id"].Value.ToString(); ;
+                VendaId = linhaSelecionada.Cells["Id"].Value.ToString();
+                Selecionou = true;
             }
 
             Close();
