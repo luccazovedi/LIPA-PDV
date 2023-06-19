@@ -200,6 +200,7 @@
     <Content Include="Imagens\ImagemCliente.png" />
     <Content Include="Imagens\ImagemProduto.png" />
     <Content Include="Imagens\ImagemVenda.png" />
+    <None Include="Imagens\user_channel_icon_250039.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

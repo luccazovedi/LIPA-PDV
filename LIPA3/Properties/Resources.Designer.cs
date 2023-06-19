@@ -59,5 +59,15 @@ namespace LIPA3.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_channel_icon_250039 {
+            get {
+                object obj = ResourceManager.GetObject("user_channel_icon_250039", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

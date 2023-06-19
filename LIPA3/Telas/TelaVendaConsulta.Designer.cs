@@ -28,92 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.vendaDataGrid = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.vendaDataGrid)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // vendaDataGrid
-            // 
-            this.vendaDataGrid.AllowUserToAddRows = false;
-            this.vendaDataGrid.AllowUserToDeleteRows = false;
-            this.vendaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.vendaDataGrid.BackgroundColor = System.Drawing.Color.CadetBlue;
-            this.vendaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vendaDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaVendaConsulta));
+			this.vendaDataGrid = new System.Windows.Forms.DataGridView();
+			this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.DataVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			((System.ComponentModel.ISupportInitialize)(this.vendaDataGrid)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// vendaDataGrid
+			// 
+			this.vendaDataGrid.AllowUserToAddRows = false;
+			this.vendaDataGrid.AllowUserToDeleteRows = false;
+			this.vendaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.vendaDataGrid.BackgroundColor = System.Drawing.Color.CadetBlue;
+			this.vendaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.vendaDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.DataVenda,
             this.Cliente,
             this.Usuario,
             this.ValorTotal});
-            this.vendaDataGrid.GridColor = System.Drawing.Color.SeaGreen;
-            this.vendaDataGrid.Location = new System.Drawing.Point(15, 12);
-            this.vendaDataGrid.Name = "vendaDataGrid";
-            this.vendaDataGrid.ReadOnly = true;
-            this.vendaDataGrid.RowHeadersWidth = 51;
-            this.vendaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.vendaDataGrid.Size = new System.Drawing.Size(877, 451);
-            this.vendaDataGrid.TabIndex = 90;
-            this.vendaDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendaDataGrid_CellDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.FillWeight = 45.68528F;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // DataVenda
-            // 
-            this.DataVenda.FillWeight = 110.8629F;
-            this.DataVenda.HeaderText = "DATA VENDA";
-            this.DataVenda.MinimumWidth = 6;
-            this.DataVenda.Name = "DataVenda";
-            this.DataVenda.ReadOnly = true;
-            // 
-            // Cliente
-            // 
-            this.Cliente.FillWeight = 110.8629F;
-            this.Cliente.HeaderText = "CLIENTE";
-            this.Cliente.MinimumWidth = 6;
-            this.Cliente.Name = "Cliente";
-            this.Cliente.ReadOnly = true;
-            // 
-            // Usuario
-            // 
-            this.Usuario.FillWeight = 110.8629F;
-            this.Usuario.HeaderText = "USUÁRIO";
-            this.Usuario.MinimumWidth = 6;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // ValorTotal
-            // 
-            this.ValorTotal.FillWeight = 110.8629F;
-            this.ValorTotal.HeaderText = "VALOR TOTAL";
-            this.ValorTotal.MinimumWidth = 6;
-            this.ValorTotal.Name = "ValorTotal";
-            this.ValorTotal.ReadOnly = true;
-            // 
-            // TelaVendaConsulta
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(904, 471);
-            this.Controls.Add(this.vendaDataGrid);
-            this.Name = "TelaVendaConsulta";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "[LAMBDA] Venda Consulta";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaVendaConsulta_FormClosing);
-            this.Load += new System.EventHandler(this.TelaVendaConsulta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vendaDataGrid)).EndInit();
-            this.ResumeLayout(false);
+			this.vendaDataGrid.GridColor = System.Drawing.Color.SeaGreen;
+			this.vendaDataGrid.Location = new System.Drawing.Point(15, 12);
+			this.vendaDataGrid.Name = "vendaDataGrid";
+			this.vendaDataGrid.ReadOnly = true;
+			this.vendaDataGrid.RowHeadersWidth = 51;
+			this.vendaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.vendaDataGrid.Size = new System.Drawing.Size(877, 451);
+			this.vendaDataGrid.TabIndex = 90;
+			this.vendaDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendaDataGrid_CellDoubleClick);
+			// 
+			// ID
+			// 
+			this.ID.FillWeight = 45.68528F;
+			this.ID.HeaderText = "ID";
+			this.ID.MinimumWidth = 6;
+			this.ID.Name = "ID";
+			this.ID.ReadOnly = true;
+			// 
+			// DataVenda
+			// 
+			this.DataVenda.FillWeight = 110.8629F;
+			this.DataVenda.HeaderText = "DATA VENDA";
+			this.DataVenda.MinimumWidth = 6;
+			this.DataVenda.Name = "DataVenda";
+			this.DataVenda.ReadOnly = true;
+			// 
+			// Cliente
+			// 
+			this.Cliente.FillWeight = 110.8629F;
+			this.Cliente.HeaderText = "CLIENTE";
+			this.Cliente.MinimumWidth = 6;
+			this.Cliente.Name = "Cliente";
+			this.Cliente.ReadOnly = true;
+			// 
+			// Usuario
+			// 
+			this.Usuario.FillWeight = 110.8629F;
+			this.Usuario.HeaderText = "USUÁRIO";
+			this.Usuario.MinimumWidth = 6;
+			this.Usuario.Name = "Usuario";
+			this.Usuario.ReadOnly = true;
+			// 
+			// ValorTotal
+			// 
+			this.ValorTotal.FillWeight = 110.8629F;
+			this.ValorTotal.HeaderText = "VALOR TOTAL";
+			this.ValorTotal.MinimumWidth = 6;
+			this.ValorTotal.Name = "ValorTotal";
+			this.ValorTotal.ReadOnly = true;
+			// 
+			// TelaVendaConsulta
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.DarkSlateGray;
+			this.ClientSize = new System.Drawing.Size(904, 471);
+			this.Controls.Add(this.vendaDataGrid);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Name = "TelaVendaConsulta";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "[LAMBDA] Venda Consulta";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaVendaConsulta_FormClosing);
+			this.Load += new System.EventHandler(this.TelaVendaConsulta_Load);
+			((System.ComponentModel.ISupportInitialize)(this.vendaDataGrid)).EndInit();
+			this.ResumeLayout(false);
 
         }
 
