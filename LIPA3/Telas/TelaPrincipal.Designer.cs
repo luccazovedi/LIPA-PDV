@@ -28,89 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
-			this.clienteLbl = new System.Windows.Forms.Label();
-			this.produtoLbl = new System.Windows.Forms.Label();
-			this.vendaLbl = new System.Windows.Forms.Label();
-			this.painelPnl = new System.Windows.Forms.Panel();
-			this.outroPainelPnl = new System.Windows.Forms.Panel();
-			this.SuspendLayout();
-			// 
-			// clienteLbl
-			// 
-			this.clienteLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.clienteLbl.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.clienteLbl.Image = ((System.Drawing.Image)(resources.GetObject("clienteLbl.Image")));
-			this.clienteLbl.Location = new System.Drawing.Point(192, 9);
-			this.clienteLbl.Name = "clienteLbl";
-			this.clienteLbl.Size = new System.Drawing.Size(96, 96);
-			this.clienteLbl.TabIndex = 0;
-			this.clienteLbl.Click += new System.EventHandler(this.clienteLbl_Click);
-			// 
-			// produtoLbl
-			// 
-			this.produtoLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.produtoLbl.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.produtoLbl.Image = ((System.Drawing.Image)(resources.GetObject("produtoLbl.Image")));
-			this.produtoLbl.Location = new System.Drawing.Point(405, 9);
-			this.produtoLbl.Name = "produtoLbl";
-			this.produtoLbl.Size = new System.Drawing.Size(96, 96);
-			this.produtoLbl.TabIndex = 1;
-			this.produtoLbl.Click += new System.EventHandler(this.produtoLbl_Click);
-			// 
-			// vendaLbl
-			// 
-			this.vendaLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.vendaLbl.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.vendaLbl.Image = ((System.Drawing.Image)(resources.GetObject("vendaLbl.Image")));
-			this.vendaLbl.Location = new System.Drawing.Point(622, 9);
-			this.vendaLbl.Name = "vendaLbl";
-			this.vendaLbl.Size = new System.Drawing.Size(96, 96);
-			this.vendaLbl.TabIndex = 3;
-			this.vendaLbl.Click += new System.EventHandler(this.vendaLbl_Click);
-			// 
-			// painelPnl
-			// 
-			this.painelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
+            this.clienteLbl = new System.Windows.Forms.Label();
+            this.produtoLbl = new System.Windows.Forms.Label();
+            this.vendaLbl = new System.Windows.Forms.Label();
+            this.painelPnl = new System.Windows.Forms.Panel();
+            this.outroPainelPnl = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // clienteLbl
+            // 
+            this.clienteLbl.BackColor = System.Drawing.Color.MintCream;
+            this.clienteLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clienteLbl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.clienteLbl.Image = ((System.Drawing.Image)(resources.GetObject("clienteLbl.Image")));
+            this.clienteLbl.Location = new System.Drawing.Point(12, 9);
+            this.clienteLbl.Name = "clienteLbl";
+            this.clienteLbl.Size = new System.Drawing.Size(96, 96);
+            this.clienteLbl.TabIndex = 0;
+            this.clienteLbl.Click += new System.EventHandler(this.clienteLbl_Click);
+            // 
+            // produtoLbl
+            // 
+            this.produtoLbl.BackColor = System.Drawing.Color.MintCream;
+            this.produtoLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.produtoLbl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.produtoLbl.Image = ((System.Drawing.Image)(resources.GetObject("produtoLbl.Image")));
+            this.produtoLbl.Location = new System.Drawing.Point(114, 9);
+            this.produtoLbl.Name = "produtoLbl";
+            this.produtoLbl.Size = new System.Drawing.Size(96, 96);
+            this.produtoLbl.TabIndex = 1;
+            this.produtoLbl.Click += new System.EventHandler(this.produtoLbl_Click);
+            // 
+            // vendaLbl
+            // 
+            this.vendaLbl.BackColor = System.Drawing.Color.MintCream;
+            this.vendaLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vendaLbl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.vendaLbl.Image = ((System.Drawing.Image)(resources.GetObject("vendaLbl.Image")));
+            this.vendaLbl.Location = new System.Drawing.Point(216, 9);
+            this.vendaLbl.Name = "vendaLbl";
+            this.vendaLbl.Size = new System.Drawing.Size(96, 96);
+            this.vendaLbl.TabIndex = 3;
+            this.vendaLbl.Click += new System.EventHandler(this.vendaLbl_Click);
+            // 
+            // painelPnl
+            // 
+            this.painelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.painelPnl.BackColor = System.Drawing.Color.Teal;
+            this.painelPnl.Location = new System.Drawing.Point(12, 121);
+            this.painelPnl.Name = "painelPnl";
+            this.painelPnl.Size = new System.Drawing.Size(920, 800);
+            this.painelPnl.TabIndex = 4;
+            this.painelPnl.Click += new System.EventHandler(this.painelPnl_Click);
+            // 
+            // outroPainelPnl
+            // 
+            this.outroPainelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.painelPnl.BackColor = System.Drawing.Color.CadetBlue;
-			this.painelPnl.Location = new System.Drawing.Point(12, 121);
-			this.painelPnl.Name = "painelPnl";
-			this.painelPnl.Size = new System.Drawing.Size(894, 601);
-			this.painelPnl.TabIndex = 4;
-			this.painelPnl.Click += new System.EventHandler(this.painelPnl_Click);
-			// 
-			// outroPainelPnl
-			// 
-			this.outroPainelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.outroPainelPnl.BackColor = System.Drawing.Color.DarkSlateGray;
-			this.outroPainelPnl.Location = new System.Drawing.Point(967, 109);
-			this.outroPainelPnl.Name = "outroPainelPnl";
-			this.outroPainelPnl.Size = new System.Drawing.Size(391, 627);
-			this.outroPainelPnl.TabIndex = 5;
-			this.outroPainelPnl.Click += new System.EventHandler(this.outroPainelPnl_Click);
-			// 
-			// TelaPrincipal
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.DarkSlateGray;
-			this.ClientSize = new System.Drawing.Size(1370, 749);
-			this.Controls.Add(this.outroPainelPnl);
-			this.Controls.Add(this.painelPnl);
-			this.Controls.Add(this.vendaLbl);
-			this.Controls.Add(this.produtoLbl);
-			this.Controls.Add(this.clienteLbl);
-			this.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "TelaPrincipal";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "[LAMBDA] Principal";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			this.ResumeLayout(false);
+            this.outroPainelPnl.BackColor = System.Drawing.Color.Teal;
+            this.outroPainelPnl.Location = new System.Drawing.Point(972, 121);
+            this.outroPainelPnl.Name = "outroPainelPnl";
+            this.outroPainelPnl.Size = new System.Drawing.Size(920, 800);
+            this.outroPainelPnl.TabIndex = 5;
+            this.outroPainelPnl.Click += new System.EventHandler(this.outroPainelPnl_Click);
+            // 
+            // TelaPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(1904, 1042);
+            this.Controls.Add(this.outroPainelPnl);
+            this.Controls.Add(this.painelPnl);
+            this.Controls.Add(this.vendaLbl);
+            this.Controls.Add(this.produtoLbl);
+            this.Controls.Add(this.clienteLbl);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "TelaPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "[LAMBDA] Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ResumeLayout(false);
 
         }
 

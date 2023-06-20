@@ -15,7 +15,7 @@ namespace LIPA3.Classes
     internal class MySQL
     {
         // Altere a variável "caminhoConexao" com as informações do seu banco de dados local.
-        public static string caminhoConexao = "server=localhost;User Id=root;database=LIPA3;password=root";
+        public static string caminhoConexao = "server=localhost;User Id=root;database=LIPA3;password=";
         public static MySqlConnection conexao = new MySqlConnection(caminhoConexao);
         public static DataContext acesso = new DataContext(MySQL.conexao);
 
