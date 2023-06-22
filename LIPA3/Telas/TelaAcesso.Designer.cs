@@ -41,7 +41,7 @@
             // 
             // entrarBtn
             // 
-            this.entrarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.entrarBtn.BackColor = System.Drawing.Color.DarkSlateGray;
             this.entrarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.entrarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entrarBtn.ForeColor = System.Drawing.Color.Transparent;
@@ -55,10 +55,10 @@
             // 
             // usuarioTxt
             // 
-            this.usuarioTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.usuarioTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.usuarioTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.usuarioTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioTxt.ForeColor = System.Drawing.Color.Black;
+            this.usuarioTxt.ForeColor = System.Drawing.Color.White;
             this.usuarioTxt.Location = new System.Drawing.Point(268, 194);
             this.usuarioTxt.Name = "usuarioTxt";
             this.usuarioTxt.Size = new System.Drawing.Size(275, 27);
@@ -78,7 +78,7 @@
             // 
             // sairBtn
             // 
-            this.sairBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.sairBtn.BackColor = System.Drawing.Color.Teal;
             this.sairBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sairBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sairBtn.ForeColor = System.Drawing.Color.Transparent;
@@ -92,10 +92,10 @@
             // 
             // senhaTxt
             // 
-            this.senhaTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.senhaTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.senhaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.senhaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senhaTxt.ForeColor = System.Drawing.Color.Black;
+            this.senhaTxt.ForeColor = System.Drawing.Color.White;
             this.senhaTxt.Location = new System.Drawing.Point(268, 247);
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.PasswordChar = '*';
@@ -127,7 +127,7 @@
             // 
             // registrarBtn
             // 
-            this.registrarBtn.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.registrarBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.registrarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.registrarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registrarBtn.ForeColor = System.Drawing.Color.White;
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.registrarBtn);
             this.Controls.Add(this.criarContaLbl);

@@ -59,6 +59,7 @@ namespace LIPA3.Telas
             
             if (tipo == "T" || tipo == "VI")
             {
+                codigoPTxt.Text = "";
                 produtoTxt.Text = "";
                 quantidadeTxt.Text = "";
                 valorUnitarioTxt.Text = "";
@@ -381,7 +382,6 @@ namespace LIPA3.Telas
 
         private void adicionarBtn_Click(object sender, EventArgs e)
         {
-            int produtoId = 0;
             if (produtoTxt.Text == "")
             {
                 MessageBox.Show("[SISTEMA] É necessário preencher o campo PRODUTO!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -419,9 +419,8 @@ namespace LIPA3.Telas
                 int quantidade = int.Parse(quantidadeTxt.Text);
                 double valorUnitario = double.Parse(valorUnitarioTxt.Text);
                 double subTotalProduto = quantidade * valorUnitario;
-                double quantidade1 = 0;
+                double quantidadeEstoque = 0;
                 
-
                 subTotalProdutoTxt.Text = subTotalProduto.ToString();
 
                 MySQL.InserirTabelaVendaItens(VendaId, ProdutoId, quantidade, produtoTxt.Text, valorUnitario, subTotalProduto);
@@ -432,22 +431,21 @@ namespace LIPA3.Telas
                 {
                     MySqlDataReader leitor = comando.ExecuteReader();
                     leitor.Read();
-                    quantidade1 = double.Parse(leitor["QuantidadeEstoque"].ToString());
-                   
+                    quantidadeEstoque = double.Parse(leitor["QuantidadeEstoque"].ToString());
                 }
 
-                    consulta = "UPDATE Produto SET QuantidadeEstoque = @QuantidadeEstoque WHERE Id = " + ProdutoId;
+                consulta = "UPDATE Produto SET QuantidadeEstoque = @QuantidadeEstoque WHERE Id = " + ProdutoId;
                 MySQL.conexao.Close();
                 using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
                 {
 
                     MySQL.conexao.Open();
-                    comando.Parameters.AddWithValue("@QuantidadeEstoque", quantidade1 - quantidade);
+                    comando.Parameters.AddWithValue("@QuantidadeEstoque", quantidadeEstoque - quantidade);
                     comando.ExecuteNonQuery();
                     MySQL.conexao.Close();
                 }
 
-                    CalcularTotal();
+                CalcularTotal();
                 Exibir();
                 Limpar("VI");
             }
@@ -458,8 +456,8 @@ namespace LIPA3.Telas
             if (VendaId != 0 && VendaItemId != 0)
             {
                 ProdutoId = int.Parse(codigoPTxt.Text);
-                double quantidade1 = 0;
-                int quantidade = int.Parse(quantidadeTxt.Text);
+                double quantidadeEstoque = 0;
+                double quantidade = double.Parse(quantidadeTxt.Text);
 
                 MySQL.RemoverTabelaVendaItens(VendaItemId);
 
@@ -469,7 +467,7 @@ namespace LIPA3.Telas
                 {
                     MySqlDataReader leitor = comando.ExecuteReader();
                     leitor.Read();
-                    quantidade1 = double.Parse(leitor["QuantidadeEstoque"].ToString());
+                    quantidadeEstoque = double.Parse(leitor["QuantidadeEstoque"].ToString());
 
                 }
 
@@ -479,7 +477,7 @@ namespace LIPA3.Telas
                 {
 
                     MySQL.conexao.Open();
-                    comando.Parameters.AddWithValue("@QuantidadeEstoque", quantidade1 + quantidade);
+                    comando.Parameters.AddWithValue("@QuantidadeEstoque", quantidadeEstoque + quantidade);
                     comando.ExecuteNonQuery();
                     MySQL.conexao.Close();
                 }
@@ -510,7 +508,6 @@ namespace LIPA3.Telas
 
             MySQL.conexao.Dispose();
         }
-#endregion
 
         private void quantidadeTxt_TextChanged(object sender, EventArgs e)
         {
@@ -530,15 +527,11 @@ namespace LIPA3.Telas
 
         private void relatorioBtn_Click(object sender, EventArgs e)
         {
-            using(var frm = new RelatorioVenda())
+            using (var frm = new RelatorioVenda())
             {
                 frm.ShowDialog();
             }
         }
-
-        private void printDocument2_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

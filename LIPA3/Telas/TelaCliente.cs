@@ -526,18 +526,6 @@ namespace LIPA3.Telas
                 e.Handled = true;
             }
         }
-        //private void Form_Resize(object sender, EventArgs e)
-        //{
-        //    generoCmb.Size = new Size(this.ClientSize.Width - 20, (this.ClientSize.Height - 40) / 2);
-        //    dataNascimentoTxt.Size = new Size(this.ClientSize.Width - 20, (this.ClientSize.Height - 40) / 2);
-
-        //    //textBox2.Location = new Point(10, textBox1.Bottom + 10);
-        //}
         #endregion
-
-        private void TelaCliente_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -63,17 +63,15 @@
             this.salvarBtn = new System.Windows.Forms.Button();
             this.consultarBtn = new System.Windows.Forms.Button();
             this.vendaItensDataGrid = new System.Windows.Forms.DataGridView();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.codigoPTxt = new System.Windows.Forms.TextBox();
-            this.codigoP = new System.Windows.Forms.Label();
-            this.relatorioBtn = new System.Windows.Forms.Button();
-            this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoPTxt = new System.Windows.Forms.TextBox();
+            this.codigoP = new System.Windows.Forms.Label();
+            this.relatorioBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vendaItensDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,10 +91,10 @@
             // 
             // valorUnitarioTxt
             // 
-            this.valorUnitarioTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.valorUnitarioTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.valorUnitarioTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.valorUnitarioTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorUnitarioTxt.ForeColor = System.Drawing.Color.Black;
+            this.valorUnitarioTxt.ForeColor = System.Drawing.Color.White;
             this.valorUnitarioTxt.Location = new System.Drawing.Point(248, 179);
             this.valorUnitarioTxt.Name = "valorUnitarioTxt";
             this.valorUnitarioTxt.Size = new System.Drawing.Size(189, 27);
@@ -124,9 +122,9 @@
             // 
             // formaPagamentoCmb
             // 
-            this.formaPagamentoCmb.BackColor = System.Drawing.Color.Honeydew;
+            this.formaPagamentoCmb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.formaPagamentoCmb.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.formaPagamentoCmb.ForeColor = System.Drawing.Color.Black;
+            this.formaPagamentoCmb.ForeColor = System.Drawing.Color.White;
             this.formaPagamentoCmb.FormattingEnabled = true;
             this.formaPagamentoCmb.Items.AddRange(new object[] {
             "CARTÃO CRÉDITO",
@@ -141,10 +139,11 @@
             // 
             // produtoTxt
             // 
-            this.produtoTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.produtoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.produtoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.produtoTxt.Enabled = false;
             this.produtoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.produtoTxt.ForeColor = System.Drawing.Color.Black;
+            this.produtoTxt.ForeColor = System.Drawing.Color.White;
             this.produtoTxt.Location = new System.Drawing.Point(143, 114);
             this.produtoTxt.Name = "produtoTxt";
             this.produtoTxt.Size = new System.Drawing.Size(295, 27);
@@ -152,10 +151,10 @@
             // 
             // observacoesTxt
             // 
-            this.observacoesTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.observacoesTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.observacoesTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.observacoesTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.observacoesTxt.ForeColor = System.Drawing.Color.Black;
+            this.observacoesTxt.ForeColor = System.Drawing.Color.White;
             this.observacoesTxt.Location = new System.Drawing.Point(489, 182);
             this.observacoesTxt.Multiline = true;
             this.observacoesTxt.Name = "observacoesTxt";
@@ -194,11 +193,11 @@
             // 
             // clienteTxt
             // 
-            this.clienteTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.clienteTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.clienteTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.clienteTxt.Enabled = false;
             this.clienteTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clienteTxt.ForeColor = System.Drawing.Color.Black;
+            this.clienteTxt.ForeColor = System.Drawing.Color.White;
             this.clienteTxt.Location = new System.Drawing.Point(54, 42);
             this.clienteTxt.Name = "clienteTxt";
             this.clienteTxt.Size = new System.Drawing.Size(384, 27);
@@ -206,7 +205,7 @@
             // 
             // clienteBtn
             // 
-            this.clienteBtn.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.clienteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.clienteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clienteBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clienteBtn.ForeColor = System.Drawing.Color.White;
@@ -230,9 +229,9 @@
             // 
             // situacaoCmb
             // 
-            this.situacaoCmb.BackColor = System.Drawing.Color.Honeydew;
+            this.situacaoCmb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.situacaoCmb.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.situacaoCmb.ForeColor = System.Drawing.Color.Black;
+            this.situacaoCmb.ForeColor = System.Drawing.Color.White;
             this.situacaoCmb.FormattingEnabled = true;
             this.situacaoCmb.Items.AddRange(new object[] {
             "ABERTA",
@@ -245,10 +244,10 @@
             // 
             // quantidadeTxt
             // 
-            this.quantidadeTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.quantidadeTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.quantidadeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.quantidadeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantidadeTxt.ForeColor = System.Drawing.Color.Black;
+            this.quantidadeTxt.ForeColor = System.Drawing.Color.White;
             this.quantidadeTxt.Location = new System.Drawing.Point(54, 179);
             this.quantidadeTxt.Name = "quantidadeTxt";
             this.quantidadeTxt.Size = new System.Drawing.Size(189, 27);
@@ -267,10 +266,10 @@
             // 
             // subTotalProdutoTxt
             // 
-            this.subTotalProdutoTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.subTotalProdutoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.subTotalProdutoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.subTotalProdutoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTotalProdutoTxt.ForeColor = System.Drawing.Color.Black;
+            this.subTotalProdutoTxt.ForeColor = System.Drawing.Color.White;
             this.subTotalProdutoTxt.Location = new System.Drawing.Point(54, 237);
             this.subTotalProdutoTxt.Name = "subTotalProdutoTxt";
             this.subTotalProdutoTxt.Size = new System.Drawing.Size(188, 27);
@@ -288,7 +287,7 @@
             // 
             // produtoBtn
             // 
-            this.produtoBtn.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.produtoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.produtoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produtoBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.produtoBtn.ForeColor = System.Drawing.Color.White;
@@ -312,10 +311,10 @@
             // 
             // subTotalTxt
             // 
-            this.subTotalTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.subTotalTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.subTotalTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.subTotalTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTotalTxt.ForeColor = System.Drawing.Color.Black;
+            this.subTotalTxt.ForeColor = System.Drawing.Color.White;
             this.subTotalTxt.Location = new System.Drawing.Point(234, 714);
             this.subTotalTxt.Name = "subTotalTxt";
             this.subTotalTxt.Size = new System.Drawing.Size(195, 27);
@@ -333,10 +332,10 @@
             // 
             // totalItensTxt
             // 
-            this.totalItensTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.totalItensTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.totalItensTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.totalItensTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalItensTxt.ForeColor = System.Drawing.Color.Black;
+            this.totalItensTxt.ForeColor = System.Drawing.Color.White;
             this.totalItensTxt.Location = new System.Drawing.Point(12, 714);
             this.totalItensTxt.Name = "totalItensTxt";
             this.totalItensTxt.Size = new System.Drawing.Size(195, 27);
@@ -354,10 +353,10 @@
             // 
             // descontoTxt
             // 
-            this.descontoTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.descontoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.descontoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descontoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descontoTxt.ForeColor = System.Drawing.Color.Black;
+            this.descontoTxt.ForeColor = System.Drawing.Color.White;
             this.descontoTxt.Location = new System.Drawing.Point(467, 714);
             this.descontoTxt.Name = "descontoTxt";
             this.descontoTxt.Size = new System.Drawing.Size(195, 27);
@@ -368,7 +367,7 @@
             // 
             this.valorTotalLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valorTotalLbl.ForeColor = System.Drawing.Color.White;
-            this.valorTotalLbl.Location = new System.Drawing.Point(710, 691);
+            this.valorTotalLbl.Location = new System.Drawing.Point(691, 691);
             this.valorTotalLbl.Name = "valorTotalLbl";
             this.valorTotalLbl.Size = new System.Drawing.Size(126, 20);
             this.valorTotalLbl.TabIndex = 99;
@@ -376,10 +375,10 @@
             // 
             // valorTotalTxt
             // 
-            this.valorTotalTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.valorTotalTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.valorTotalTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.valorTotalTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorTotalTxt.ForeColor = System.Drawing.Color.Black;
+            this.valorTotalTxt.ForeColor = System.Drawing.Color.White;
             this.valorTotalTxt.Location = new System.Drawing.Point(694, 714);
             this.valorTotalTxt.Name = "valorTotalTxt";
             this.valorTotalTxt.Size = new System.Drawing.Size(195, 27);
@@ -401,7 +400,7 @@
             // 
             // removerBtn
             // 
-            this.removerBtn.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.removerBtn.BackColor = System.Drawing.Color.Teal;
             this.removerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.removerBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removerBtn.ForeColor = System.Drawing.Color.White;
@@ -415,11 +414,11 @@
             // 
             // limparBtn
             // 
-            this.limparBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.limparBtn.BackColor = System.Drawing.Color.DimGray;
             this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.limparBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limparBtn.ForeColor = System.Drawing.Color.White;
-            this.limparBtn.Location = new System.Drawing.Point(754, 196);
+            this.limparBtn.Location = new System.Drawing.Point(754, 237);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(135, 35);
             this.limparBtn.TabIndex = 106;
@@ -429,11 +428,11 @@
             // 
             // editarBtn
             // 
-            this.editarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.editarBtn.BackColor = System.Drawing.Color.DimGray;
             this.editarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarBtn.ForeColor = System.Drawing.Color.White;
-            this.editarBtn.Location = new System.Drawing.Point(754, 155);
+            this.editarBtn.Location = new System.Drawing.Point(754, 196);
             this.editarBtn.Name = "editarBtn";
             this.editarBtn.Size = new System.Drawing.Size(135, 35);
             this.editarBtn.TabIndex = 104;
@@ -443,11 +442,11 @@
             // 
             // excluirBtn
             // 
-            this.excluirBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.excluirBtn.BackColor = System.Drawing.Color.DimGray;
             this.excluirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.excluirBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excluirBtn.ForeColor = System.Drawing.Color.White;
-            this.excluirBtn.Location = new System.Drawing.Point(754, 237);
+            this.excluirBtn.Location = new System.Drawing.Point(754, 155);
             this.excluirBtn.Name = "excluirBtn";
             this.excluirBtn.Size = new System.Drawing.Size(135, 35);
             this.excluirBtn.TabIndex = 103;
@@ -457,7 +456,7 @@
             // 
             // salvarBtn
             // 
-            this.salvarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.salvarBtn.BackColor = System.Drawing.Color.DimGray;
             this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarBtn.ForeColor = System.Drawing.Color.White;
@@ -471,7 +470,7 @@
             // 
             // consultarBtn
             // 
-            this.consultarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.consultarBtn.BackColor = System.Drawing.Color.DimGray;
             this.consultarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.consultarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultarBtn.ForeColor = System.Drawing.Color.White;
@@ -479,7 +478,7 @@
             this.consultarBtn.Name = "consultarBtn";
             this.consultarBtn.Size = new System.Drawing.Size(135, 35);
             this.consultarBtn.TabIndex = 107;
-            this.consultarBtn.Text = "CONSULTAR";
+            this.consultarBtn.Text = "VENDA";
             this.consultarBtn.UseVisualStyleBackColor = false;
             this.consultarBtn.Click += new System.EventHandler(this.consultarBtn_Click);
             // 
@@ -488,7 +487,7 @@
             this.vendaItensDataGrid.AllowUserToAddRows = false;
             this.vendaItensDataGrid.AllowUserToDeleteRows = false;
             this.vendaItensDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.vendaItensDataGrid.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.vendaItensDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.vendaItensDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vendaItensDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -506,45 +505,6 @@
             this.vendaItensDataGrid.Size = new System.Drawing.Size(877, 366);
             this.vendaItensDataGrid.TabIndex = 108;
             this.vendaItensDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendaItensDataGrid_CellDoubleClick);
-            // 
-            // codigoPTxt
-            // 
-            this.codigoPTxt.BackColor = System.Drawing.Color.Honeydew;
-            this.codigoPTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.codigoPTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoPTxt.ForeColor = System.Drawing.Color.Black;
-            this.codigoPTxt.Location = new System.Drawing.Point(54, 114);
-            this.codigoPTxt.Name = "codigoPTxt";
-            this.codigoPTxt.Size = new System.Drawing.Size(83, 27);
-            this.codigoPTxt.TabIndex = 109;
-            // 
-            // codigoP
-            // 
-            this.codigoP.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoP.ForeColor = System.Drawing.Color.White;
-            this.codigoP.Location = new System.Drawing.Point(54, 91);
-            this.codigoP.Name = "codigoP";
-            this.codigoP.Size = new System.Drawing.Size(91, 20);
-            this.codigoP.TabIndex = 110;
-            this.codigoP.Text = "CODIGO";
-            // 
-            // relatorioBtn
-            // 
-            this.relatorioBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.relatorioBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.relatorioBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.relatorioBtn.ForeColor = System.Drawing.Color.White;
-            this.relatorioBtn.Location = new System.Drawing.Point(294, 254);
-            this.relatorioBtn.Name = "relatorioBtn";
-            this.relatorioBtn.Size = new System.Drawing.Size(135, 35);
-            this.relatorioBtn.TabIndex = 111;
-            this.relatorioBtn.Text = "RELATORIO";
-            this.relatorioBtn.UseVisualStyleBackColor = false;
-            this.relatorioBtn.Click += new System.EventHandler(this.relatorioBtn_Click);
-            // 
-            // printDocument2
-            // 
-            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
             // 
             // ID
             // 
@@ -593,11 +553,46 @@
             this.produtoId.ReadOnly = true;
             this.produtoId.Visible = false;
             // 
+            // codigoPTxt
+            // 
+            this.codigoPTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.codigoPTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.codigoPTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoPTxt.ForeColor = System.Drawing.Color.White;
+            this.codigoPTxt.Location = new System.Drawing.Point(54, 114);
+            this.codigoPTxt.Name = "codigoPTxt";
+            this.codigoPTxt.Size = new System.Drawing.Size(83, 27);
+            this.codigoPTxt.TabIndex = 109;
+            // 
+            // codigoP
+            // 
+            this.codigoP.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoP.ForeColor = System.Drawing.Color.White;
+            this.codigoP.Location = new System.Drawing.Point(54, 91);
+            this.codigoP.Name = "codigoP";
+            this.codigoP.Size = new System.Drawing.Size(91, 20);
+            this.codigoP.TabIndex = 110;
+            this.codigoP.Text = "CÓDIGO";
+            // 
+            // relatorioBtn
+            // 
+            this.relatorioBtn.BackColor = System.Drawing.Color.DimGray;
+            this.relatorioBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.relatorioBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.relatorioBtn.ForeColor = System.Drawing.Color.White;
+            this.relatorioBtn.Location = new System.Drawing.Point(248, 229);
+            this.relatorioBtn.Name = "relatorioBtn";
+            this.relatorioBtn.Size = new System.Drawing.Size(135, 35);
+            this.relatorioBtn.TabIndex = 111;
+            this.relatorioBtn.Text = "RELATÓRIO";
+            this.relatorioBtn.UseVisualStyleBackColor = false;
+            this.relatorioBtn.Click += new System.EventHandler(this.relatorioBtn_Click);
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(904, 762);
             this.Controls.Add(this.relatorioBtn);
             this.Controls.Add(this.codigoP);
@@ -683,11 +678,9 @@
         private System.Windows.Forms.Button salvarBtn;
         private System.Windows.Forms.Button consultarBtn;
         private System.Windows.Forms.DataGridView vendaItensDataGrid;
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.TextBox codigoPTxt;
         private System.Windows.Forms.Label codigoP;
         private System.Windows.Forms.Button relatorioBtn;
-        private System.Drawing.Printing.PrintDocument printDocument2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;

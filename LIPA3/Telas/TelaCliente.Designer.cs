@@ -103,11 +103,11 @@
             // excluirBtn
             // 
             this.excluirBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.excluirBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.excluirBtn.BackColor = System.Drawing.Color.DimGray;
             this.excluirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.excluirBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excluirBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.excluirBtn.Location = new System.Drawing.Point(764, 248);
+            this.excluirBtn.Location = new System.Drawing.Point(764, 113);
             this.excluirBtn.Name = "excluirBtn";
             this.excluirBtn.Size = new System.Drawing.Size(135, 38);
             this.excluirBtn.TabIndex = 23;
@@ -131,10 +131,10 @@
             this.nomeTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nomeTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.nomeTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nomeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nomeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeTxt.ForeColor = System.Drawing.Color.Black;
+            this.nomeTxt.ForeColor = System.Drawing.Color.White;
             this.nomeTxt.Location = new System.Drawing.Point(3, 32);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(237, 27);
@@ -143,13 +143,13 @@
             // salvarBtn
             // 
             this.salvarBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.salvarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.salvarBtn.BackColor = System.Drawing.Color.DimGray;
             this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarBtn.ForeColor = System.Drawing.Color.Transparent;
             this.salvarBtn.Location = new System.Drawing.Point(764, 68);
             this.salvarBtn.Name = "salvarBtn";
-            this.salvarBtn.Size = new System.Drawing.Size(132, 39);
+            this.salvarBtn.Size = new System.Drawing.Size(135, 39);
             this.salvarBtn.TabIndex = 22;
             this.salvarBtn.Text = "SALVAR";
             this.salvarBtn.UseVisualStyleBackColor = false;
@@ -182,10 +182,10 @@
             this.cpfTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cpfTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.cpfTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cpfTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cpfTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cpfTxt.ForeColor = System.Drawing.Color.Black;
+            this.cpfTxt.ForeColor = System.Drawing.Color.White;
             this.cpfTxt.Location = new System.Drawing.Point(246, 32);
             this.cpfTxt.Name = "cpfTxt";
             this.cpfTxt.Size = new System.Drawing.Size(238, 27);
@@ -197,10 +197,10 @@
             this.rgTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rgTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.rgTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rgTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.rgTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rgTxt.ForeColor = System.Drawing.Color.Black;
+            this.rgTxt.ForeColor = System.Drawing.Color.White;
             this.rgTxt.Location = new System.Drawing.Point(490, 32);
             this.rgTxt.Name = "rgTxt";
             this.rgTxt.Size = new System.Drawing.Size(239, 27);
@@ -225,9 +225,9 @@
             this.generoCmb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.generoCmb.BackColor = System.Drawing.Color.Honeydew;
+            this.generoCmb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.generoCmb.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generoCmb.ForeColor = System.Drawing.Color.Black;
+            this.generoCmb.ForeColor = System.Drawing.Color.White;
             this.generoCmb.FormattingEnabled = true;
             this.generoCmb.Items.AddRange(new object[] {
             "MASCULINO",
@@ -294,9 +294,9 @@
             this.estadoCivilCmb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.estadoCivilCmb.BackColor = System.Drawing.Color.Honeydew;
+            this.estadoCivilCmb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.estadoCivilCmb.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estadoCivilCmb.ForeColor = System.Drawing.Color.Black;
+            this.estadoCivilCmb.ForeColor = System.Drawing.Color.White;
             this.estadoCivilCmb.FormattingEnabled = true;
             this.estadoCivilCmb.Items.AddRange(new object[] {
             "SOLTEIRO",
@@ -312,10 +312,10 @@
             this.profissaoTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.profissaoTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.profissaoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.profissaoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.profissaoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profissaoTxt.ForeColor = System.Drawing.Color.Black;
+            this.profissaoTxt.ForeColor = System.Drawing.Color.White;
             this.profissaoTxt.Location = new System.Drawing.Point(369, 29);
             this.profissaoTxt.Name = "profissaoTxt";
             this.profissaoTxt.Size = new System.Drawing.Size(177, 27);
@@ -337,10 +337,10 @@
             this.nacionalidadeTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nacionalidadeTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.nacionalidadeTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nacionalidadeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nacionalidadeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nacionalidadeTxt.ForeColor = System.Drawing.Color.Black;
+            this.nacionalidadeTxt.ForeColor = System.Drawing.Color.White;
             this.nacionalidadeTxt.Location = new System.Drawing.Point(3, 29);
             this.nacionalidadeTxt.Name = "nacionalidadeTxt";
             this.nacionalidadeTxt.Size = new System.Drawing.Size(177, 27);
@@ -362,10 +362,10 @@
             this.telefoneTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.telefoneTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.telefoneTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.telefoneTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.telefoneTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telefoneTxt.ForeColor = System.Drawing.Color.Black;
+            this.telefoneTxt.ForeColor = System.Drawing.Color.White;
             this.telefoneTxt.Location = new System.Drawing.Point(3, 28);
             this.telefoneTxt.Name = "telefoneTxt";
             this.telefoneTxt.Size = new System.Drawing.Size(174, 27);
@@ -388,10 +388,10 @@
             this.celularTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.celularTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.celularTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.celularTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.celularTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.celularTxt.ForeColor = System.Drawing.Color.Black;
+            this.celularTxt.ForeColor = System.Drawing.Color.White;
             this.celularTxt.Location = new System.Drawing.Point(552, 29);
             this.celularTxt.Name = "celularTxt";
             this.celularTxt.Size = new System.Drawing.Size(180, 27);
@@ -426,10 +426,10 @@
             this.emailTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.emailTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.emailTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.emailTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.emailTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTxt.ForeColor = System.Drawing.Color.Black;
+            this.emailTxt.ForeColor = System.Drawing.Color.White;
             this.emailTxt.Location = new System.Drawing.Point(3, 28);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(274, 27);
@@ -451,10 +451,10 @@
             this.enderecoTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.enderecoTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.enderecoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.enderecoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.enderecoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enderecoTxt.ForeColor = System.Drawing.Color.Black;
+            this.enderecoTxt.ForeColor = System.Drawing.Color.White;
             this.enderecoTxt.Location = new System.Drawing.Point(365, 28);
             this.enderecoTxt.Name = "enderecoTxt";
             this.enderecoTxt.Size = new System.Drawing.Size(366, 27);
@@ -476,10 +476,10 @@
             this.numeroTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numeroTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.numeroTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.numeroTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.numeroTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numeroTxt.ForeColor = System.Drawing.Color.Black;
+            this.numeroTxt.ForeColor = System.Drawing.Color.White;
             this.numeroTxt.Location = new System.Drawing.Point(214, 34);
             this.numeroTxt.Name = "numeroTxt";
             this.numeroTxt.Size = new System.Drawing.Size(106, 27);
@@ -502,10 +502,10 @@
             this.complementoTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.complementoTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.complementoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.complementoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.complementoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.complementoTxt.ForeColor = System.Drawing.Color.Black;
+            this.complementoTxt.ForeColor = System.Drawing.Color.White;
             this.complementoTxt.Location = new System.Drawing.Point(3, 37);
             this.complementoTxt.Name = "complementoTxt";
             this.complementoTxt.Size = new System.Drawing.Size(204, 27);
@@ -527,10 +527,10 @@
             this.bairroTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bairroTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.bairroTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bairroTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.bairroTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bairroTxt.ForeColor = System.Drawing.Color.Black;
+            this.bairroTxt.ForeColor = System.Drawing.Color.White;
             this.bairroTxt.Location = new System.Drawing.Point(3, 34);
             this.bairroTxt.Name = "bairroTxt";
             this.bairroTxt.Size = new System.Drawing.Size(205, 27);
@@ -552,10 +552,10 @@
             this.cidadeTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cidadeTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.cidadeTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cidadeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cidadeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cidadeTxt.ForeColor = System.Drawing.Color.Black;
+            this.cidadeTxt.ForeColor = System.Drawing.Color.White;
             this.cidadeTxt.Location = new System.Drawing.Point(326, 34);
             this.cidadeTxt.Name = "cidadeTxt";
             this.cidadeTxt.Size = new System.Drawing.Size(195, 27);
@@ -577,10 +577,10 @@
             this.estadoTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.estadoTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.estadoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.estadoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.estadoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estadoTxt.ForeColor = System.Drawing.Color.Black;
+            this.estadoTxt.ForeColor = System.Drawing.Color.White;
             this.estadoTxt.Location = new System.Drawing.Point(527, 34);
             this.estadoTxt.Name = "estadoTxt";
             this.estadoTxt.Size = new System.Drawing.Size(204, 27);
@@ -602,10 +602,10 @@
             this.cepTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cepTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.cepTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cepTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cepTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cepTxt.ForeColor = System.Drawing.Color.Black;
+            this.cepTxt.ForeColor = System.Drawing.Color.White;
             this.cepTxt.Location = new System.Drawing.Point(183, 28);
             this.cepTxt.Name = "cepTxt";
             this.cepTxt.Size = new System.Drawing.Size(176, 27);
@@ -628,10 +628,10 @@
             this.observacoesTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.observacoesTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.observacoesTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.observacoesTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.observacoesTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.observacoesTxt.ForeColor = System.Drawing.Color.Black;
+            this.observacoesTxt.ForeColor = System.Drawing.Color.White;
             this.observacoesTxt.Location = new System.Drawing.Point(213, 37);
             this.observacoesTxt.Multiline = true;
             this.observacoesTxt.Name = "observacoesTxt";
@@ -652,11 +652,11 @@
             // editarBtn
             // 
             this.editarBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.editarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.editarBtn.BackColor = System.Drawing.Color.DimGray;
             this.editarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.editarBtn.Location = new System.Drawing.Point(764, 116);
+            this.editarBtn.Location = new System.Drawing.Point(764, 155);
             this.editarBtn.Name = "editarBtn";
             this.editarBtn.Size = new System.Drawing.Size(135, 38);
             this.editarBtn.TabIndex = 24;
@@ -667,11 +667,11 @@
             // limparBtn
             // 
             this.limparBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.limparBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.limparBtn.BackColor = System.Drawing.Color.DimGray;
             this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.limparBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limparBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.limparBtn.Location = new System.Drawing.Point(764, 204);
+            this.limparBtn.Location = new System.Drawing.Point(764, 242);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(135, 38);
             this.limparBtn.TabIndex = 26;
@@ -686,7 +686,7 @@
             this.clienteDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clienteDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.clienteDataGrid.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.clienteDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.clienteDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clienteDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -695,7 +695,7 @@
             this.Rg,
             this.Cidade,
             this.Estado});
-            this.clienteDataGrid.GridColor = System.Drawing.Color.SeaGreen;
+            this.clienteDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.clienteDataGrid.Location = new System.Drawing.Point(11, 471);
             this.clienteDataGrid.Name = "clienteDataGrid";
             this.clienteDataGrid.ReadOnly = true;
@@ -756,13 +756,13 @@
             // btnConsultar
             // 
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConsultar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnConsultar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultar.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(284, 438);
+            this.btnConsultar.Location = new System.Drawing.Point(292, 427);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(135, 27);
+            this.btnConsultar.Size = new System.Drawing.Size(135, 38);
             this.btnConsultar.TabIndex = 28;
             this.btnConsultar.Text = "CONSULTAR";
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -772,13 +772,13 @@
             // 
             this.consultaTxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.consultaTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.consultaTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.consultaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.consultaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consultaTxt.ForeColor = System.Drawing.Color.Black;
+            this.consultaTxt.ForeColor = System.Drawing.Color.White;
             this.consultaTxt.Location = new System.Drawing.Point(11, 438);
             this.consultaTxt.Name = "consultaTxt";
-            this.consultaTxt.Size = new System.Drawing.Size(264, 27);
+            this.consultaTxt.Size = new System.Drawing.Size(275, 27);
             this.consultaTxt.TabIndex = 20;
             this.consultaTxt.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.consultaTxt_PreviewKeyDown);
             // 
@@ -795,11 +795,11 @@
             // exibirBtn
             // 
             this.exibirBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exibirBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.exibirBtn.BackColor = System.Drawing.Color.DimGray;
             this.exibirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exibirBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exibirBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.exibirBtn.Location = new System.Drawing.Point(764, 160);
+            this.exibirBtn.Location = new System.Drawing.Point(764, 199);
             this.exibirBtn.Name = "exibirBtn";
             this.exibirBtn.Size = new System.Drawing.Size(135, 38);
             this.exibirBtn.TabIndex = 25;
@@ -814,9 +814,9 @@
             this.sairBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sairBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sairBtn.ForeColor = System.Drawing.Color.White;
-            this.sairBtn.Location = new System.Drawing.Point(834, 8);
+            this.sairBtn.Location = new System.Drawing.Point(803, 8);
             this.sairBtn.Name = "sairBtn";
-            this.sairBtn.Size = new System.Drawing.Size(65, 31);
+            this.sairBtn.Size = new System.Drawing.Size(91, 35);
             this.sairBtn.TabIndex = 59;
             this.sairBtn.Text = "SAIR";
             this.sairBtn.UseVisualStyleBackColor = false;
@@ -963,7 +963,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(904, 762);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.tableLayoutPanel5);
@@ -988,7 +988,6 @@
             this.Name = "TelaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Cliente";
-            this.Load += new System.EventHandler(this.TelaCliente_Load);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.consultaTxt_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGrid)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

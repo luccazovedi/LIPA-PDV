@@ -38,7 +38,7 @@
             // 
             // clienteLbl
             // 
-            this.clienteLbl.BackColor = System.Drawing.Color.MintCream;
+            this.clienteLbl.BackColor = System.Drawing.Color.Gray;
             this.clienteLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clienteLbl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.clienteLbl.Image = ((System.Drawing.Image)(resources.GetObject("clienteLbl.Image")));
@@ -50,7 +50,7 @@
             // 
             // produtoLbl
             // 
-            this.produtoLbl.BackColor = System.Drawing.Color.MintCream;
+            this.produtoLbl.BackColor = System.Drawing.Color.Gray;
             this.produtoLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produtoLbl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.produtoLbl.Image = ((System.Drawing.Image)(resources.GetObject("produtoLbl.Image")));
@@ -62,7 +62,7 @@
             // 
             // vendaLbl
             // 
-            this.vendaLbl.BackColor = System.Drawing.Color.MintCream;
+            this.vendaLbl.BackColor = System.Drawing.Color.Gray;
             this.vendaLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.vendaLbl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.vendaLbl.Image = ((System.Drawing.Image)(resources.GetObject("vendaLbl.Image")));
@@ -77,7 +77,7 @@
             this.painelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.painelPnl.AutoSize = true;
-            this.painelPnl.BackColor = System.Drawing.Color.Teal;
+            this.painelPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.painelPnl.Location = new System.Drawing.Point(12, 121);
             this.painelPnl.Name = "painelPnl";
             this.painelPnl.Size = new System.Drawing.Size(920, 800);
@@ -88,7 +88,7 @@
             // 
             this.outroPainelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.outroPainelPnl.AutoSize = true;
-            this.outroPainelPnl.BackColor = System.Drawing.Color.Teal;
+            this.outroPainelPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.outroPainelPnl.Location = new System.Drawing.Point(972, 121);
             this.outroPainelPnl.Name = "outroPainelPnl";
             this.outroPainelPnl.Size = new System.Drawing.Size(920, 800);
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.outroPainelPnl);
             this.Controls.Add(this.painelPnl);

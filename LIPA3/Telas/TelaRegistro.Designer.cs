@@ -53,10 +53,10 @@
             // 
             // senhaTxt
             // 
-            this.senhaTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.senhaTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.senhaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.senhaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senhaTxt.ForeColor = System.Drawing.Color.Black;
+            this.senhaTxt.ForeColor = System.Drawing.Color.White;
             this.senhaTxt.Location = new System.Drawing.Point(250, 261);
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.PasswordChar = '*';
@@ -65,11 +65,11 @@
             // 
             // voltarBtn
             // 
-            this.voltarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.voltarBtn.BackColor = System.Drawing.Color.Teal;
             this.voltarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.voltarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.voltarBtn.ForeColor = System.Drawing.Color.White;
-            this.voltarBtn.Location = new System.Drawing.Point(391, 372);
+            this.voltarBtn.Location = new System.Drawing.Point(391, 350);
             this.voltarBtn.Name = "voltarBtn";
             this.voltarBtn.Size = new System.Drawing.Size(135, 35);
             this.voltarBtn.TabIndex = 6;
@@ -89,10 +89,10 @@
             // 
             // usuarioTxt
             // 
-            this.usuarioTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.usuarioTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.usuarioTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.usuarioTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioTxt.ForeColor = System.Drawing.Color.Black;
+            this.usuarioTxt.ForeColor = System.Drawing.Color.White;
             this.usuarioTxt.Location = new System.Drawing.Point(250, 202);
             this.usuarioTxt.Name = "usuarioTxt";
             this.usuarioTxt.Size = new System.Drawing.Size(275, 27);
@@ -100,11 +100,11 @@
             // 
             // registrarBtn
             // 
-            this.registrarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.registrarBtn.BackColor = System.Drawing.Color.DarkSlateGray;
             this.registrarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.registrarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registrarBtn.ForeColor = System.Drawing.Color.White;
-            this.registrarBtn.Location = new System.Drawing.Point(250, 372);
+            this.registrarBtn.Location = new System.Drawing.Point(250, 350);
             this.registrarBtn.Name = "registrarBtn";
             this.registrarBtn.Size = new System.Drawing.Size(135, 35);
             this.registrarBtn.TabIndex = 5;
@@ -124,10 +124,10 @@
             // 
             // nomeTxt
             // 
-            this.nomeTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.nomeTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nomeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nomeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeTxt.ForeColor = System.Drawing.Color.Black;
+            this.nomeTxt.ForeColor = System.Drawing.Color.White;
             this.nomeTxt.Location = new System.Drawing.Point(250, 145);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(275, 27);
@@ -135,9 +135,9 @@
             // 
             // tipoCmb
             // 
-            this.tipoCmb.BackColor = System.Drawing.Color.Honeydew;
+            this.tipoCmb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tipoCmb.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipoCmb.ForeColor = System.Drawing.Color.Black;
+            this.tipoCmb.ForeColor = System.Drawing.Color.White;
             this.tipoCmb.FormattingEnabled = true;
             this.tipoCmb.Items.AddRange(new object[] {
             "ADMINISTRADOR",
@@ -155,13 +155,13 @@
             this.tipoLbl.Name = "tipoLbl";
             this.tipoLbl.Size = new System.Drawing.Size(93, 20);
             this.tipoLbl.TabIndex = 19;
-            this.tipoLbl.Text = "ACESSO";
+            this.tipoLbl.Text = "TIPO";
             // 
             // TelaRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tipoLbl);
             this.Controls.Add(this.tipoCmb);

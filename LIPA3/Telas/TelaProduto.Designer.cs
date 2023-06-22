@@ -103,13 +103,13 @@
             this.descricaoTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.descricaoTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.descricaoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.descricaoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descricaoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descricaoTxt.ForeColor = System.Drawing.Color.Black;
+            this.descricaoTxt.ForeColor = System.Drawing.Color.White;
             this.descricaoTxt.Location = new System.Drawing.Point(3, 29);
             this.descricaoTxt.Name = "descricaoTxt";
-            this.descricaoTxt.Size = new System.Drawing.Size(260, 27);
+            this.descricaoTxt.Size = new System.Drawing.Size(256, 27);
             this.descricaoTxt.TabIndex = 1;
             // 
             // situacaoChk
@@ -125,10 +125,10 @@
             // 
             // codigoBarrasTxt
             // 
-            this.codigoBarrasTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.codigoBarrasTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.codigoBarrasTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.codigoBarrasTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoBarrasTxt.ForeColor = System.Drawing.Color.Black;
+            this.codigoBarrasTxt.ForeColor = System.Drawing.Color.White;
             this.codigoBarrasTxt.Location = new System.Drawing.Point(9, 180);
             this.codigoBarrasTxt.Name = "codigoBarrasTxt";
             this.codigoBarrasTxt.Size = new System.Drawing.Size(180, 27);
@@ -146,10 +146,10 @@
             // 
             // marcaTxt
             // 
-            this.marcaTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.marcaTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.marcaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.marcaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.marcaTxt.ForeColor = System.Drawing.Color.Black;
+            this.marcaTxt.ForeColor = System.Drawing.Color.White;
             this.marcaTxt.Location = new System.Drawing.Point(195, 180);
             this.marcaTxt.Name = "marcaTxt";
             this.marcaTxt.Size = new System.Drawing.Size(200, 27);
@@ -167,10 +167,10 @@
             // 
             // pesoTxt
             // 
-            this.pesoTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.pesoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pesoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.pesoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pesoTxt.ForeColor = System.Drawing.Color.Black;
+            this.pesoTxt.ForeColor = System.Drawing.Color.White;
             this.pesoTxt.Location = new System.Drawing.Point(9, 241);
             this.pesoTxt.Name = "pesoTxt";
             this.pesoTxt.Size = new System.Drawing.Size(120, 27);
@@ -188,10 +188,10 @@
             // 
             // larguraTxt
             // 
-            this.larguraTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.larguraTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.larguraTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.larguraTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.larguraTxt.ForeColor = System.Drawing.Color.Black;
+            this.larguraTxt.ForeColor = System.Drawing.Color.White;
             this.larguraTxt.Location = new System.Drawing.Point(261, 241);
             this.larguraTxt.Name = "larguraTxt";
             this.larguraTxt.Size = new System.Drawing.Size(120, 27);
@@ -209,10 +209,10 @@
             // 
             // alturaTxt
             // 
-            this.alturaTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.alturaTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.alturaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.alturaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alturaTxt.ForeColor = System.Drawing.Color.Black;
+            this.alturaTxt.ForeColor = System.Drawing.Color.White;
             this.alturaTxt.Location = new System.Drawing.Point(135, 241);
             this.alturaTxt.Name = "alturaTxt";
             this.alturaTxt.Size = new System.Drawing.Size(120, 27);
@@ -230,10 +230,10 @@
             // 
             // profundidadeTxt
             // 
-            this.profundidadeTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.profundidadeTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.profundidadeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.profundidadeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profundidadeTxt.ForeColor = System.Drawing.Color.Black;
+            this.profundidadeTxt.ForeColor = System.Drawing.Color.White;
             this.profundidadeTxt.Location = new System.Drawing.Point(387, 241);
             this.profundidadeTxt.Name = "profundidadeTxt";
             this.profundidadeTxt.Size = new System.Drawing.Size(134, 27);
@@ -289,11 +289,11 @@
             this.precoVendaTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.precoVendaTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.precoVendaTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.precoVendaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.precoVendaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precoVendaTxt.ForeColor = System.Drawing.Color.Black;
-            this.precoVendaTxt.Location = new System.Drawing.Point(269, 29);
+            this.precoVendaTxt.ForeColor = System.Drawing.Color.White;
+            this.precoVendaTxt.Location = new System.Drawing.Point(265, 29);
             this.precoVendaTxt.Name = "precoVendaTxt";
             this.precoVendaTxt.Size = new System.Drawing.Size(130, 27);
             this.precoVendaTxt.TabIndex = 2;
@@ -303,7 +303,7 @@
             this.precoVendaLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.precoVendaLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precoVendaLbl.ForeColor = System.Drawing.Color.White;
-            this.precoVendaLbl.Location = new System.Drawing.Point(269, 6);
+            this.precoVendaLbl.Location = new System.Drawing.Point(265, 6);
             this.precoVendaLbl.Name = "precoVendaLbl";
             this.precoVendaLbl.Size = new System.Drawing.Size(130, 20);
             this.precoVendaLbl.TabIndex = 79;
@@ -314,13 +314,13 @@
             this.quantidadeEstoqueTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.quantidadeEstoqueTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.quantidadeEstoqueTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.quantidadeEstoqueTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.quantidadeEstoqueTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantidadeEstoqueTxt.ForeColor = System.Drawing.Color.Black;
-            this.quantidadeEstoqueTxt.Location = new System.Drawing.Point(405, 29);
+            this.quantidadeEstoqueTxt.ForeColor = System.Drawing.Color.White;
+            this.quantidadeEstoqueTxt.Location = new System.Drawing.Point(401, 29);
             this.quantidadeEstoqueTxt.Name = "quantidadeEstoqueTxt";
-            this.quantidadeEstoqueTxt.Size = new System.Drawing.Size(112, 27);
+            this.quantidadeEstoqueTxt.Size = new System.Drawing.Size(123, 27);
             this.quantidadeEstoqueTxt.TabIndex = 3;
             // 
             // quantidadeEstoqueLbl
@@ -328,15 +328,15 @@
             this.quantidadeEstoqueLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.quantidadeEstoqueLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantidadeEstoqueLbl.ForeColor = System.Drawing.Color.White;
-            this.quantidadeEstoqueLbl.Location = new System.Drawing.Point(405, 6);
+            this.quantidadeEstoqueLbl.Location = new System.Drawing.Point(401, 6);
             this.quantidadeEstoqueLbl.Name = "quantidadeEstoqueLbl";
-            this.quantidadeEstoqueLbl.Size = new System.Drawing.Size(112, 20);
+            this.quantidadeEstoqueLbl.Size = new System.Drawing.Size(119, 20);
             this.quantidadeEstoqueLbl.TabIndex = 81;
             this.quantidadeEstoqueLbl.Text = "QUANTIDADE ESTOQUE";
             // 
             // exibirBtn
             // 
-            this.exibirBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.exibirBtn.BackColor = System.Drawing.Color.DimGray;
             this.exibirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exibirBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exibirBtn.ForeColor = System.Drawing.Color.White;
@@ -350,7 +350,7 @@
             // 
             // limparBtn
             // 
-            this.limparBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.limparBtn.BackColor = System.Drawing.Color.DimGray;
             this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.limparBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limparBtn.ForeColor = System.Drawing.Color.White;
@@ -364,7 +364,7 @@
             // 
             // editarBtn
             // 
-            this.editarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.editarBtn.BackColor = System.Drawing.Color.DimGray;
             this.editarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarBtn.ForeColor = System.Drawing.Color.White;
@@ -378,7 +378,7 @@
             // 
             // excluirBtn
             // 
-            this.excluirBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.excluirBtn.BackColor = System.Drawing.Color.DimGray;
             this.excluirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.excluirBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excluirBtn.ForeColor = System.Drawing.Color.White;
@@ -393,7 +393,7 @@
             // salvarBtn
             // 
             this.salvarBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.salvarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.salvarBtn.BackColor = System.Drawing.Color.DimGray;
             this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarBtn.ForeColor = System.Drawing.Color.White;
@@ -410,7 +410,7 @@
             this.produtoDataGrid.AllowUserToAddRows = false;
             this.produtoDataGrid.AllowUserToDeleteRows = false;
             this.produtoDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.produtoDataGrid.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.produtoDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.produtoDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.produtoDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -479,10 +479,10 @@
             // 
             // consultaTxt
             // 
-            this.consultaTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.consultaTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.consultaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.consultaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consultaTxt.ForeColor = System.Drawing.Color.Black;
+            this.consultaTxt.ForeColor = System.Drawing.Color.White;
             this.consultaTxt.Location = new System.Drawing.Point(12, 346);
             this.consultaTxt.Name = "consultaTxt";
             this.consultaTxt.Size = new System.Drawing.Size(310, 27);
@@ -501,7 +501,7 @@
             // 
             // consultarBtn
             // 
-            this.consultarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.consultarBtn.BackColor = System.Drawing.Color.DarkSlateGray;
             this.consultarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.consultarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultarBtn.ForeColor = System.Drawing.Color.White;
@@ -518,9 +518,9 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.15385F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.15385F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.71537F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.80645F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.28843F));
             this.tableLayoutPanel1.Controls.Add(this.descricaoTxt, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.precoVendaTxt, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.quantidadeEstoqueTxt, 2, 1);
@@ -532,15 +532,15 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(520, 53);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(527, 53);
             this.tableLayoutPanel1.TabIndex = 91;
             // 
             // TelaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(904, 749);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(904, 761);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.consultaTxt);
             this.Controls.Add(this.consultaLbl);
