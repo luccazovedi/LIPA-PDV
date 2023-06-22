@@ -74,8 +74,9 @@
             // 
             // painelPnl
             // 
-            this.painelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.painelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.painelPnl.AutoSize = true;
             this.painelPnl.BackColor = System.Drawing.Color.Teal;
             this.painelPnl.Location = new System.Drawing.Point(12, 121);
             this.painelPnl.Name = "painelPnl";
@@ -85,8 +86,8 @@
             // 
             // outroPainelPnl
             // 
-            this.outroPainelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.outroPainelPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.outroPainelPnl.AutoSize = true;
             this.outroPainelPnl.BackColor = System.Drawing.Color.Teal;
             this.outroPainelPnl.Location = new System.Drawing.Point(972, 121);
             this.outroPainelPnl.Name = "outroPainelPnl";
@@ -99,7 +100,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1904, 1042);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.outroPainelPnl);
             this.Controls.Add(this.painelPnl);
             this.Controls.Add(this.vendaLbl);
@@ -107,11 +108,13 @@
             this.Controls.Add(this.clienteLbl);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(967, 1030);
             this.Name = "TelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[LAMBDA] Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

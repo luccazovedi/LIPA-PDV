@@ -38,6 +38,7 @@ namespace LIPA3.Telas
                 situacaoCmb.SelectedIndex = -1;
                 observacoesTxt.Text = "";
                 totalItensTxt.Text = "";
+                codigoPTxt.Text = "";
                 subTotalTxt.Text = "";
                 descontoTxt.Text = "";
                 valorTotalTxt.Text = "";
@@ -90,6 +91,7 @@ namespace LIPA3.Telas
                     vendaItensDataGrid.Rows[indiceLinha].Cells["QUANTIDADE"].Value = leitor["Quantidade"].ToString();
                     vendaItensDataGrid.Rows[indiceLinha].Cells["VALORUNITARIO"].Value = leitor["ValorUnitario"].ToString();
                     vendaItensDataGrid.Rows[indiceLinha].Cells["SUBTOTAL"].Value = leitor["SubTotalProduto"].ToString();
+                    vendaItensDataGrid.Rows[indiceLinha].Cells["PRODUTOID"].Value = leitor["ProdutoId"].ToString();
                 }
             }
 
@@ -280,6 +282,7 @@ namespace LIPA3.Telas
                 if (telaProdutoConsulta.Selecionou == true)
                 {
                     ProdutoId = int.Parse(telaProdutoConsulta.ProdutoId);
+                    codigoPTxt.Text = telaProdutoConsulta.ProdutoId;
                     produtoTxt.Text = telaProdutoConsulta.ProdutoDescricao;
                     valorUnitarioTxt.Text = telaProdutoConsulta.ProdutoValor;
                 }
@@ -378,6 +381,7 @@ namespace LIPA3.Telas
 
         private void adicionarBtn_Click(object sender, EventArgs e)
         {
+            int produtoId = 0;
             if (produtoTxt.Text == "")
             {
                 MessageBox.Show("[SISTEMA] É necessário preencher o campo PRODUTO!", "[LAMBDA] Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -415,12 +419,35 @@ namespace LIPA3.Telas
                 int quantidade = int.Parse(quantidadeTxt.Text);
                 double valorUnitario = double.Parse(valorUnitarioTxt.Text);
                 double subTotalProduto = quantidade * valorUnitario;
+                double quantidade1 = 0;
+                
 
                 subTotalProdutoTxt.Text = subTotalProduto.ToString();
 
                 MySQL.InserirTabelaVendaItens(VendaId, ProdutoId, quantidade, produtoTxt.Text, valorUnitario, subTotalProduto);
+                
+                string consulta = "SELECT QuantidadeEstoque FROM Produto WHERE Id = " + ProdutoId;
+                MySQL.conexao.Open();
+                using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+                {
+                    MySqlDataReader leitor = comando.ExecuteReader();
+                    leitor.Read();
+                    quantidade1 = double.Parse(leitor["QuantidadeEstoque"].ToString());
+                   
+                }
 
-                CalcularTotal();
+                    consulta = "UPDATE Produto SET QuantidadeEstoque = @QuantidadeEstoque WHERE Id = " + ProdutoId;
+                MySQL.conexao.Close();
+                using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+                {
+
+                    MySQL.conexao.Open();
+                    comando.Parameters.AddWithValue("@QuantidadeEstoque", quantidade1 - quantidade);
+                    comando.ExecuteNonQuery();
+                    MySQL.conexao.Close();
+                }
+
+                    CalcularTotal();
                 Exibir();
                 Limpar("VI");
             }
@@ -430,7 +457,32 @@ namespace LIPA3.Telas
         {
             if (VendaId != 0 && VendaItemId != 0)
             {
+                ProdutoId = int.Parse(codigoPTxt.Text);
+                double quantidade1 = 0;
+                int quantidade = int.Parse(quantidadeTxt.Text);
+
                 MySQL.RemoverTabelaVendaItens(VendaItemId);
+
+                string consulta = "SELECT QuantidadeEstoque FROM Produto WHERE Id = " + ProdutoId;
+                MySQL.conexao.Open();
+                using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+                {
+                    MySqlDataReader leitor = comando.ExecuteReader();
+                    leitor.Read();
+                    quantidade1 = double.Parse(leitor["QuantidadeEstoque"].ToString());
+
+                }
+
+                consulta = "UPDATE Produto SET QuantidadeEstoque = @QuantidadeEstoque WHERE Id = " + ProdutoId;
+                MySQL.conexao.Close();
+                using (MySqlCommand comando = new MySqlCommand(consulta, MySQL.conexao))
+                {
+
+                    MySQL.conexao.Open();
+                    comando.Parameters.AddWithValue("@QuantidadeEstoque", quantidade1 + quantidade);
+                    comando.ExecuteNonQuery();
+                    MySQL.conexao.Close();
+                }
 
                 CalcularTotal();
                 Exibir();
@@ -448,13 +500,45 @@ namespace LIPA3.Telas
                 string id = linhaSelecionada.Cells["Id"].Value.ToString();
                 VendaItemId = int.Parse(id);
                 produtoTxt.Text = linhaSelecionada.Cells["Descricao"].Value.ToString();
+                quantidadeTxt.TextChanged -= quantidadeTxt_TextChanged;
                 quantidadeTxt.Text = linhaSelecionada.Cells["Quantidade"].Value.ToString();
+                quantidadeTxt.TextChanged += quantidadeTxt_TextChanged;
                 valorUnitarioTxt.Text = linhaSelecionada.Cells["ValorUnitario"].Value.ToString();
                 subTotalProdutoTxt.Text = linhaSelecionada.Cells["SubTotal"].Value.ToString();
+                codigoPTxt.Text = linhaSelecionada.Cells["produtoId"].Value.ToString();
             }
 
             MySQL.conexao.Dispose();
         }
-        #endregion
+#endregion
+
+        private void quantidadeTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (quantidadeTxt.Text != "")
+            {
+                subTotalProdutoTxt.Text = (double.Parse(quantidadeTxt.Text) * double.Parse(valorUnitarioTxt.Text)).ToString();
+            }
+        }
+
+        private void descontoTxt_Leave(object sender, EventArgs e)
+        {
+            if (descontoTxt.Text != "")
+            {
+                valorTotalTxt.Text = (double.Parse(subTotalTxt.Text) - double.Parse(descontoTxt.Text)).ToString();
+            }
+        }
+
+        private void relatorioBtn_Click(object sender, EventArgs e)
+        {
+            using(var frm = new RelatorioVenda())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void printDocument2_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+        }
     }
 }

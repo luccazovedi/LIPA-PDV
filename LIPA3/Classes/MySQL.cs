@@ -15,7 +15,7 @@ namespace LIPA3.Classes
     internal class MySQL
     {
         // Altere a variável "caminhoConexao" com as informações do seu banco de dados local.
-        public static string caminhoConexao = "server=localhost;User Id=root;database=LIPA3;password=";
+        public static string caminhoConexao = "server=localhost;User Id=root;database=LIPA3;password=root";
         public static MySqlConnection conexao = new MySqlConnection(caminhoConexao);
         public static DataContext acesso = new DataContext(MySQL.conexao);
 
@@ -340,7 +340,7 @@ namespace LIPA3.Classes
 
         public static string ExibirTabelaProduto()
         {
-            return "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao FROM Produto";
+            return "SELECT Id, Descricao, Marca, PrecoVenda, QuantidadeEstoque, Condicao, Situacao FROM Produto";
         }
         #endregion
 
@@ -505,7 +505,7 @@ namespace LIPA3.Classes
 
         public static string ExibirTabelaVendaItens(int vendaId)
         {
-            return "SELECT Id, Descricao, Quantidade, ValorUnitario, SubTotalProduto FROM VendaItens WHERE VendaId = " + vendaId;
+            return "SELECT Id, ProdutoId, Descricao, Quantidade, ValorUnitario, SubTotalProduto FROM VendaItens WHERE VendaId = " + vendaId;
         }
         #endregion
 

@@ -67,8 +67,10 @@
             this.consultaTxt = new System.Windows.Forms.TextBox();
             this.consultaLbl = new System.Windows.Forms.Label();
             this.consultarBtn = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.condicaoGrpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produtoDataGrid)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // sairBtn
@@ -87,9 +89,10 @@
             // 
             // descricaoLbl
             // 
+            this.descricaoLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.descricaoLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descricaoLbl.ForeColor = System.Drawing.Color.White;
-            this.descricaoLbl.Location = new System.Drawing.Point(6, 102);
+            this.descricaoLbl.Location = new System.Drawing.Point(3, 7);
             this.descricaoLbl.Name = "descricaoLbl";
             this.descricaoLbl.Size = new System.Drawing.Size(111, 19);
             this.descricaoLbl.TabIndex = 62;
@@ -97,13 +100,16 @@
             // 
             // descricaoTxt
             // 
+            this.descricaoTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.descricaoTxt.BackColor = System.Drawing.Color.Honeydew;
             this.descricaoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descricaoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descricaoTxt.ForeColor = System.Drawing.Color.Black;
-            this.descricaoTxt.Location = new System.Drawing.Point(9, 125);
+            this.descricaoTxt.Location = new System.Drawing.Point(3, 29);
             this.descricaoTxt.Name = "descricaoTxt";
-            this.descricaoTxt.Size = new System.Drawing.Size(326, 27);
+            this.descricaoTxt.Size = new System.Drawing.Size(260, 27);
             this.descricaoTxt.TabIndex = 1;
             // 
             // situacaoChk
@@ -280,20 +286,24 @@
             // 
             // precoVendaTxt
             // 
+            this.precoVendaTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.precoVendaTxt.BackColor = System.Drawing.Color.Honeydew;
             this.precoVendaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.precoVendaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precoVendaTxt.ForeColor = System.Drawing.Color.Black;
-            this.precoVendaTxt.Location = new System.Drawing.Point(341, 125);
+            this.precoVendaTxt.Location = new System.Drawing.Point(269, 29);
             this.precoVendaTxt.Name = "precoVendaTxt";
-            this.precoVendaTxt.Size = new System.Drawing.Size(125, 27);
+            this.precoVendaTxt.Size = new System.Drawing.Size(130, 27);
             this.precoVendaTxt.TabIndex = 2;
             // 
             // precoVendaLbl
             // 
+            this.precoVendaLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.precoVendaLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precoVendaLbl.ForeColor = System.Drawing.Color.White;
-            this.precoVendaLbl.Location = new System.Drawing.Point(338, 102);
+            this.precoVendaLbl.Location = new System.Drawing.Point(269, 6);
             this.precoVendaLbl.Name = "precoVendaLbl";
             this.precoVendaLbl.Size = new System.Drawing.Size(130, 20);
             this.precoVendaLbl.TabIndex = 79;
@@ -301,22 +311,26 @@
             // 
             // quantidadeEstoqueTxt
             // 
+            this.quantidadeEstoqueTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.quantidadeEstoqueTxt.BackColor = System.Drawing.Color.Honeydew;
             this.quantidadeEstoqueTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.quantidadeEstoqueTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantidadeEstoqueTxt.ForeColor = System.Drawing.Color.Black;
-            this.quantidadeEstoqueTxt.Location = new System.Drawing.Point(472, 125);
+            this.quantidadeEstoqueTxt.Location = new System.Drawing.Point(405, 29);
             this.quantidadeEstoqueTxt.Name = "quantidadeEstoqueTxt";
-            this.quantidadeEstoqueTxt.Size = new System.Drawing.Size(200, 27);
+            this.quantidadeEstoqueTxt.Size = new System.Drawing.Size(112, 27);
             this.quantidadeEstoqueTxt.TabIndex = 3;
             // 
             // quantidadeEstoqueLbl
             // 
+            this.quantidadeEstoqueLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.quantidadeEstoqueLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantidadeEstoqueLbl.ForeColor = System.Drawing.Color.White;
-            this.quantidadeEstoqueLbl.Location = new System.Drawing.Point(469, 102);
+            this.quantidadeEstoqueLbl.Location = new System.Drawing.Point(405, 6);
             this.quantidadeEstoqueLbl.Name = "quantidadeEstoqueLbl";
-            this.quantidadeEstoqueLbl.Size = new System.Drawing.Size(208, 20);
+            this.quantidadeEstoqueLbl.Size = new System.Drawing.Size(112, 20);
             this.quantidadeEstoqueLbl.TabIndex = 81;
             this.quantidadeEstoqueLbl.Text = "QUANTIDADE ESTOQUE";
             // 
@@ -378,6 +392,7 @@
             // 
             // salvarBtn
             // 
+            this.salvarBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.salvarBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -498,12 +513,35 @@
             this.consultarBtn.UseVisualStyleBackColor = false;
             this.consultarBtn.Click += new System.EventHandler(this.consultarBtn_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.15385F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.15385F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
+            this.tableLayoutPanel1.Controls.Add(this.descricaoTxt, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.precoVendaTxt, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.quantidadeEstoqueTxt, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.descricaoLbl, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.precoVendaLbl, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.quantidadeEstoqueLbl, 2, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 98);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(520, 53);
+            this.tableLayoutPanel1.TabIndex = 91;
+            // 
             // TelaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(904, 749);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.consultaTxt);
             this.Controls.Add(this.consultaLbl);
             this.Controls.Add(this.consultarBtn);
@@ -513,10 +551,6 @@
             this.Controls.Add(this.editarBtn);
             this.Controls.Add(this.excluirBtn);
             this.Controls.Add(this.salvarBtn);
-            this.Controls.Add(this.quantidadeEstoqueTxt);
-            this.Controls.Add(this.quantidadeEstoqueLbl);
-            this.Controls.Add(this.precoVendaTxt);
-            this.Controls.Add(this.precoVendaLbl);
             this.Controls.Add(this.condicaoGrpBox);
             this.Controls.Add(this.profundidadeTxt);
             this.Controls.Add(this.profundidadeLbl);
@@ -531,8 +565,6 @@
             this.Controls.Add(this.codigoBarrasTxt);
             this.Controls.Add(this.codigoBarrasLbl);
             this.Controls.Add(this.situacaoChk);
-            this.Controls.Add(this.descricaoLbl);
-            this.Controls.Add(this.descricaoTxt);
             this.Controls.Add(this.sairBtn);
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -542,6 +574,8 @@
             this.condicaoGrpBox.ResumeLayout(false);
             this.condicaoGrpBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produtoDataGrid)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -587,5 +621,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecoVenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeEstoque;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condicao;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

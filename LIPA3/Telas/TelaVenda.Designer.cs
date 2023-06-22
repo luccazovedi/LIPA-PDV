@@ -63,12 +63,17 @@
             this.salvarBtn = new System.Windows.Forms.Button();
             this.consultarBtn = new System.Windows.Forms.Button();
             this.vendaItensDataGrid = new System.Windows.Forms.DataGridView();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.codigoPTxt = new System.Windows.Forms.TextBox();
+            this.codigoP = new System.Windows.Forms.Label();
+            this.relatorioBtn = new System.Windows.Forms.Button();
+            this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.produtoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.vendaItensDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,9 +145,9 @@
             this.produtoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.produtoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.produtoTxt.ForeColor = System.Drawing.Color.Black;
-            this.produtoTxt.Location = new System.Drawing.Point(54, 114);
+            this.produtoTxt.Location = new System.Drawing.Point(143, 114);
             this.produtoTxt.Name = "produtoTxt";
-            this.produtoTxt.Size = new System.Drawing.Size(384, 27);
+            this.produtoTxt.Size = new System.Drawing.Size(295, 27);
             this.produtoTxt.TabIndex = 2;
             // 
             // observacoesTxt
@@ -161,7 +166,7 @@
             // 
             this.produtoLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.produtoLbl.ForeColor = System.Drawing.Color.White;
-            this.produtoLbl.Location = new System.Drawing.Point(51, 91);
+            this.produtoLbl.Location = new System.Drawing.Point(140, 91);
             this.produtoLbl.Name = "produtoLbl";
             this.produtoLbl.Size = new System.Drawing.Size(91, 20);
             this.produtoLbl.TabIndex = 76;
@@ -248,6 +253,7 @@
             this.quantidadeTxt.Name = "quantidadeTxt";
             this.quantidadeTxt.Size = new System.Drawing.Size(189, 27);
             this.quantidadeTxt.TabIndex = 3;
+            this.quantidadeTxt.TextChanged += new System.EventHandler(this.quantidadeTxt_TextChanged);
             // 
             // quantidadeLbl
             // 
@@ -356,6 +362,7 @@
             this.descontoTxt.Name = "descontoTxt";
             this.descontoTxt.Size = new System.Drawing.Size(195, 27);
             this.descontoTxt.TabIndex = 96;
+            this.descontoTxt.Leave += new System.EventHandler(this.descontoTxt_Leave);
             // 
             // valorTotalLbl
             // 
@@ -488,7 +495,8 @@
             this.Descricao,
             this.Quantidade,
             this.ValorUnitario,
-            this.SubTotal});
+            this.SubTotal,
+            this.produtoId});
             this.vendaItensDataGrid.GridColor = System.Drawing.Color.SeaGreen;
             this.vendaItensDataGrid.Location = new System.Drawing.Point(12, 308);
             this.vendaItensDataGrid.Name = "vendaItensDataGrid";
@@ -498,6 +506,45 @@
             this.vendaItensDataGrid.Size = new System.Drawing.Size(877, 366);
             this.vendaItensDataGrid.TabIndex = 108;
             this.vendaItensDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendaItensDataGrid_CellDoubleClick);
+            // 
+            // codigoPTxt
+            // 
+            this.codigoPTxt.BackColor = System.Drawing.Color.Honeydew;
+            this.codigoPTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.codigoPTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoPTxt.ForeColor = System.Drawing.Color.Black;
+            this.codigoPTxt.Location = new System.Drawing.Point(54, 114);
+            this.codigoPTxt.Name = "codigoPTxt";
+            this.codigoPTxt.Size = new System.Drawing.Size(83, 27);
+            this.codigoPTxt.TabIndex = 109;
+            // 
+            // codigoP
+            // 
+            this.codigoP.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoP.ForeColor = System.Drawing.Color.White;
+            this.codigoP.Location = new System.Drawing.Point(54, 91);
+            this.codigoP.Name = "codigoP";
+            this.codigoP.Size = new System.Drawing.Size(91, 20);
+            this.codigoP.TabIndex = 110;
+            this.codigoP.Text = "CODIGO";
+            // 
+            // relatorioBtn
+            // 
+            this.relatorioBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.relatorioBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.relatorioBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.relatorioBtn.ForeColor = System.Drawing.Color.White;
+            this.relatorioBtn.Location = new System.Drawing.Point(294, 254);
+            this.relatorioBtn.Name = "relatorioBtn";
+            this.relatorioBtn.Size = new System.Drawing.Size(135, 35);
+            this.relatorioBtn.TabIndex = 111;
+            this.relatorioBtn.Text = "RELATORIO";
+            this.relatorioBtn.UseVisualStyleBackColor = false;
+            this.relatorioBtn.Click += new System.EventHandler(this.relatorioBtn_Click);
+            // 
+            // printDocument2
+            // 
+            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
             // 
             // ID
             // 
@@ -539,12 +586,22 @@
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.ReadOnly = true;
             // 
+            // produtoId
+            // 
+            this.produtoId.HeaderText = "PRODUTOID";
+            this.produtoId.Name = "produtoId";
+            this.produtoId.ReadOnly = true;
+            this.produtoId.Visible = false;
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(904, 762);
+            this.Controls.Add(this.relatorioBtn);
+            this.Controls.Add(this.codigoP);
+            this.Controls.Add(this.codigoPTxt);
             this.Controls.Add(this.vendaItensDataGrid);
             this.Controls.Add(this.consultarBtn);
             this.Controls.Add(this.limparBtn);
@@ -626,11 +683,16 @@
         private System.Windows.Forms.Button salvarBtn;
         private System.Windows.Forms.Button consultarBtn;
         private System.Windows.Forms.DataGridView vendaItensDataGrid;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.TextBox codigoPTxt;
+        private System.Windows.Forms.Label codigoP;
+        private System.Windows.Forms.Button relatorioBtn;
+        private System.Drawing.Printing.PrintDocument printDocument2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn produtoId;
     }
 }
