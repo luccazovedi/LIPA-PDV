@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaProduto));
             this.sairBtn = new System.Windows.Forms.Button();
             this.descricaoLbl = new System.Windows.Forms.Label();
-            this.descricaoTxt = new System.Windows.Forms.TextBox();
             this.situacaoChk = new System.Windows.Forms.CheckBox();
             this.codigoBarrasTxt = new System.Windows.Forms.TextBox();
             this.codigoBarrasLbl = new System.Windows.Forms.Label();
@@ -48,9 +47,7 @@
             this.novoRadBtn = new System.Windows.Forms.RadioButton();
             this.usadoRadBtn = new System.Windows.Forms.RadioButton();
             this.condicaoGrpBox = new System.Windows.Forms.GroupBox();
-            this.precoVendaTxt = new System.Windows.Forms.TextBox();
             this.precoVendaLbl = new System.Windows.Forms.Label();
-            this.quantidadeEstoqueTxt = new System.Windows.Forms.TextBox();
             this.quantidadeEstoqueLbl = new System.Windows.Forms.Label();
             this.exibirBtn = new System.Windows.Forms.Button();
             this.limparBtn = new System.Windows.Forms.Button();
@@ -67,15 +64,16 @@
             this.consultaTxt = new System.Windows.Forms.TextBox();
             this.consultaLbl = new System.Windows.Forms.Label();
             this.consultarBtn = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.quantidadeEstoqueTxt = new System.Windows.Forms.TextBox();
+            this.precoVendaTxt = new System.Windows.Forms.TextBox();
+            this.descricaoTxt = new System.Windows.Forms.TextBox();
             this.condicaoGrpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produtoDataGrid)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // sairBtn
             // 
-            this.sairBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.sairBtn.BackColor = System.Drawing.Color.Teal;
             this.sairBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sairBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sairBtn.ForeColor = System.Drawing.Color.White;
@@ -89,34 +87,19 @@
             // 
             // descricaoLbl
             // 
-            this.descricaoLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.descricaoLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descricaoLbl.ForeColor = System.Drawing.Color.White;
-            this.descricaoLbl.Location = new System.Drawing.Point(3, 7);
+            this.descricaoLbl.Location = new System.Drawing.Point(12, 112);
             this.descricaoLbl.Name = "descricaoLbl";
             this.descricaoLbl.Size = new System.Drawing.Size(111, 19);
             this.descricaoLbl.TabIndex = 62;
             this.descricaoLbl.Text = "DESCRIÇÃO";
             // 
-            // descricaoTxt
-            // 
-            this.descricaoTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.descricaoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.descricaoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descricaoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descricaoTxt.ForeColor = System.Drawing.Color.White;
-            this.descricaoTxt.Location = new System.Drawing.Point(3, 29);
-            this.descricaoTxt.Name = "descricaoTxt";
-            this.descricaoTxt.Size = new System.Drawing.Size(256, 27);
-            this.descricaoTxt.TabIndex = 1;
-            // 
             // situacaoChk
             // 
             this.situacaoChk.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.situacaoChk.ForeColor = System.Drawing.Color.White;
-            this.situacaoChk.Location = new System.Drawing.Point(9, 12);
+            this.situacaoChk.Location = new System.Drawing.Point(12, 20);
             this.situacaoChk.Name = "situacaoChk";
             this.situacaoChk.Size = new System.Drawing.Size(101, 27);
             this.situacaoChk.TabIndex = 3;
@@ -129,7 +112,7 @@
             this.codigoBarrasTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.codigoBarrasTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codigoBarrasTxt.ForeColor = System.Drawing.Color.White;
-            this.codigoBarrasTxt.Location = new System.Drawing.Point(9, 180);
+            this.codigoBarrasTxt.Location = new System.Drawing.Point(12, 192);
             this.codigoBarrasTxt.Name = "codigoBarrasTxt";
             this.codigoBarrasTxt.Size = new System.Drawing.Size(180, 27);
             this.codigoBarrasTxt.TabIndex = 4;
@@ -138,7 +121,7 @@
             // 
             this.codigoBarrasLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codigoBarrasLbl.ForeColor = System.Drawing.Color.White;
-            this.codigoBarrasLbl.Location = new System.Drawing.Point(9, 157);
+            this.codigoBarrasLbl.Location = new System.Drawing.Point(12, 169);
             this.codigoBarrasLbl.Name = "codigoBarrasLbl";
             this.codigoBarrasLbl.Size = new System.Drawing.Size(180, 20);
             this.codigoBarrasLbl.TabIndex = 64;
@@ -150,7 +133,7 @@
             this.marcaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.marcaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marcaTxt.ForeColor = System.Drawing.Color.White;
-            this.marcaTxt.Location = new System.Drawing.Point(195, 180);
+            this.marcaTxt.Location = new System.Drawing.Point(198, 192);
             this.marcaTxt.Name = "marcaTxt";
             this.marcaTxt.Size = new System.Drawing.Size(200, 27);
             this.marcaTxt.TabIndex = 5;
@@ -159,7 +142,7 @@
             // 
             this.marcaLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marcaLbl.ForeColor = System.Drawing.Color.White;
-            this.marcaLbl.Location = new System.Drawing.Point(192, 157);
+            this.marcaLbl.Location = new System.Drawing.Point(195, 169);
             this.marcaLbl.Name = "marcaLbl";
             this.marcaLbl.Size = new System.Drawing.Size(73, 20);
             this.marcaLbl.TabIndex = 66;
@@ -171,7 +154,7 @@
             this.pesoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.pesoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pesoTxt.ForeColor = System.Drawing.Color.White;
-            this.pesoTxt.Location = new System.Drawing.Point(9, 241);
+            this.pesoTxt.Location = new System.Drawing.Point(12, 253);
             this.pesoTxt.Name = "pesoTxt";
             this.pesoTxt.Size = new System.Drawing.Size(120, 27);
             this.pesoTxt.TabIndex = 6;
@@ -180,7 +163,7 @@
             // 
             this.pesoLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pesoLbl.ForeColor = System.Drawing.Color.White;
-            this.pesoLbl.Location = new System.Drawing.Point(6, 218);
+            this.pesoLbl.Location = new System.Drawing.Point(9, 230);
             this.pesoLbl.Name = "pesoLbl";
             this.pesoLbl.Size = new System.Drawing.Size(57, 20);
             this.pesoLbl.TabIndex = 68;
@@ -192,7 +175,7 @@
             this.larguraTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.larguraTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.larguraTxt.ForeColor = System.Drawing.Color.White;
-            this.larguraTxt.Location = new System.Drawing.Point(261, 241);
+            this.larguraTxt.Location = new System.Drawing.Point(264, 253);
             this.larguraTxt.Name = "larguraTxt";
             this.larguraTxt.Size = new System.Drawing.Size(120, 27);
             this.larguraTxt.TabIndex = 8;
@@ -201,7 +184,7 @@
             // 
             this.larguraLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.larguraLbl.ForeColor = System.Drawing.Color.White;
-            this.larguraLbl.Location = new System.Drawing.Point(258, 218);
+            this.larguraLbl.Location = new System.Drawing.Point(261, 230);
             this.larguraLbl.Name = "larguraLbl";
             this.larguraLbl.Size = new System.Drawing.Size(95, 20);
             this.larguraLbl.TabIndex = 70;
@@ -213,7 +196,7 @@
             this.alturaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.alturaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alturaTxt.ForeColor = System.Drawing.Color.White;
-            this.alturaTxt.Location = new System.Drawing.Point(135, 241);
+            this.alturaTxt.Location = new System.Drawing.Point(138, 253);
             this.alturaTxt.Name = "alturaTxt";
             this.alturaTxt.Size = new System.Drawing.Size(120, 27);
             this.alturaTxt.TabIndex = 7;
@@ -222,7 +205,7 @@
             // 
             this.alturaLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alturaLbl.ForeColor = System.Drawing.Color.White;
-            this.alturaLbl.Location = new System.Drawing.Point(132, 218);
+            this.alturaLbl.Location = new System.Drawing.Point(135, 230);
             this.alturaLbl.Name = "alturaLbl";
             this.alturaLbl.Size = new System.Drawing.Size(95, 20);
             this.alturaLbl.TabIndex = 72;
@@ -234,7 +217,7 @@
             this.profundidadeTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.profundidadeTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profundidadeTxt.ForeColor = System.Drawing.Color.White;
-            this.profundidadeTxt.Location = new System.Drawing.Point(387, 241);
+            this.profundidadeTxt.Location = new System.Drawing.Point(390, 253);
             this.profundidadeTxt.Name = "profundidadeTxt";
             this.profundidadeTxt.Size = new System.Drawing.Size(134, 27);
             this.profundidadeTxt.TabIndex = 9;
@@ -243,7 +226,7 @@
             // 
             this.profundidadeLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profundidadeLbl.ForeColor = System.Drawing.Color.White;
-            this.profundidadeLbl.Location = new System.Drawing.Point(384, 218);
+            this.profundidadeLbl.Location = new System.Drawing.Point(387, 230);
             this.profundidadeLbl.Name = "profundidadeLbl";
             this.profundidadeLbl.Size = new System.Drawing.Size(145, 20);
             this.profundidadeLbl.TabIndex = 74;
@@ -277,58 +260,28 @@
             this.condicaoGrpBox.Controls.Add(this.usadoRadBtn);
             this.condicaoGrpBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.condicaoGrpBox.ForeColor = System.Drawing.Color.White;
-            this.condicaoGrpBox.Location = new System.Drawing.Point(9, 45);
+            this.condicaoGrpBox.Location = new System.Drawing.Point(12, 53);
             this.condicaoGrpBox.Name = "condicaoGrpBox";
             this.condicaoGrpBox.Size = new System.Drawing.Size(185, 47);
             this.condicaoGrpBox.TabIndex = 78;
             this.condicaoGrpBox.TabStop = false;
             this.condicaoGrpBox.Text = "CONDIÇÃO";
             // 
-            // precoVendaTxt
-            // 
-            this.precoVendaTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.precoVendaTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.precoVendaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.precoVendaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precoVendaTxt.ForeColor = System.Drawing.Color.White;
-            this.precoVendaTxt.Location = new System.Drawing.Point(265, 29);
-            this.precoVendaTxt.Name = "precoVendaTxt";
-            this.precoVendaTxt.Size = new System.Drawing.Size(130, 27);
-            this.precoVendaTxt.TabIndex = 2;
-            // 
             // precoVendaLbl
             // 
-            this.precoVendaLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.precoVendaLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precoVendaLbl.ForeColor = System.Drawing.Color.White;
-            this.precoVendaLbl.Location = new System.Drawing.Point(265, 6);
+            this.precoVendaLbl.Location = new System.Drawing.Point(271, 112);
             this.precoVendaLbl.Name = "precoVendaLbl";
             this.precoVendaLbl.Size = new System.Drawing.Size(130, 20);
             this.precoVendaLbl.TabIndex = 79;
             this.precoVendaLbl.Text = "PREÇO VENDA";
             // 
-            // quantidadeEstoqueTxt
-            // 
-            this.quantidadeEstoqueTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.quantidadeEstoqueTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.quantidadeEstoqueTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.quantidadeEstoqueTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantidadeEstoqueTxt.ForeColor = System.Drawing.Color.White;
-            this.quantidadeEstoqueTxt.Location = new System.Drawing.Point(401, 29);
-            this.quantidadeEstoqueTxt.Name = "quantidadeEstoqueTxt";
-            this.quantidadeEstoqueTxt.Size = new System.Drawing.Size(123, 27);
-            this.quantidadeEstoqueTxt.TabIndex = 3;
-            // 
             // quantidadeEstoqueLbl
             // 
-            this.quantidadeEstoqueLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.quantidadeEstoqueLbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantidadeEstoqueLbl.ForeColor = System.Drawing.Color.White;
-            this.quantidadeEstoqueLbl.Location = new System.Drawing.Point(401, 6);
+            this.quantidadeEstoqueLbl.Location = new System.Drawing.Point(407, 111);
             this.quantidadeEstoqueLbl.Name = "quantidadeEstoqueLbl";
             this.quantidadeEstoqueLbl.Size = new System.Drawing.Size(119, 20);
             this.quantidadeEstoqueLbl.TabIndex = 81;
@@ -340,7 +293,7 @@
             this.exibirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exibirBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exibirBtn.ForeColor = System.Drawing.Color.White;
-            this.exibirBtn.Location = new System.Drawing.Point(754, 200);
+            this.exibirBtn.Location = new System.Drawing.Point(754, 195);
             this.exibirBtn.Name = "exibirBtn";
             this.exibirBtn.Size = new System.Drawing.Size(135, 35);
             this.exibirBtn.TabIndex = 16;
@@ -354,7 +307,7 @@
             this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.limparBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limparBtn.ForeColor = System.Drawing.Color.White;
-            this.limparBtn.Location = new System.Drawing.Point(754, 241);
+            this.limparBtn.Location = new System.Drawing.Point(754, 236);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(135, 35);
             this.limparBtn.TabIndex = 17;
@@ -368,7 +321,7 @@
             this.editarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarBtn.ForeColor = System.Drawing.Color.White;
-            this.editarBtn.Location = new System.Drawing.Point(754, 159);
+            this.editarBtn.Location = new System.Drawing.Point(754, 154);
             this.editarBtn.Name = "editarBtn";
             this.editarBtn.Size = new System.Drawing.Size(135, 35);
             this.editarBtn.TabIndex = 15;
@@ -382,7 +335,7 @@
             this.excluirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.excluirBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excluirBtn.ForeColor = System.Drawing.Color.White;
-            this.excluirBtn.Location = new System.Drawing.Point(754, 118);
+            this.excluirBtn.Location = new System.Drawing.Point(754, 113);
             this.excluirBtn.Name = "excluirBtn";
             this.excluirBtn.Size = new System.Drawing.Size(135, 35);
             this.excluirBtn.TabIndex = 14;
@@ -392,12 +345,11 @@
             // 
             // salvarBtn
             // 
-            this.salvarBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.salvarBtn.BackColor = System.Drawing.Color.DimGray;
             this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarBtn.ForeColor = System.Drawing.Color.White;
-            this.salvarBtn.Location = new System.Drawing.Point(754, 77);
+            this.salvarBtn.Location = new System.Drawing.Point(754, 72);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(135, 35);
             this.salvarBtn.TabIndex = 13;
@@ -513,27 +465,38 @@
             this.consultarBtn.UseVisualStyleBackColor = false;
             this.consultarBtn.Click += new System.EventHandler(this.consultarBtn_Click);
             // 
-            // tableLayoutPanel1
+            // quantidadeEstoqueTxt
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.71537F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.80645F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.28843F));
-            this.tableLayoutPanel1.Controls.Add(this.descricaoTxt, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.precoVendaTxt, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.quantidadeEstoqueTxt, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.descricaoLbl, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.precoVendaLbl, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.quantidadeEstoqueLbl, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 98);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(527, 53);
-            this.tableLayoutPanel1.TabIndex = 91;
+            this.quantidadeEstoqueTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.quantidadeEstoqueTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.quantidadeEstoqueTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantidadeEstoqueTxt.ForeColor = System.Drawing.Color.White;
+            this.quantidadeEstoqueTxt.Location = new System.Drawing.Point(410, 134);
+            this.quantidadeEstoqueTxt.Name = "quantidadeEstoqueTxt";
+            this.quantidadeEstoqueTxt.Size = new System.Drawing.Size(123, 27);
+            this.quantidadeEstoqueTxt.TabIndex = 3;
+            // 
+            // precoVendaTxt
+            // 
+            this.precoVendaTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.precoVendaTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.precoVendaTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precoVendaTxt.ForeColor = System.Drawing.Color.White;
+            this.precoVendaTxt.Location = new System.Drawing.Point(274, 134);
+            this.precoVendaTxt.Name = "precoVendaTxt";
+            this.precoVendaTxt.Size = new System.Drawing.Size(130, 27);
+            this.precoVendaTxt.TabIndex = 2;
+            // 
+            // descricaoTxt
+            // 
+            this.descricaoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.descricaoTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descricaoTxt.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descricaoTxt.ForeColor = System.Drawing.Color.White;
+            this.descricaoTxt.Location = new System.Drawing.Point(12, 134);
+            this.descricaoTxt.Name = "descricaoTxt";
+            this.descricaoTxt.Size = new System.Drawing.Size(256, 27);
+            this.descricaoTxt.TabIndex = 1;
             // 
             // TelaProduto
             // 
@@ -541,10 +504,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(904, 761);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.descricaoLbl);
+            this.Controls.Add(this.descricaoTxt);
+            this.Controls.Add(this.quantidadeEstoqueTxt);
+            this.Controls.Add(this.precoVendaTxt);
             this.Controls.Add(this.consultaTxt);
+            this.Controls.Add(this.quantidadeEstoqueLbl);
             this.Controls.Add(this.consultaLbl);
             this.Controls.Add(this.consultarBtn);
+            this.Controls.Add(this.precoVendaLbl);
             this.Controls.Add(this.produtoDataGrid);
             this.Controls.Add(this.exibirBtn);
             this.Controls.Add(this.limparBtn);
@@ -574,8 +542,6 @@
             this.condicaoGrpBox.ResumeLayout(false);
             this.condicaoGrpBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produtoDataGrid)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -585,7 +551,6 @@
 
         private System.Windows.Forms.Button sairBtn;
         private System.Windows.Forms.Label descricaoLbl;
-        private System.Windows.Forms.TextBox descricaoTxt;
         private System.Windows.Forms.CheckBox situacaoChk;
         private System.Windows.Forms.TextBox codigoBarrasTxt;
         private System.Windows.Forms.Label codigoBarrasLbl;
@@ -602,9 +567,7 @@
         private System.Windows.Forms.RadioButton novoRadBtn;
         private System.Windows.Forms.RadioButton usadoRadBtn;
         private System.Windows.Forms.GroupBox condicaoGrpBox;
-        private System.Windows.Forms.TextBox precoVendaTxt;
         private System.Windows.Forms.Label precoVendaLbl;
-        private System.Windows.Forms.TextBox quantidadeEstoqueTxt;
         private System.Windows.Forms.Label quantidadeEstoqueLbl;
         private System.Windows.Forms.Button exibirBtn;
         private System.Windows.Forms.Button limparBtn;
@@ -621,6 +584,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecoVenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeEstoque;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condicao;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox quantidadeEstoqueTxt;
+        private System.Windows.Forms.TextBox precoVendaTxt;
+        private System.Windows.Forms.TextBox descricaoTxt;
     }
 }

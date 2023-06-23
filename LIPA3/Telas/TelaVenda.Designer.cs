@@ -71,13 +71,12 @@
             this.produtoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoPTxt = new System.Windows.Forms.TextBox();
             this.codigoP = new System.Windows.Forms.Label();
-            this.relatorioBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vendaItensDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // sairBtn
             // 
-            this.sairBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.sairBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.sairBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sairBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sairBtn.ForeColor = System.Drawing.Color.White;
@@ -418,7 +417,7 @@
             this.limparBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.limparBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limparBtn.ForeColor = System.Drawing.Color.White;
-            this.limparBtn.Location = new System.Drawing.Point(754, 237);
+            this.limparBtn.Location = new System.Drawing.Point(754, 188);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(135, 35);
             this.limparBtn.TabIndex = 106;
@@ -432,7 +431,7 @@
             this.editarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarBtn.ForeColor = System.Drawing.Color.White;
-            this.editarBtn.Location = new System.Drawing.Point(754, 196);
+            this.editarBtn.Location = new System.Drawing.Point(754, 147);
             this.editarBtn.Name = "editarBtn";
             this.editarBtn.Size = new System.Drawing.Size(135, 35);
             this.editarBtn.TabIndex = 104;
@@ -446,7 +445,7 @@
             this.excluirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.excluirBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excluirBtn.ForeColor = System.Drawing.Color.White;
-            this.excluirBtn.Location = new System.Drawing.Point(754, 155);
+            this.excluirBtn.Location = new System.Drawing.Point(754, 106);
             this.excluirBtn.Name = "excluirBtn";
             this.excluirBtn.Size = new System.Drawing.Size(135, 35);
             this.excluirBtn.TabIndex = 103;
@@ -460,7 +459,7 @@
             this.salvarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarBtn.ForeColor = System.Drawing.Color.White;
-            this.salvarBtn.Location = new System.Drawing.Point(754, 114);
+            this.salvarBtn.Location = new System.Drawing.Point(754, 65);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(135, 35);
             this.salvarBtn.TabIndex = 102;
@@ -470,11 +469,11 @@
             // 
             // consultarBtn
             // 
-            this.consultarBtn.BackColor = System.Drawing.Color.DimGray;
+            this.consultarBtn.BackColor = System.Drawing.Color.DarkSlateGray;
             this.consultarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.consultarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultarBtn.ForeColor = System.Drawing.Color.White;
-            this.consultarBtn.Location = new System.Drawing.Point(754, 73);
+            this.consultarBtn.Location = new System.Drawing.Point(248, 229);
             this.consultarBtn.Name = "consultarBtn";
             this.consultarBtn.Size = new System.Drawing.Size(135, 35);
             this.consultarBtn.TabIndex = 107;
@@ -574,27 +573,12 @@
             this.codigoP.TabIndex = 110;
             this.codigoP.Text = "CÓDIGO";
             // 
-            // relatorioBtn
-            // 
-            this.relatorioBtn.BackColor = System.Drawing.Color.DimGray;
-            this.relatorioBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.relatorioBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.relatorioBtn.ForeColor = System.Drawing.Color.White;
-            this.relatorioBtn.Location = new System.Drawing.Point(248, 229);
-            this.relatorioBtn.Name = "relatorioBtn";
-            this.relatorioBtn.Size = new System.Drawing.Size(135, 35);
-            this.relatorioBtn.TabIndex = 111;
-            this.relatorioBtn.Text = "RELATÓRIO";
-            this.relatorioBtn.UseVisualStyleBackColor = false;
-            this.relatorioBtn.Click += new System.EventHandler(this.relatorioBtn_Click);
-            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(904, 762);
-            this.Controls.Add(this.relatorioBtn);
             this.Controls.Add(this.codigoP);
             this.Controls.Add(this.codigoPTxt);
             this.Controls.Add(this.vendaItensDataGrid);
@@ -680,7 +664,6 @@
         private System.Windows.Forms.DataGridView vendaItensDataGrid;
         private System.Windows.Forms.TextBox codigoPTxt;
         private System.Windows.Forms.Label codigoP;
-        private System.Windows.Forms.Button relatorioBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;

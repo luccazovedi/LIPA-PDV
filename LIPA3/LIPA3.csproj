@@ -112,12 +112,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Telas\RelatorioVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\RelatorioVenda.Designer.cs">
-      <DependentUpon>RelatorioVenda.cs</DependentUpon>
-    </Compile>
     <Compile Include="Telas\TelaAcesso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,9 +174,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Telas\RelatorioVenda.resx">
-      <DependentUpon>RelatorioVenda.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaAcesso.resx">
       <DependentUpon>TelaAcesso.cs</DependentUpon>
     </EmbeddedResource>

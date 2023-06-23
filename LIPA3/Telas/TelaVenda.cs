@@ -524,14 +524,6 @@ namespace LIPA3.Telas
                 valorTotalTxt.Text = (double.Parse(subTotalTxt.Text) - double.Parse(descontoTxt.Text)).ToString();
             }
         }
-
-        private void relatorioBtn_Click(object sender, EventArgs e)
-        {
-            using (var frm = new RelatorioVenda())
-            {
-                frm.ShowDialog();
-            }
-        }
         #endregion
     }
 }

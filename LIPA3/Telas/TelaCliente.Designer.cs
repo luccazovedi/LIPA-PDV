@@ -810,7 +810,7 @@
             // sairBtn
             // 
             this.sairBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sairBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.sairBtn.BackColor = System.Drawing.Color.Teal;
             this.sairBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sairBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sairBtn.ForeColor = System.Drawing.Color.White;
