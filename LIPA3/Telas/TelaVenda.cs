@@ -122,7 +122,7 @@ namespace LIPA3.Telas
 
             //MySQL.InserirTabelaVenda(ClienteId, 1, int.Parse(totalItensTxt.Text), double.Parse(subTotalTxt.Text), double.Parse(descontoTxt.Text),
             //    double.Parse(valorTotalTxt.Text), formaPagamentoCmb.SelectedItem.ToString(), situacaoCmb.SelectedItem.ToString(), observacoesTxt.Text);
-            MySQL.InserirTabelaVenda(ClienteId, 1, 0, 0, 0, 0, formaPagamentoCmb.SelectedItem.ToString(), situacaoCmb.SelectedItem.ToString(), observacoesTxt.Text);
+            MySQL.InserirTabelaVenda(ClienteId, int.Parse(TelaAcesso.usuarioId.ToString()), 0, 0, 0, 0, formaPagamentoCmb.SelectedItem.ToString(), situacaoCmb.SelectedItem.ToString(), observacoesTxt.Text);
 
             Limpar("V");
         }

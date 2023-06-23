@@ -232,7 +232,7 @@ namespace LIPA3.Classes
 
         public static string ExibirTabelaCliente()
         {
-            return "SELECT Id, Nome, Cpf, Rg, Cidade, Estado FROM Cliente";
+            return "SELECT Id,Situacao, Nome, Cpf, Rg, Cidade, Estado FROM Cliente";
         }
         #endregion
 

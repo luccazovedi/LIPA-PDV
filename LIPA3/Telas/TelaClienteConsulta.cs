@@ -40,14 +40,17 @@ namespace LIPA3.Telas
 
                 while (leitor.Read())
                 {
-                    int indiceLinha = clienteDataGrid.Rows.Add();
+                    if (leitor["Situacao"].ToString() == "0")
+                    {
+                        int indiceLinha = clienteDataGrid.Rows.Add();
 
-                    clienteDataGrid.Rows[indiceLinha].Cells["ID"].Value = leitor["Id"].ToString();
-                    clienteDataGrid.Rows[indiceLinha].Cells["NOME"].Value = leitor["Nome"].ToString();
-                    clienteDataGrid.Rows[indiceLinha].Cells["CPF"].Value = leitor["Cpf"].ToString();
-                    clienteDataGrid.Rows[indiceLinha].Cells["RG"].Value = leitor["Rg"].ToString();
-                    clienteDataGrid.Rows[indiceLinha].Cells["CIDADE"].Value = leitor["Cidade"].ToString();
-                    clienteDataGrid.Rows[indiceLinha].Cells["ESTADO"].Value = leitor["Estado"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["ID"].Value = leitor["Id"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["NOME"].Value = leitor["Nome"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["CPF"].Value = leitor["Cpf"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["RG"].Value = leitor["Rg"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["CIDADE"].Value = leitor["Cidade"].ToString();
+                        clienteDataGrid.Rows[indiceLinha].Cells["ESTADO"].Value = leitor["Estado"].ToString();
+                    }
                 }
             }
 

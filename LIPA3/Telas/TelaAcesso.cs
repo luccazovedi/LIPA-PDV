@@ -19,7 +19,7 @@ namespace LIPA3
 {
     public partial class TelaAcesso : Form
     {
-        object usuarioId;
+        public static object usuarioId;
 
         public TelaAcesso()
         {

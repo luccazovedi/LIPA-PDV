@@ -41,7 +41,7 @@ namespace LIPA3.Telas
 
                 while (leitor.Read())
                 {
-                    if (leitor["Situacao"].ToString() == "0")
+                    if (leitor["Situacao"].ToString() == "0" && leitor["QuantidadeEstoque"].ToString() != "0,00")
                     {
                         int indiceLinha = produtoDataGrid.Rows.Add();
 
